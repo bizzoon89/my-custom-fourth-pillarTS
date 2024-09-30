@@ -1,0 +1,229 @@
+//@import './variables.scss';
+@use "sass:map";
+@use 'sass:color';
+
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the common layout of the site
+// -----------------------------------------------------------------------------
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
+%listreset {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body {
+  background-color: $body-bg;
+  font-family: "Space Grotesk", sans-serif;
+
+  &.dark {
+    background-color: $night-bg;
+    color: $night-text;
+  }
+}
+
+.wrapper {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+* {
+  .resize-active & {
+    transition: none !important;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+.social-networks {
+  @extend %listreset;
+  display: flex;
+
+  &.content-mode {
+    @include media(">=tablet") {
+      display: block;
+      position: absolute;
+      top: 5px;
+      left: 50px;
+    }
+
+    @include media(">=laptop") {
+      left: 90px;
+
+    }
+
+    @include media(">=widescreen") {
+      left: 113px;
+    }
+
+    li {
+      @include media(">=tablet") {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+
+    a {
+      width: 40px;
+      height: 40px;
+      background: $blue-normal;
+
+      &:hover {
+        background: $core-500;
+
+        path {
+          fill: $white;
+        }
+      }
+    }
+
+    path {
+      fill: $white;
+    }
+  }
+
+  li {
+    margin-right: 17px;
+  }
+
+  a {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: $white;
+    font-size: 0;
+    padding: 3px;
+    color: $blue-normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      text-decoration: none;
+      background: $core-500;
+      color: $white;
+
+      path {
+        fill: $white;
+      }
+    }
+  }
+
+  .fa-brands {
+    font-size: 15px;
+  }
+
+  svg {
+    vertical-align: top;
+  }
+
+  path {
+    transition: fill 0.3s ease;
+  }
+
+  .a2a_kit {
+    display: flex;
+
+    @include media(">=tablet") {
+      display: block;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      padding: 5px;
+      transition: background 0.3s ease;
+      margin-right: 17px;
+
+      @include media(">=tablet") {
+        margin-bottom: 15px;
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+.content-section {
+  padding: 40px 0;
+
+  @include media(">=tablet") {
+    padding: 70px 0 0;
+  }
+
+  @include media(">=desktop") {
+    padding: 90px 0 0;
+  }
+
+  @include media(">=laptop") {
+    padding: 109px 0 0;
+  }
+
+  &:last-child {
+    padding: 40px 0;
+
+    @include media(">=tablet") {
+      padding: 70px 0;
+    }
+
+    @include media(">=desktop") {
+      padding: 90px 0;
+    }
+
+    @include media(">=laptop") {
+      padding: 109px 0 113px;
+    }
+  }
+
+  .container-md {
+    max-width: calc(1024px + 60px);
+    position: relative;
+
+    @include media(">=tablet") {
+      max-width: calc(1024px + 240px);
+      padding-left: 120px;
+      padding-right: 120px;
+    }
+
+    @include media(">=laptop") {
+      max-width: calc(1024px + 380px);
+      padding-right: 190px;
+      padding-left: 190px;
+    }
+  }
+
+  &.fz-base {
+    font-size: 18px;
+    line-height: 1.6;
+
+    p {
+      margin-bottom: 18px;
+    }
+  }
+
+  p+h3 {
+    padding-top: 42px;
+  }
+}
+
+.content {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}

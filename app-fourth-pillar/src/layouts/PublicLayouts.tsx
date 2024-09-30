@@ -3,10 +3,16 @@ import { Outlet } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
+import { headerData } from "../mocks/header"; 
+
 const PublicLayouts = () => {
+
   return (
     <>
-      <Header />
+      <Header
+        logoData={headerData.logoData}
+        menuData={headerData.menuData}
+      />
       <Outlet />
       <Footer />
     </>

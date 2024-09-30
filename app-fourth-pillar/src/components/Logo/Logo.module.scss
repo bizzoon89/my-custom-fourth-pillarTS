@@ -1,0 +1,33 @@
+@import 'include-media/dist/include-media';
+@import '../../assets/styles/variables';
+
+.logo {
+  width: 92px;
+
+  @include media(">=tablet") {
+    width: 110px;
+  }
+
+  @include media(">=desktop") {
+    width: 165px;
+  }
+
+  img {
+    vertical-align: top;
+    width: 100%;
+  }
+}
+
+.footerLogo {
+  width: 214px;
+  margin: 0 auto 25px;
+
+  @include media(">=tablet") {
+    margin: 0 0 45px;
+  }
+
+  img {
+    vertical-align: top;
+    width: 100%;
+  }
+}

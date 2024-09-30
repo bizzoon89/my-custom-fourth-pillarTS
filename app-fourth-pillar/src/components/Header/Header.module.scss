@@ -1,0 +1,145 @@
+@import 'include-media/dist/include-media';
+@import '../../assets/styles/variables';
+
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 111;
+  transition: background 0.3s ease, padding 0.3s ease;
+  padding: 15px 0 0 20px;
+  color: $core-900;
+  
+  @include media(">=tablet") {
+      padding: 20px 0 0 20px;
+  }
+
+  @include media(">=laptop") {
+    padding: 30px 0 0 35px;
+  }
+
+  &.fixed-header {
+    padding-top: 0;
+    position: fixed;
+    background: $blue-normal;
+  }
+
+  .nav-active & {
+    @include media("<tablet") {
+      background: $blue-normal;
+    }
+  }
+}
+
+.nav-active {
+  @include media("<tablet") {
+    overflow: hidden;
+  }
+}
+
+.container {
+  @extend .container;
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  max-width: 100%;
+
+  @include media(">=tablet") {
+    min-height: 84px;
+  }
+}
+
+.dropNav {
+  margin: 0 0 0 auto;
+
+  @include media("<tablet") {
+    background: $blue-normal;
+    padding: 30px;
+    position: fixed;
+    top: 67px;
+    left: 0;
+    overflow-y: auto;
+    right: 0;
+    height: calc(var(--full-viewport) - 67px);
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
+    z-index: -1;
+    visibility: hidden;
+    transition: visibility 0.3s ease, z-index 0.3s ease, opacity 0.3s ease;
+
+    .nav-active & {
+      z-index: auto;
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .fixed-header & {
+      height: calc(var(--full-viewport) - 52px);
+      top: 52px;
+    }
+  }
+}
+
+.navOpener {
+  position: absolute;
+  font-size: 0;
+  width: 52px;
+  height: 52px;
+  background: $core-500;
+  z-index: 10;
+  top: 15px;
+  right: 0;
+
+  .fixed-header & {
+    top: 0;
+  }
+
+  @include media(">=tablet") {
+    display: none;
+  }
+
+  em,
+  &::after,
+  &::before {
+    position: absolute;
+    height: 3px;
+    left: 12px;
+    right: 12px;
+    background: $white;
+    transition: transform 0.3s ease, top 0.3s ease, opacity 0.3s ease;
+  }
+
+  &::before,
+  &::after {
+    content: '';
+  }
+
+  &::after {
+    top: 34px;
+
+    .nav-active & {
+      top: 24px;
+      transform: rotate(-45deg);
+    }
+  }
+
+  &::before {
+    top: 14px;
+
+    .nav-active & {
+      top: 24px;
+      transform: rotate(45deg);
+    }
+  }
+
+  em {
+    top: 24px;
+    left: 20px;
+
+    .nav-active & {
+      opacity: 0;
+    }
+  }
+}

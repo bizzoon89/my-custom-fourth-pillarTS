@@ -1,18 +1,37 @@
-import React from 'react'
+import { NavLink } from 'react-router-dom';
 
-//import styles from "./NavList.module.scss";
-//import "./NavList.scss";
+import styles from "./Menu.module.scss";
 
-interface IMenu {
-  children: React.ReactNode; 
+export interface IMenuItem {
+  label: string;
+  url: string;
+  btnContact?: boolean;
 }
 
-const Menu = ({ children }: IMenu) => {
-  //const { mainNav, nav} = styles;
+interface IMenu  {
+  menuData: IMenuItem[],
+};
 
+const Menu = ({menuData}: IMenu) => {
   return (
-    <nav className="mainNav">
-      <ul className="nav">{children}</ul>
+    <nav className={styles.mainNav}>
+      <ul className={styles.nav}>
+        {
+          menuData.map((menuItem, index) => (
+            <li
+              key={index}
+              className={`${menuItem.btnContact ? "btnContact" : ""}`}
+            >
+              <NavLink
+                to={menuItem.url}
+                className={({ isActive }: { isActive: boolean }): string | undefined => isActive ? `${styles.active}` : undefined}
+                >
+                {menuItem.label}
+              </NavLink>
+            </li>
+          ))
+        }
+      </ul>
     </nav>
   )
 }

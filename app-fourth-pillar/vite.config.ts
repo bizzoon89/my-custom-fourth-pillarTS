@@ -7,5 +7,16 @@ export default defineConfig({
   server: {
     port: "3000",
     open: "."
-  }
+  },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        //silenceDeprecations: ["legacy-js-api"],
+        api: 'modern-compiler', // or "modern", "legacy"
+        // additionalData: `
+        //   @import "./src/assets/styles/_variables.scss";
+        // `,
+      },
+    },
+  },
 })

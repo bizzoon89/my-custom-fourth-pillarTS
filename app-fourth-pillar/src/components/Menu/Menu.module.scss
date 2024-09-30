@@ -1,0 +1,87 @@
+@import 'include-media/dist/include-media';
+@import '../../assets/styles/variables';
+
+.mainNav {
+  margin: 0 0 20px;
+
+  @include media(">=tablet") {
+    margin: 0 -30px 0 auto;
+  }
+}
+
+.nav {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  line-height: 1.2;
+  font-weight: 500;
+  font-size: 28px;
+
+  @include media(">=tablet") {
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+  }
+
+  
+  li {
+    padding: 20px 0;
+    border-bottom: 1px solid $white;
+
+    @include media(">=tablet") {
+      margin: 0 0 0 20px;
+      padding: 0;
+      border: 0;
+    }
+    
+    @include media(">=desktop") {
+      margin: 0 0 0 40px;
+    }
+    
+    &:last-child {
+      @include media(">=tablet") {
+        margin-left: 30px;
+      }
+      
+      @include media(">=desktop") {
+        margin-left: 65px;
+      }
+    }
+  }
+  
+  a {
+    color: $white;
+    display: block;
+    text-decoration: none;
+    transition: color 0.3s ease, background 0.3s ease;
+    
+    &:hover {
+      text-decoration: none;
+      color: $core-200;
+    }
+  }
+  
+  .active {
+    color: $core-500;
+  }
+}
+
+[class*="btnContact"] {
+  a {
+    @include media(">=tablet") {
+      color: $white;
+      background: $core-500;
+      padding: 30px 21px 32px;
+      min-height: 84px;
+
+      &:hover {
+        color: $white;
+        background: $highlight-500;
+      }
+
+      &.active {
+        color: $white;
+      }
+    }
+  }
+}
