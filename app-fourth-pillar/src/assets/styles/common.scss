@@ -26,11 +26,15 @@ html {
 body {
   background-color: $body-bg;
   font-family: "Space Grotesk", sans-serif;
-
+  
   &.dark {
     background-color: $night-bg;
     color: $night-text;
   }
+}
+
+#root {
+  min-height: 150vh;
 }
 
 .wrapper {
