@@ -12,6 +12,7 @@ const PublicLayouts = () => {
       <Header
         logoData={headerData.logoData}
         menuData={headerData.menuData}
+        addMenuData={headerData.addMenuData}
       />
       <Outlet />
       <Footer />

@@ -143,3 +143,30 @@
     }
   }
 }
+
+.addLink {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  font-size: 13px;
+  font-weight: 400;
+  margin-top: auto;
+
+  li {
+    margin-bottom: 10px;
+  }
+
+  @include media(">=tablet") {
+    display: none;
+  }
+
+  a {
+    color: rgba($white, 0.8);
+    text-decoration: none;
+
+    &:hover {
+      color: $core-200;
+      text-decoration: none;
+    }
+  }
+}

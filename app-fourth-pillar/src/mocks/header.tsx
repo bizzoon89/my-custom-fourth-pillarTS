@@ -24,4 +24,14 @@ export const headerData = {
       btnContact: true
     }
   ],
+  addMenuData: [
+    {
+      label: 'Privacy Policy',
+      url: '/privacyPolicy'
+    },
+    {
+      label: 'Cookie Policy',
+      url: '/cookiepolicy'
+    }
+  ]
 } as HeaderProps;

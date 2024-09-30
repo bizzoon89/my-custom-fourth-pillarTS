@@ -2,18 +2,25 @@ import { useState, useEffect } from 'react';
 
 import Menu from "../Menu";
 import Logo from "../Logo";
+import LinkList from '../LinkList';
 
 import { ILogo } from "../Logo/Logo";
 import { IMenuItem } from "../Menu/Menu";
+import { ILinkItem } from '../LinkList/LinkList';
 
 import styles from "./Header.module.scss";
 
 export interface HeaderProps {
   logoData: ILogo;
   menuData: IMenuItem[];
+  addMenuData: ILinkItem[];
 }
 
-const Header = ({ logoData, menuData }: HeaderProps) => {
+const Header = ({ logoData, menuData, addMenuData }: HeaderProps) => {
+  console.log(logoData);
+  console.log(menuData);
+  console.log(addMenuData);
+  
 
   const [navState, setNavState] = useState<boolean>(false);
 
@@ -57,6 +64,10 @@ const Header = ({ logoData, menuData }: HeaderProps) => {
         <Logo {...logoData}/>
         <div className={styles.dropNav}>
           <Menu menuData={menuData}/>
+          <LinkList
+            classList={styles.addLink}
+            linkData={addMenuData}
+          />
         </div>
         <a
           href="#"
