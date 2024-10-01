@@ -2,11 +2,11 @@ import { Link } from 'react-router-dom';
 
 import styles from "./Logo.module.scss";
 
-export interface ILogo {
+import { IImage } from '../../types';
+
+export interface ILogo extends IImage {
   positionFooter: boolean;
   url: string;
-  img: string;
-  alt: string;
 }
 
 const Logo = ({ positionFooter, url, img, alt }: ILogo) => {

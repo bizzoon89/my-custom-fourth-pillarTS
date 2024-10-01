@@ -7,7 +7,7 @@ export const headerData = {
     img: '/images/logo.svg',
     alt: 'Fourth pillar',
   },
-  menuData: [
+  menuItems: [
     {
       label: 'Home',
       url: '/',
@@ -24,14 +24,14 @@ export const headerData = {
       btnContact: true
     }
   ],
-  addMenuData: [
+  addMenuItems: [
     {
-      label: 'Privacy Policy',
-      url: '/privacyPolicy'
+      url: '/privacy-policy',
+      text: 'Privacy Policy'
     },
     {
-      label: 'Cookie Policy',
-      url: '/cookiepolicy'
+      url: '/cookie-policy',
+      text: 'Cookie Policy'
     }
   ]
 } as HeaderProps;

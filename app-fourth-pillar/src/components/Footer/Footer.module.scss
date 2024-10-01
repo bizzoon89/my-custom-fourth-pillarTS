@@ -1,0 +1,159 @@
+@import 'include-media/dist/include-media';
+@import '../../assets/styles/variables';
+
+.footer {
+  background: $blue-normal;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba($white, 0.8);
+  padding: 50px 0 30px;
+
+  @include media(">=tablet") {
+    padding: 78px 0 69px;
+  }
+
+  @include media(">=laptop") {
+    font-size: 15px;
+  }
+
+  h6 {
+    color: $white;
+    padding-top: 5px;
+    margin-bottom: 16px;
+  }
+
+  a {
+    color: rgba($white, 0.8);
+    transition: color 0.3s ease, background 0.3s ease;
+    text-decoration: none;
+
+    &:hover {
+      color: $core-200;
+      text-decoration: none;
+    }
+  }
+  
+
+
+
+  .socialNetworks {
+    margin-bottom: 30px;
+    justify-content: center;
+
+    @include media(">=tablet") {
+      margin-bottom: 69px;
+      justify-content: flex-start;
+    }
+
+    li {
+      margin-right: 8px;
+      margin-left: 8px;
+
+      @include media(">=tablet") {
+        margin-right: 17px;
+        margin-left: 0;
+      }
+    }
+  }
+}
+
+.col {
+  width: 50%;
+  padding: 0 15px 25px;
+
+  @include media(">=desktop") {
+    padding: 0 15px 0 0;
+    width: 33.33%;
+  }
+
+  &:nth-child(2) {
+    @include media(">=desktop") {
+      padding: 0 15px 0 26px;
+    }
+  }
+
+  &:last-child {
+    @include media(">=desktop") {
+      padding: 0 15px 0 54px;
+    }
+  }
+}
+
+.footerNav {
+  margin: 0 0 0 auto;
+  padding-top: 1px;
+  width: 60%;
+  display: none;
+
+  @include media(">=tablet") {
+    flex-wrap: wrap;
+    display: flex;
+
+  }
+
+  @include media(">=desktop") {
+    width: 65%;
+  }
+
+  @include media(">=widescreen") {
+    width: 49%;
+  }
+}
+
+.footerArea {
+  text-align: center;
+
+  @include media(">=tablet") {
+    text-align: left;
+    width: 30%;
+  }
+
+  @include media(">=widescreen") {
+    width: 40%;
+  }
+}
+
+.container {
+  @extend .container;
+  max-width: 1840px;
+
+  @include media(">=tablet") {
+    display: flex;
+  }
+}
+
+
+
+.addNav {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+  font-weight: 500;
+  font-size: 16px;
+
+  @include media(">=widescreen") {
+    font-size: 18px;
+  }
+
+  li {
+    margin-bottom: 24px;
+  }
+
+  a {
+    color: $white;
+  
+    &:hover {
+      color: $core-200;
+    }
+  }
+}
+
+.listLink {
+  padding: 0;
+  list-style: none;
+  margin: 0;
+
+  li {
+    margin-bottom: 8px;
+  }
+}

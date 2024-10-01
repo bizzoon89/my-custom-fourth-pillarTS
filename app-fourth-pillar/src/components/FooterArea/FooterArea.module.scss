@@ -1,0 +1,33 @@
+@import 'include-media/dist/include-media';
+@import '../../assets/styles/variables';
+
+.copy {
+  display: block;
+  font-size: 12px;
+}
+
+.address {
+  font-style: normal;
+  white-space: pre-line;
+  margin-bottom: 28px;
+}
+
+.text {
+  display: block;
+  margin-bottom: 7px;
+}
+
+.title {
+  display: none;
+  font-weight: 500;
+  font-size: 16px;
+  margin-bottom: 8px;
+
+  @include media(">=tablet") {
+    display: block;
+  }
+
+  @include media(">=widescreen") {
+    font-size: 18px;
+  }
+}

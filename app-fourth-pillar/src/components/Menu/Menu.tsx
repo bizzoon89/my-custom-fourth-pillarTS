@@ -9,15 +9,15 @@ export interface IMenuItem {
 }
 
 interface IMenu  {
-  menuData: IMenuItem[],
+  menuItems: IMenuItem[],
 };
 
-const Menu = ({menuData}: IMenu) => {
+const Menu = ({ menuItems }: IMenu) => {
   return (
     <nav className={styles.mainNav}>
       <ul className={styles.nav}>
         {
-          menuData.map((menuItem, index) => (
+          menuItems.map((menuItem, index) => (
             <li
               key={index}
               className={`${menuItem.btnContact ? "btnContact" : ""}`}

@@ -1,24 +1,20 @@
 
 import { Link } from "react-router-dom";
 
-export interface ILinkItem {
-  label: string;
-  url: string;
-}
+import { ILink } from "../../types";
 
 interface ILinkList {
   classList: string;
-  linkData: ILinkItem[];
+  linkItem: ILink[];
 }
 
-const LinkList = ({ classList, linkData }: ILinkList) => {
-  console.log(linkData);
+const LinkList = ({ classList, linkItem }: ILinkList) => {
   
   return (
     <ul className={classList}>
-      {linkData.map((item, index) => (
+      {linkItem.map((item, index) => (
         <li key={index}>
-          <Link to={item.url}>{item.label}</Link>
+          <Link to={item.url}>{item.text}</Link>
         </li>
       ))}
     </ul>

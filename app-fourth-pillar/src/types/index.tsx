@@ -1,21 +1,26 @@
+export type IdType = string | number;
 export type PlainText = string;
 export type Html = string;
 export type InlineHtml = string;
 
-export interface ImageType {
+export interface ILink { //i use
   url: string;
+  text: string;
+};
+
+export interface IImage { //i use
+  img: string;
   alt: string;
 };
 
-export interface LinkType {
+export interface ILinkTarget {
   url: string;
   title: string;
   target: string;
 };
 
-export interface LabeledLink {
-  link: LinkType;
+export interface ILabeledLink {
+  link: ILink;
   label: string;
 };
 
-export type IdType = string | number;
