@@ -80,6 +80,28 @@ export const footerData = {
         text: 'Cookie Policy'
       }
     ]
-  }
+  },
+  socialLinkList: [
+    {
+      url: 'https://www.instagram.com/thefourthpillar',
+      ariaLabel: 'Go to Instagram page',
+      target: '_blank',
+      name: 'Instagram',
+      icon: {
+        img: '/images/instagram.svg',
+        alt: 'Instagram'
+      }
+    },
+    {
+      url: 'https://www.linkedin.com/company/the-fourth-pillar',
+      ariaLabel: 'Go to linkedin page',
+      target: '_blank',
+      name: 'Instagram',
+      icon: {
+        img: '/images/linkedin.svg',
+        alt: 'LinkedIn'
+      }
+    }
+  ]
 } as FooterProps;
 

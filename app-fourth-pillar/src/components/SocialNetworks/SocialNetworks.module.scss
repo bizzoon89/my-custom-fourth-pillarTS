@@ -1,0 +1,134 @@
+@import 'include-media/dist/include-media';
+@import '../../assets/styles/variables';
+
+.socialNetworks {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  display: flex;
+  margin-bottom: 30px;
+  justify-content: center;
+
+  @include media(">=tablet") {
+    margin-bottom: 69px;
+    justify-content: flex-start;
+  }
+
+  &.contentPosition {
+    margin: 0;
+
+    @include media(">=tablet") {
+      display: block;
+      position: absolute;
+      top: 5px;
+      left: 50px;
+    }
+
+    @include media(">=laptop") {
+      left: 90px;
+
+    }
+
+    @include media(">=widescreen") {
+      left: 113px;
+    }
+
+    li {
+      margin-right: 17px;
+      margin-left: 0;
+
+      @include media(">=tablet") {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+    }
+
+    a {
+      width: 40px;
+      height: 40px;
+      border: 1px solid $blue-normal;
+
+      &:hover {
+        background: $core-500;
+
+        path {
+          fill: $white;
+        }
+      }
+    }
+
+    path {
+      fill: $white;
+    }
+  }
+
+  li {
+    margin-right: 8px;
+    margin-left: 8px;
+
+    @include media(">=tablet") {
+      margin-right: 17px;
+      margin-left: 0;
+    }
+  }
+
+  a {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: $white;
+    font-size: 0;
+    padding: 4px 3px 3px;
+    color: $blue-normal;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background 0.3s ease, color 0.3s ease;
+
+    &:hover {
+      text-decoration: none;
+      background: $core-500;
+      color: $white;
+
+      path {
+        fill: $white;
+      }
+    }
+  }
+
+  .fa-brands {
+    font-size: 15px;
+  }
+
+  svg {
+    vertical-align: top;
+  }
+
+  path {
+    transition: fill 0.3s ease;
+  }
+
+  .a2a_kit {
+    display: flex;
+
+    @include media(">=tablet") {
+      display: block;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 15px;
+      padding: 5px;
+      transition: background 0.3s ease;
+      margin-right: 17px;
+
+      @include media(">=tablet") {
+        margin-bottom: 15px;
+        margin-right: 0;
+      }
+    }
+  }
+}

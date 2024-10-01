@@ -22,6 +22,7 @@ const PublicLayouts = () => {
         footerMenu={footerData.footerMenu}
         servicesMenu={footerData.servicesMenu}
         addFooterMenu={footerData.addFooterMenu}
+        socialLinkList={footerData.socialLinkList}
       />
     </>
   )
