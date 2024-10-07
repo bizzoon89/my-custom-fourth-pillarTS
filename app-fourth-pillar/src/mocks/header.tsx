@@ -3,7 +3,7 @@ import { HeaderProps } from "../components/Header/Header"
 export const headerData = {
   logoData: {
     url: '/',
-    img: '/images/logo.svg',
+    src: '/images/logo.svg',
     alt: 'Fourth pillar',
   },
   menuItems: [

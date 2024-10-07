@@ -3,7 +3,7 @@ import { IImage } from "../../types";
 
 import styles from "./Hero.module.scss"
 
-export interface IHeroProps {
+export interface HeroProps {
   title: string;
   text?: string;
   maps?: IImage;
@@ -12,7 +12,7 @@ export interface IHeroProps {
   heroImg?: IImage;
 }
 
-interface IHero extends IHeroProps {
+interface IHero extends HeroProps {
   optionClass?: string;
   children?: React.ReactNode;
 }
@@ -21,7 +21,7 @@ const Hero = ({ children, optionClass, title, text, maps, address, mail, heroImg
   const Maps = () => {
     return (
       <div className={styles.imgMaps}>
-        <img src={maps?.img} alt={maps?.alt} />
+        <img src={maps?.src} alt={maps?.alt} />
       </div>
     )
   }
@@ -29,7 +29,7 @@ const Hero = ({ children, optionClass, title, text, maps, address, mail, heroImg
   const HeroImg = () => {
     return (
       <div className={styles.heroImages}>
-        <img src={heroImg?.img} alt={heroImg?.alt} />
+        <img src={heroImg?.src} alt={heroImg?.alt} />
       </div>
     )
   }

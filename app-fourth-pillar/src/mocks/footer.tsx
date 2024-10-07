@@ -3,7 +3,7 @@ import { FooterProps } from "../components/Footer/Footer"
 export const footerData = {
   logoData: {
     url: '/',
-    img: '/images/logo.svg',
+    src: '/images/logo.svg',
     alt: 'Fourth pillar',
   },
   contactInfo: {
@@ -82,12 +82,12 @@ export const footerData = {
   },
   socialLinkList: [
     {
-      url: 'https://www.instagram.com/thefourthpillar',
+      url: 'https://www.instagram.com/fourthpillarco',
       ariaLabel: 'Go to Instagram page',
       target: '_blank',
       name: 'Instagram',
       icon: {
-        img: '/images/instagram.svg',
+        src: '/images/instagram.svg',
         alt: 'Instagram'
       }
     },
@@ -97,7 +97,7 @@ export const footerData = {
       target: '_blank',
       name: 'Instagram',
       icon: {
-        img: '/images/linkedin.svg',
+        src: '/images/linkedin.svg',
         alt: 'LinkedIn'
       }
     }

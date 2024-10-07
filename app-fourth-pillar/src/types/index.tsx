@@ -9,7 +9,7 @@ export interface ILink { //i use
 };
 
 export interface IImage { //i use
-  img: string;
+  src: string;
   alt: string;
 };
 

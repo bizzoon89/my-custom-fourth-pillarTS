@@ -2,11 +2,11 @@ import styles from './InfoText.module.scss';
 
 import { PlainText } from '../../types';
 
-export interface IInfoTextProps {
+export interface InfoTextProps {
   title: PlainText;
 }
 
-interface IInfoText extends IInfoTextProps {
+interface IInfoText extends InfoTextProps {
   children?: React.ReactNode;
 }
 

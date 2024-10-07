@@ -23,7 +23,7 @@ const SocialNetworks = ({ contentPosition, socialLinkList }: SocialNetworks) => 
       {socialLinkList.map(social => (
         <li key={uuidv4()}>
           <a href={social.url} aria-label={social.ariaLabel} target={social.target}>
-            <img src={social.icon.img} alt={social.icon.alt} />
+            <img src={social.icon.src} alt={social.icon.alt} />
             {social.name}
           </a>
         </li>
