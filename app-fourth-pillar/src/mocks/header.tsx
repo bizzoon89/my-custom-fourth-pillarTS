@@ -2,20 +2,34 @@ import { HeaderProps } from "../components/Header/Header"
 
 export const headerData = {
   logoData: {
-    positionFooter: false,
     url: '/',
     img: '/images/logo.svg',
     alt: 'Fourth pillar',
   },
   menuItems: [
     {
-      label: 'Home',
-      url: '/',
+      label: 'About',
+      url: '/about',
       btnContact: false
     },
     {
-      label: 'About',
-      url: '/about',
+      label: 'Services',
+      url: '/services',
+      btnContact: false
+    },
+    {
+      label: 'Our People',
+      url: '/people',
+      btnContact: false
+    },
+    {
+      label: 'Clients',
+      url: '/clients',
+      btnContact: false
+    },
+    {
+      label: 'News',
+      url: '/news',
       btnContact: false
     },
     {

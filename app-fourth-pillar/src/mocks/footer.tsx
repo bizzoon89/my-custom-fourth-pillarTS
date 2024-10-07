@@ -2,7 +2,6 @@ import { FooterProps } from "../components/Footer/Footer"
 
 export const footerData = {
   logoData: {
-    positionFooter: true,
     url: '/',
     img: '/images/logo.svg',
     alt: 'Fourth pillar',

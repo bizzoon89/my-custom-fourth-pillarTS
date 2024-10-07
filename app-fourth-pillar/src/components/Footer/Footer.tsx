@@ -29,7 +29,10 @@ const Footer = ({ logoData, contactInfo, footerMenu, servicesMenu, addFooterMenu
     <footer className={styles.footer}>
       <div className={styles.container}>
         <div className={styles.footerArea}>
-          <Logo {...logoData} />
+          <Logo
+            {...logoData}
+            positionFooter={true}
+          />
           <FooterArea  {...contactInfo} >
             <SocialNetworks socialLinkList={socialLinkList}/>
           </FooterArea>

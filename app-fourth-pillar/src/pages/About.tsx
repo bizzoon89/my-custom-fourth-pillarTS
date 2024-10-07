@@ -1,6 +1,12 @@
+import Hero from '../components/Hero';
+
+import { heroData } from '../mocks/about';
+
 const About = () => {
   return (
-    <>About</>
+    <>
+      <Hero {...heroData} />
+    </>
   )
 }
 

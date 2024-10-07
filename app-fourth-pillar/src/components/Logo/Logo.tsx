@@ -5,11 +5,14 @@ import styles from "./Logo.module.scss";
 import { IImage } from '../../types';
 
 export interface ILogo extends IImage {
-  positionFooter: boolean;
   url: string;
 }
 
-const Logo = ({ positionFooter, url, img, alt }: ILogo) => {
+interface Logo extends ILogo {
+  positionFooter?: boolean;
+}
+
+const Logo = ({ positionFooter, url, img, alt }: Logo) => {
   const { logo, footerLogo } = styles;
 
   return (

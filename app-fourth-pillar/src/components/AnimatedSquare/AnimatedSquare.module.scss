@@ -1,0 +1,186 @@
+@import 'include-media/dist/include-media';
+@import '../../assets/styles/variables';
+
+.animatedSquare {
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  width: 94px;
+  height: 94px;
+  gap: 8px;
+
+  @include media(">=tablet") {
+    width: 114px;
+    gap: 10px;
+    height: 114px;
+  }
+
+  @include media(">=laptop") {
+    gap: 14px;
+    width: 184px;
+    height: 180px;
+
+  }
+
+  &.lgSquare {
+    @include media(">=laptop") {
+      width: 278px;
+      height: 273px;
+      gap: 20px;
+
+      span {
+        width: 127px;
+        height: 127px;
+      }
+    }
+  }
+
+  span {
+    width: 43px;
+    height: 43px;
+    display: block;
+    border: 4px solid $white;
+    animation: disappear 2s infinite;
+
+    @include media(">=tablet") {
+      height: 52px;
+      width: 52px;
+    }
+
+    @include media(">=laptop") {
+      width: 84px;
+      height: 84px;
+    }
+
+    &:nth-child(1) {
+      animation-delay: 0s;
+    }
+
+    &:nth-child(2) {
+      animation-delay: 0.5s;
+    }
+
+    &:nth-child(4) {
+      animation-delay: 1s;
+    }
+
+    &:nth-child(3) {
+      animation-delay: 1.5s;
+    }
+  }
+
+  &.square01 {
+    position: absolute;
+    right: 10px;
+    bottom: -100px;
+
+    @include media(">=laptop") {
+      bottom: -108px;
+      right: 6px;
+    }
+  }
+
+  &.square02 {
+    position: absolute;
+    top: -30px;
+    right: 50px;
+    display: none;
+
+    @include media(">=tablet") {
+      display: flex;
+    }
+
+    @include media(">=laptop") {
+      bottom: 5px;
+      top: auto;
+      right: auto;
+      left: 50px;
+    }
+  }
+
+  &.square03 {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    display: none;
+
+    @include media(">=tablet") {
+      display: flex;
+    }
+  }
+
+  &.square04 {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    display: none;
+
+    @include media(">=tablet") {
+      display: flex;
+    }
+
+    @include media(">=laptop") {
+      top: -107px;
+    }
+  }
+
+  &.square05 {
+    position: absolute;
+    bottom: 0;
+    display: none;
+    right: 10px;
+
+    @include media(">=tablet") {
+      display: flex;
+    }
+
+    @include media(">=widescreen") {
+      right: 12.5%;
+    }
+  }
+
+  &.square06 {
+    position: absolute;
+    bottom: 32px;
+    right: 20px;
+
+    @include media(">=tablet") {
+      bottom: 5px;
+      left: 9%;
+      right: auto;
+    }
+  }
+
+  &.square07 {
+    position: absolute;
+    top: 0;
+    right: 5px;
+    display: none;
+
+    @include media(">=tablet") {
+      display: flex;
+    }
+
+    @include media(">=widescreen") {
+      top: -107px;
+      right: 5px;
+    }
+  }
+}
+
+@keyframes disappear {
+
+  0%,
+  100% {
+    border-color: $white;
+  }
+
+  25% {
+    border-color: $base-300;
+  }
+
+  50%,
+  75% {
+    border-color: $core-500;
+  }
+}

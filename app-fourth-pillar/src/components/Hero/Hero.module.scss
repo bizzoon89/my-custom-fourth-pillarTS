@@ -1,0 +1,396 @@
+@import 'include-media/dist/include-media';
+@import '../../assets/styles/variables';
+
+@mixin placeholder {
+  &::placeholder {
+    @content;
+    opacity: 1;
+  }
+}
+
+.fzSm {
+  font-size: 46px;
+  
+    @include media(">=phone") {
+      font-size: 56px;
+    }
+  
+    @include media(">=tablet") {
+      font-size: 80px;
+    }
+  
+    @include media(">=laptop") {
+      font-size: 112px;
+    }
+  
+    @include media(">=widescreen") {
+      font-size: 160px;
+    }
+}
+
+.heroSection {
+  border-top-width: 33px;
+  color: $white;
+  padding: 100px 0 50px;
+  background: linear-gradient(104.27deg, #C70361 0%, #2A2745 97.45%);
+  line-height: 1.3;
+  font-weight: 300;
+  border: 15px solid $white;
+  border-top: 0;
+  margin-top: 15px;
+  min-height: 400px;
+  font-size: 22px;
+  display: flex;
+  align-items: flex-end;
+
+  .dark & {
+    border-color: #000;
+  }
+
+  &.heroInner {
+    min-height: 400px;
+    padding: 150px 0 50px;
+  }
+
+  &.heroAlt {
+    @include media(">=widescreen") {
+      padding: 291px 48px 100px;
+    }
+  }
+
+  &.heroHome {
+    padding-bottom: 35px;
+
+    @include media(">=tablet") {
+      min-height: 79vh;
+    }
+
+    @include media(">=laptop") {
+      min-height: 70vh;
+      padding-top: 150px;
+    }
+
+    @include media(">=widescreen") {
+      min-height: 81vh;
+      padding: 228px 0 100px;
+    }
+  }
+
+  @include media(">=tablet") {
+    border: 20px solid $white;
+    border-top: 0;
+    margin-top: 20px;
+    min-height: 460px;
+    padding: 150px 0 50px;
+    font-size: 28px;
+    display: block;
+  }
+
+  @include media(">=laptop") {
+    border: 30px solid $white;
+    min-height: 632px;
+    padding: 228px 0 100px;
+    border-top: 0;
+    margin-top: 30px;
+    font-size: 36px;
+  }
+
+  @include media(">=widescreen") {
+    min-height: 874px;
+    font-size: 42px;
+  }
+
+  h1 {
+    margin-bottom: 20px;
+    white-space: pre-line;
+    text-transform: uppercase;
+
+    @include media(">=desktop") {
+      margin: 0 0 38px;
+    }
+  }
+
+  &.heroContact {
+    padding-bottom: 30px;
+
+    @include media("<tablet") {
+      min-height: 1px;
+    }
+
+    @include media(">=tablet") {
+      padding-top: 84px;
+      font-size: 22px;
+    }
+
+    @include media(">=desktop") {
+      font-size: 24px;
+    }
+
+    @include media(">=laptop") {
+      font-size: 30px;
+    }
+
+    @include media(">=widescreen") {
+      font-size: 34px;
+    }
+
+    .textArea {
+      padding-bottom: 30px;
+
+      @include media(">=tablet") {
+        padding-top: 84px;
+        padding-bottom: 0;
+        padding-right: 15px;
+        width: 50%;
+      }
+
+      @include media(">=desktop") {
+        width: 39%;
+      }
+
+      @include media(">=widescreen") {
+        padding-left: 20px;
+      }
+    }
+
+    .container {
+      max-width: 1860px;
+
+      @include media(">=tablet") {
+        display: flex;
+      }
+    }
+
+    address {
+      font-style: normal;
+      line-height: 1.2;
+      margin: 0;
+      white-space: pre-line;
+    }
+  }
+
+  &.heroNews {
+    padding-bottom: 30px;
+
+    @include media("<tablet") {
+      min-height: 1px;
+    }
+
+    @include media(">=tablet") {
+      padding-top: 84px;
+      font-size: 22px;
+    }
+
+    .container {
+      max-width: 1860px;
+
+      @include media(">=tablet") {
+        display: flex;
+      }
+    }
+
+    .textArea {
+      position: relative;
+      z-index: 1;
+
+      @include media(">=tablet") {
+        width: 45%;
+        padding-top: 143px;
+        padding-bottom: 100px;
+      }
+
+      @include media(">=desktop") {
+        width: 35%;
+        padding-bottom: 150px;
+      }
+
+      @include media(">=laptop") {
+        padding-bottom: 225px;
+        width: 33.33%;
+      }
+
+      @include media(">=widescreen") {
+        padding-left: 20px;
+      }
+    }
+  }
+
+  .h4 {
+    font-weight: 700;
+    display: block;
+
+    @include media(">=tablet") {
+      margin-bottom: 43px;
+    }
+  }
+
+  &.heroLanding {
+    font-size: 18px;
+    line-height: 1.6;
+    padding-bottom: 30px;
+
+    @include media(">=tablet") {
+      padding-bottom: 50px;
+      padding-top: 162px;
+    }
+
+    @include media(">=desktop") {
+      padding-top: 162px;
+    }
+
+    .container {
+      max-width: 1860px;
+
+      @include media(">=tablet") {
+        display: flex;
+      }
+    }
+
+    h1 {
+      @include media(">=widescreen") {
+        margin-bottom: 41px;
+      }
+    }
+
+    .textArea {
+      padding: 0 0 25px;
+
+      @include media(">=tablet") {
+        padding: 5px 0 0;
+        width: 50%;
+      }
+
+      @include media(">=widescreen") {
+        margin-left: 20px;
+      }
+    }
+  }
+}
+
+.container {
+  @extend .container;
+  max-width: 1820px;
+}
+
+.name,
+.pos {
+  display: block;
+  font-size: 22px;
+
+  @include media(">=tablet") {
+    font-size: 28px;
+  }
+
+  @include media(">=laptop") {
+    font-size: 36px;
+  }
+
+  @include media(">=widescreen") {
+    font-size: 42px;
+  }
+}
+
+.name {
+  font-weight: 700;
+}
+
+.pos {
+  font-weight: 300;
+}
+
+.mail {
+  display: block;
+  margin-bottom: 13px;
+
+  a {
+    color: $white;
+    text-decoration: none;
+
+    &:hover {
+      color: $core-200;
+    }
+  }
+}
+
+.imgMaps {
+  max-height: 1000px;
+  overflow: hidden;
+  margin-bottom: -80px;
+  margin-right: -15px;
+  margin-left: -15px;
+  height: 320px;
+
+  @include media(">=phone") {
+    height: 400px;
+  }
+
+  @include media(">=tablet") {
+    width: calc(50% + 20px);
+    margin-right: -20px;
+    margin-left: 0;
+    height: auto;
+  }
+
+  @include media(">=desktop") {
+    margin-bottom: -100px;
+    width: calc(61% + 20px);
+  }
+
+  @include media(">=laptop") {
+    width: calc(61% + 30px);
+    margin-bottom: -150px;
+    margin-right: -30px;
+  }
+
+  @include media(">=widescreen") {
+    max-height: 1128px;
+    margin-bottom: -333px;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.heroImages {
+  max-height: 1000px;
+  overflow: hidden;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-bottom: -40px;
+
+  @include media(">=tablet") {
+    margin-right: -20px;
+    margin-left: 0;
+    width: calc(55% + 30px);
+    margin-bottom: -100px;
+  }
+
+  @include media(">=desktop") {
+    width: calc(65% + 30px);
+  }
+
+  @include media(">=laptop") {
+    width: calc(66.66% + 30px);
+    margin-right: -30px;
+  }
+
+  @include media(">=widescreen") {
+    max-height: 1230px;
+    margin-bottom: -130px;
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.textArea {
+  @include media(">=desktop") {
+    width: 61%;
+  }
+}

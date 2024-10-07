@@ -1,6 +1,15 @@
+import Hero from '../components/Hero';
+
+import { heroData } from '../mocks/contact';
+
 const Contact = () => {
   return (
-    <>Contact</>
+    <>
+      <Hero
+        {...heroData}
+        optionClass={'heroContact'}
+      />
+    </>
   )
 }
 

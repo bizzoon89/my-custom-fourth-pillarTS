@@ -12,7 +12,7 @@ export interface ISocialLinks {
   icon: IImage;
 }
 
-export interface SocialNetworks {
+interface SocialNetworks {
   contentPosition?: boolean;
   socialLinkList: ISocialLinks[];
 }
