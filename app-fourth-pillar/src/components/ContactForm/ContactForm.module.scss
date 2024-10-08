@@ -1,0 +1,185 @@
+@import 'include-media/dist/include-media';
+@import '../../assets/styles/variables';
+@import '../Button/Button.module.scss';
+
+@mixin placeholder {
+  &::placeholder {
+    @content;
+    opacity: 1;
+  }
+}
+
+.contactSection {
+  background: $blue-light;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  @include media(">=tablet") {
+    padding-top: 90px;
+    padding-bottom: 90px;
+  }
+
+  @include media(">=laptop") {
+    padding-top: 126px;
+    padding-bottom: 134px;
+  }
+}
+
+.containerLg {
+  @extend .container-lg;
+}
+
+.contactForm {
+  margin: 0;
+
+  .rowInput {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -18px;
+  }
+
+  .inputGroup {
+    padding: 0 18px 22px;
+    width: 100%;
+
+    @include media(">=tablet") {
+      width: 50%;
+    }
+
+    &:only-child {
+      width: 100%;
+    }
+  }
+
+  label {
+    display: block;
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 7px;
+    line-height: 1.3;
+
+    @include media(">=laptop") {
+      font-size: 15px;
+    }
+
+  }
+
+  textarea,
+  [type='text'],
+  [type='email'],
+  [type='tel'] {
+    display: block;
+    width: 100%;
+    border-radius: 4px;
+    height: 58px;
+    border: 2px solid transparent;
+    background: $white;
+    padding: 10px 14px;
+    font-size: 14px;
+    color: $blue-normal;
+    transition: border 0.3s ease;
+
+    @include media(">=laptop") {
+      font-size: 15px;
+    }
+
+    &:focus {
+      outline: none;
+      border-color: $core-100;
+    }
+
+    @include placeholder {
+      color: $blue-light-active;
+    }
+  }
+
+  textarea {
+    min-width: 120px;
+    height: 120px;
+    padding-top: 16px;
+    width: 100%;
+    resize: none;
+    max-height: 200px;
+  }
+
+  .ttl {
+    padding: 19px 0 8px;
+    display: block;
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: 12px;
+  }
+
+  .formCheckLabel {
+    font-weight: 400;
+  }
+
+  .btn {
+    height: 68px;
+    margin-top: 46px;
+  }
+}
+
+.customCheckbox {
+  position: relative;
+
+  [type=checkbox] {
+    cursor: pointer;
+    height: 24px;
+    left: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    z-index: 4;
+    width: 24px;
+
+  }
+
+  .formCheckLabel {
+    font-weight: 400;
+    font-size: 12px;
+    display: inline-block;
+    vertical-align: top;
+    line-height: 1.2;
+    padding: 4px 0 2px;
+    margin: 0 0 18px 35px;
+  }
+}
+
+[type="checkbox"]:checked+.formCheckLabel::after {
+  opacity: 1;
+}
+
+[type="checkbox"]:focus+.formCheckLabel::before {
+  border-color: $core-100;
+}
+
+.formCheckLabel {
+  position: relative;
+  cursor: pointer;
+
+  &::before {
+    content: '';
+    position: absolute;
+    width: 24px;
+    left: -35px;
+    top: 0;
+    height: 24px;
+    border: 1px solid $blue-light-hover;
+    background: $white;
+    border-radius: 4px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    width: 12px;
+    height: 12px;
+    background: $blue-normal;
+    border-radius: 2px;
+    top: 6px;
+    left: -29px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+}

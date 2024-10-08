@@ -2,6 +2,7 @@ import { useState } from 'react';
 import Hero from '../components/Hero';
 import InfoText from '../components/InfoText';
 import AnimatedSquare from '../components/AnimatedSquare';
+import ContactForm from '../components/ContactForm';
 
 import { heroData, infoTextData } from '../mocks/home';
 
@@ -17,6 +18,7 @@ const Home = () => {
       <InfoText {...infoTextData}>
         <AnimatedSquare positionClass={'square01'} />
       </InfoText>
+      <ContactForm />
       <button onClick={() => setCount((count) => count + 1)}>
         count is {count}
       </button>
