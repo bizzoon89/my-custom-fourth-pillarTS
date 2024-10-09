@@ -1,16 +1,14 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { v4 as uuidv4 } from 'uuid';
+//import { v4 as uuidv4 } from 'uuid';
 import axios from 'axios';
+//import { Formik, Field, Form, ErrorMessage} from 'formik';
 
 //import { useHttp } from '../../hooks/http.hook';
 
 import styles from './ContactForm.module.scss';
 
-import { IdType } from '../../types';
-
-interface IUser {
-  id: IdType;
+interface FormValues {
   firstName: string;
   lastName: string;
   email: string;
@@ -35,8 +33,7 @@ const ContactForm = () => {
       return;
     }
 
-    const newUser: IUser = {
-      id: uuidv4(),
+    const newUser: FormValues = {
       firstName: firstName,
       lastName: lastName,
       email: email,

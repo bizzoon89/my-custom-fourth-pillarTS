@@ -1,0 +1,1 @@
+export const _URL_SERVICE: string = 'https://jsonplaceholder.typicode.com/posts';

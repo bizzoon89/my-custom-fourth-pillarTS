@@ -1,0 +1,33 @@
+@import 'include-media/dist/include-media';
+@import '../../assets/styles/variables';
+
+.cardsSection {
+  padding-top: 15px;
+  padding-bottom: 15px;
+
+  @include media(">=tablet") {
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  @include media(">=laptop") {
+    padding-bottom: 33px;
+    padding-top: 30px;
+  }
+
+  h3 {
+    margin-bottom: 31px;
+  }
+
+  .textCenter {
+    padding-bottom: 50px;
+
+    .btn {
+      margin-top: 70px;
+    }
+  }
+}
+
+.container {
+  @extend .container;
+}
