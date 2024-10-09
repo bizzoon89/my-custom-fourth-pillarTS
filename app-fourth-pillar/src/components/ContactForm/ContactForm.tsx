@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
+import axios from 'axios';
 
 //import { useHttp } from '../../hooks/http.hook';
 
@@ -27,8 +28,6 @@ const ContactForm = () => {
   const [message, setMessage] = useState('');
   const [checkbox, setCheckbox] = useState(false);
 
-  // const { request } = useHttp();
-
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
 
@@ -36,8 +35,7 @@ const ContactForm = () => {
       return;
     }
 
-      
-    const newUser: IUser  = {
+    const newUser: IUser = {
       id: uuidv4(),
       firstName: firstName,
       lastName: lastName,
@@ -49,10 +47,9 @@ const ContactForm = () => {
 
     console.log(JSON.stringify(newUser));
     
-
-  //   request("http://localhost:3001/contact", "POST", JSON.stringify(newUser))
-  //     .then(response => console.log(response, 'Sending successful'))
-  //     .catch(error => console.log(error));
+    axios.post('http://localhost:3001/contact', { newUser })
+      .then(response => console.log(response, 'Sending successful'))
+      .catch(error => console.log(error));
     
     setFirstName('');
     setLastName('');

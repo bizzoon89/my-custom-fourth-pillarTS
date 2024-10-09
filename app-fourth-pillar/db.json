@@ -1,0 +1,16 @@
+{
+  "contact": [
+    {
+      "id": "1a4f",
+      "newUser": {
+        "id": "afe5da0e-69a8-4dc9-aa51-368c52240f22",
+        "firstName": "test",
+        "lastName": "test test",
+        "email": "test@test",
+        "phone": "212",
+        "message": "adsasd",
+        "checkbox": true
+      }
+    }
+  ]
+}
