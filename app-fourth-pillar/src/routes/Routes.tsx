@@ -1,43 +1,43 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter } from 'react-router-dom';
 
-import PublicLayouts from "../layouts/PublicLayouts"; 
+import PublicLayouts from '../layouts/PublicLayouts'; 
 import { Home, About, NotFound, Services, Clients, People, Contact, News } from '../pages';
 
 const routes = createBrowserRouter([
   {
-    path: "/",
+    path: '/',
     element: <PublicLayouts />,
     children: [
       {
-        path: "/",
+        path: '/',
         element: <Home />,
       },
       {
-        path: "about",
+        path: 'about',
         element: <About />,
       },
       {
-        path: "services",
+        path: 'services',
         element: <Services />,
       },
       {
-        path: "people",
+        path: 'people',
         element: <People />,
       },
       {
-        path: "clients",
+        path: 'clients',
         element: <Clients />,
       },
       {
-        path: "news",
+        path: 'news',
         element: <News />,
       },
       {
-        path: "contact",
+        path: 'contact',
         element: <Contact />,
       },
       {
-        path: "*",
+        path: '*',
         element: <NotFound />,
       },
     ],

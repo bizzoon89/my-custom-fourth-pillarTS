@@ -1,3 +1,3 @@
-import PublicLayouts from "./PublicLayouts";
+import PublicLayouts from './PublicLayouts';
 
 export { PublicLayouts };

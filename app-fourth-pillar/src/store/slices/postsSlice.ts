@@ -1,4 +1,4 @@
-import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 const initialState = {
   posts: [],
@@ -9,7 +9,7 @@ export const postsAsync = createAsyncThunk(
   'posts/postsAsync',
   async () => {
     const { request } = useHttpTest();
-    return await request("https://jsonplaceholder.typicode.com/posts?_limit=6");
+    return await request('https://jsonplaceholder.typicode.com/posts?_limit=6');
   }
 );
 
