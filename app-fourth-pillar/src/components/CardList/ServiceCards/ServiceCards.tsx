@@ -3,18 +3,18 @@ import { Link } from "react-router-dom";
 
 import styles from "./ServiceCards.module.scss";
 
-interface IService {
-  userId: string;
+interface IServiceCards {
+  userId: number;
   id: number;
   title: string;
   body: string;
 }
 
-interface IProps {
-  posts: IService[];
+interface IPropsService {
+  posts: IServiceCards[];
 }
 
-const ServiceCards = ({ posts }: IProps) => {
+const ServiceCards = ({ posts }: IPropsService) => {
   return (
     <div className={styles.rowCard}>
       {

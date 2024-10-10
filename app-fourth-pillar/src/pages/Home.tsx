@@ -12,7 +12,7 @@ const Home = () => {
   const [count, setCount] = useState(0)
 
   return (
-    <>
+    <main className='main' id='main'>
       <Hero
         {...heroData}
         optionClass={'heroHome'}
@@ -29,7 +29,7 @@ const Home = () => {
       <button onClick={() => setCount((count) => count + 1)}>
         count is {count}
       </button>
-    </>
+    </main>
   )
 }
 

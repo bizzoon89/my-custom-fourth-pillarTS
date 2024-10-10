@@ -1,4 +1,5 @@
 
+import { PropsWithChildren } from "react";
 import styles from "./FooterArea.module.scss";
 
 export interface IContactInfo {
@@ -9,7 +10,7 @@ export interface IContactInfo {
 }
 
 interface IFooterArea extends IContactInfo { 
-  children: React.ReactNode;
+  children: PropsWithChildren;
 }
 
 const FooterArea = ({ text, address, title, copyright, children }: IFooterArea) => {

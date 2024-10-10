@@ -1,6 +1,6 @@
 const News = () => {
   return (
-    <>News</>
+    <main className='main' id='main'>News</main>
   )
 }
 

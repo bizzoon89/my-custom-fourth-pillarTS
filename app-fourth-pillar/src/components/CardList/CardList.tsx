@@ -1,9 +1,11 @@
 import { onRequest } from "../../services/postsService";
 import { useEffect, useState } from 'react';
 import { _URL_SERVICE } from "../../constants/apiUrl";
+import { _URL_CLIENTS } from "../../constants/apiUrl";
 import ServiceCards from "./ServiceCards";
+import ClientCards from "./ClientCards";
 
-import styles from "./CardsList.module.scss";
+import styles from "./CardList.module.scss";
 
 interface ICardsList {
   type: string;
@@ -22,12 +24,12 @@ const CardsList = ({ type, titleSection, limit = 3 }: ICardsList) => {
       case 'serviceCards':
         url = _URL_SERVICE;
         return <ServiceCards posts={posts} />;
-        case 'textCards':
+      case 'textCards':
           //return <TextCards loadMore={loadMore} />;
           return <p>TextCards</p>;
-        case 'clientCards':
-          return <p>ClientCards</p>;
-          //return <ClientCards />;
+      case 'clientCards':
+        url = _URL_CLIENTS;
+        return <ClientCards posts={posts}/>;
       default:
         throw new Error('Unexpected process state');
     }
