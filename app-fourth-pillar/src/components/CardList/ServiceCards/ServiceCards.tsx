@@ -1,7 +1,7 @@
 
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
 
-import styles from "./ServiceCards.module.scss";
+import styles from './ServiceCards.module.scss';
 
 interface IServiceCards {
   userId: number;

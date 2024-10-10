@@ -1,5 +1,5 @@
-import { HeroProps } from "../components/Hero/Hero";
-import { JoinBoxProps } from "../components/JoinBox/JoinBox";
+import { HeroProps } from '../components/Hero/Hero';
+import { JoinBoxProps } from '../components/JoinBox/JoinBox';
 
 export const heroData = {
   title: 'Our \n people',

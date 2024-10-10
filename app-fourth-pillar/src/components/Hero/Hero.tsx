@@ -1,7 +1,7 @@
 
-import { IImage } from "../../types";
+import { IImage } from '../../types';
 
-import styles from "./Hero.module.scss"
+import styles from './Hero.module.scss'
 
 export interface HeroProps {
   title: string;

@@ -1,5 +1,5 @@
-import Button from "../Button";
-import styles from "./JoinBox.module.scss";
+import Button from '../Button';
+import styles from './JoinBox.module.scss';
 
 export interface JoinBoxProps {
   title: string;

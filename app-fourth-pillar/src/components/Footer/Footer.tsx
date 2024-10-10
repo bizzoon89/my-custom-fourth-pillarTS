@@ -1,14 +1,14 @@
-import Logo from "../Logo";
-import FooterArea from "../FooterArea";
-import LinkList from "../LinkList";
-import SocialNetworks from "../SocialNetworks";
+import Logo from '../Logo';
+import FooterArea from '../FooterArea';
+import LinkList from '../LinkList';
+import SocialNetworks from '../SocialNetworks';
 
-import { ILogo } from "../Logo/Logo";
-import { IContactInfo } from "../FooterArea/FooterArea";
-import { ILink } from "../../types";
-import { ISocialLinks } from "../SocialNetworks/SocialNetworks";
+import { ILogo } from '../Logo/Logo';
+import { IContactInfo } from '../FooterArea/FooterArea';
+import { ILink } from '../../types';
+import { ISocialLinks } from '../SocialNetworks/SocialNetworks';
 
-import styles from "./Footer.module.scss";
+import styles from './Footer.module.scss';
 
 interface IAddMenu {
   title: string;

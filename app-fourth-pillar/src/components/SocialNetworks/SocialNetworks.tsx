@@ -1,8 +1,8 @@
 import { v4 as uuidv4 } from 'uuid';
 
-import { IImage } from "../../types";
+import { IImage } from '../../types';
 
-import styles from "./SocialNetworks.module.scss";
+import styles from './SocialNetworks.module.scss';
 
 export interface ISocialLinks {
   url: string;

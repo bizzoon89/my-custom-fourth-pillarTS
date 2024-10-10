@@ -1,7 +1,7 @@
 import { NavLink } from 'react-router-dom';
 import { v4 as uuidv4 } from 'uuid';
 
-import styles from "./Menu.module.scss";
+import styles from './Menu.module.scss';
 
 export interface IMenuItem {
   label: string;
@@ -21,7 +21,7 @@ const Menu = ({ menuItems }: IMenu) => {
           menuItems.map(menuItem => (
             <li
               key={uuidv4()}
-              className={`${menuItem.btnContact ? "btnContact" : ""}`}
+              className={`${menuItem.btnContact ? 'btnContact' : ''}`}
             >
               <NavLink
                 to={menuItem.url}

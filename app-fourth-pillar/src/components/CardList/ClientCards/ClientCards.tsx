@@ -1,4 +1,4 @@
-import styles from "./ClientCards.module.scss";
+import styles from './ClientCards.module.scss';
 
 interface IClientCards {
   albumId: string;
@@ -22,9 +22,9 @@ const ClientCards = ({ posts }: IPropsClient) => {
             key={item.id}
             >
             <figure className={styles.clientCardLogo}>
-              <img src={item.thumbnailUrl} width="304" height="304" alt={item.title} />
+              <img src={item.thumbnailUrl} width='304' height='304' alt={item.title} />
             </figure>
-            <a href={item.url} target="_blank" className={styles.clientCardPopup} rel="noreferrer">
+            <a href={item.url} target='_blank' className={styles.clientCardPopup} rel='noreferrer'>
               <strong className={styles.h5}>{item.title}</strong>
             </a>
           </article>

@@ -1,4 +1,4 @@
-import { FooterProps } from "../components/Footer/Footer"
+import { FooterProps } from '../components/Footer/Footer'
 
 export const footerData = {
   logoData: {

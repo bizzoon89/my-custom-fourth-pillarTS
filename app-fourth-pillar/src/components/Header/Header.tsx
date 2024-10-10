@@ -1,14 +1,14 @@
 import { useState, useEffect } from 'react';
 
-import Menu from "../Menu";
-import Logo from "../Logo";
+import Menu from '../Menu';
+import Logo from '../Logo';
 import LinkList from '../LinkList';
 
-import { ILogo } from "../Logo/Logo";
-import { IMenuItem } from "../Menu/Menu";
-import { ILink } from "../../types";
+import { ILogo } from '../Logo/Logo';
+import { IMenuItem } from '../Menu/Menu';
+import { ILink } from '../../types';
 
-import styles from "./Header.module.scss";
+import styles from './Header.module.scss';
 
 export interface HeaderProps {
   logoData: ILogo;
@@ -66,11 +66,11 @@ const Header = ({ logoData, menuItems, addMenuItems }: HeaderProps) => {
           />
         </div>
         <a
-          href="#"
+          href='#'
           className={styles.navOpener}
           onClick={handleNavToggle}
           aria-expanded={`${navState ? true : false}`}
-          aria-haspopup="true">
+          aria-haspopup='true'>
           <em>menu</em>
         </a>
       </div>

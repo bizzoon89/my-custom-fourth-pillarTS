@@ -1,4 +1,4 @@
-import { HeaderProps } from "../components/Header/Header"
+import { HeaderProps } from '../components/Header/Header'
 
 export const headerData = {
   logoData: {

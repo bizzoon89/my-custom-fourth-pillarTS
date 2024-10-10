@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
 
-import styles from "./Logo.module.scss";
+import styles from './Logo.module.scss';
 
 import { IImage } from '../../types';
 

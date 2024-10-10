@@ -72,7 +72,7 @@ const NewsCards = ({ posts, limit, loadMore }: IPropsNews) => {
       <div className={styles.textCenter}>
         {loadMore
           ? <a
-              href="#"
+              href='#'
               className={`${styles.btn} ${styles.btnArrow} ${styles.loadMore}`}
               onClick={onLoadCards}>
               Load more

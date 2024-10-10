@@ -1,5 +1,5 @@
-import { HeroProps } from "../components/Hero/Hero";
-import { InfoTextProps } from "../components/InfoText/InfoText";
+import { HeroProps } from '../components/Hero/Hero';
+import { InfoTextProps } from '../components/InfoText/InfoText';
 
 export const heroData = {
   title: 'Immersed in the business of music',
