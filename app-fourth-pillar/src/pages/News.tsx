@@ -1,5 +1,6 @@
 import Hero from '../components/Hero';
 import CardList from '../components/CardList';
+import SingleNews from '../components/SingleNews';
 
 import { heroData } from '../mocks/news';
 
@@ -8,8 +9,9 @@ const News = () => {
     <main className='main' id='main'>
       <Hero
         {...heroData}
-        optionClass={'heroHome'}
+        optionClass={'heroNews'}
       />
+      <SingleNews />
       <CardList
         titleSection={'Articles'}
         type={'newsCards'}

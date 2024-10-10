@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './NewsCards.module.scss';
 
-interface INewsCards {
+export interface INewsCards {
   id: number;
   slug: string;
   url: string;

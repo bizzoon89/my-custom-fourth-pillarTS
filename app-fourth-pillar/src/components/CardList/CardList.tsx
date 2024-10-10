@@ -1,15 +1,16 @@
-import { onRequest } from "../../services/postsService";
 import { useEffect, useState } from 'react';
 
-import ServiceCards from "./ServiceCards";
-import ClientCards from "./ClientCards";
-import NewsCards from "./NewsCards";
+import { request } from '../../services/postsService';
 
-import { _URL_SERVICE } from "../../constants/apiUrl";
-import { _URL_CLIENTS } from "../../constants/apiUrl";
-import { _URL_TEXT } from "../../constants/apiUrl";
+import ServiceCards from './ServiceCards';
+import ClientCards from './ClientCards';
+import NewsCards from './NewsCards';
 
-import styles from "./CardList.module.scss";
+import { _URL_SERVICE } from '../../constants/apiUrl';
+import { _URL_CLIENTS } from '../../constants/apiUrl';
+import { _URL_TEXT } from '../../constants/apiUrl';
+
+import styles from './CardList.module.scss';
 
 interface ICardsList {
   type: string;
@@ -41,11 +42,15 @@ const CardsList = ({ type, titleSection, limit = 3, loadMore }: ICardsList) => {
   }
 
   useEffect(() => {
-    onRequest(`${url}?_limit=${limit}`)
-      .then(response => setPosts(response))
-      .catch(error => console.error(error));
+    onRequest();
     // eslint-disable-next-line 
   }, []);
+  
+  const onRequest = () => {
+    request(`${url}?_limit=${limit}`)
+      .then(response => setPosts(response))
+      .catch(error => console.error(error));
+  }
 
   return (
     <section className={styles.cardsSection}>
