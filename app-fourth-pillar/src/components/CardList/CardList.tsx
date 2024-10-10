@@ -1,9 +1,13 @@
 import { onRequest } from "../../services/postsService";
 import { useEffect, useState } from 'react';
-import { _URL_SERVICE } from "../../constants/apiUrl";
-import { _URL_CLIENTS } from "../../constants/apiUrl";
+
 import ServiceCards from "./ServiceCards";
 import ClientCards from "./ClientCards";
+import NewsCards from "./NewsCards";
+
+import { _URL_SERVICE } from "../../constants/apiUrl";
+import { _URL_CLIENTS } from "../../constants/apiUrl";
+import { _URL_TEXT } from "../../constants/apiUrl";
 
 import styles from "./CardList.module.scss";
 
@@ -11,9 +15,10 @@ interface ICardsList {
   type: string;
   titleSection?: string;
   limit?: number;
+  loadMore?: boolean;
 }
 
-const CardsList = ({ type, titleSection, limit = 3 }: ICardsList) => {
+const CardsList = ({ type, titleSection, limit = 3, loadMore }: ICardsList) => {
 
   const [posts, setPosts] = useState([]);
   
@@ -24,9 +29,9 @@ const CardsList = ({ type, titleSection, limit = 3 }: ICardsList) => {
       case 'serviceCards':
         url = _URL_SERVICE;
         return <ServiceCards posts={posts} />;
-      case 'textCards':
-          //return <TextCards loadMore={loadMore} />;
-          return <p>TextCards</p>;
+      case 'newsCards':
+        url = _URL_TEXT;
+        return <NewsCards posts={posts} limit={limit} loadMore={loadMore} />;
       case 'clientCards':
         url = _URL_CLIENTS;
         return <ClientCards posts={posts}/>;

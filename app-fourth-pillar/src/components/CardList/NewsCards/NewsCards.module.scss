@@ -1,0 +1,141 @@
+@import 'include-media/dist/include-media';
+@import '../../../assets/styles/variables';
+@import '../../Button/Button.module.scss';
+
+.heroSection+.cardsSection {
+  padding-top: 0;
+}
+
+.heroNews+.cardsSection {
+  padding-top: 80px;
+}
+
+.newsCard+.newsCard {
+  @include media(">=tablet") {
+    border-left: 0;
+  }
+
+  @include media("<tablet") {
+    border-top: 0;
+  }
+}
+
+.newsCard {
+  width: 100%;
+  color: $blue-normal;
+  text-align: center;
+  border: 8px solid $core-200;
+  background: $white;
+  font-size: 18px;
+  line-height: 1.6;
+  transition: opacity 0.3s ease, color 0.3s ease, background 0.3s ease;
+
+  &:hover {
+    background: $blue-normal;
+    color: $white;
+
+    .linkMore {
+      color: $white;
+    }
+  }
+
+  @include media(">=tablet") {
+    width: 50%;
+  }
+
+  @include media(">=desktop") {
+    width: 33.33%;
+  }
+
+  .newsCardTxt {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+
+    @include media(">=laptop") {
+      padding: 50px 25px;
+    }
+
+    @include media(">=widescreen") {
+      padding: 91px 54px;
+    }
+  }
+
+  .newsCardDate {
+    color: $highlight-500;
+    font-size: 15px;
+    font-weight: 700;
+    display: block;
+    margin-bottom: 14px;
+  }
+
+  h3 {
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 30px;
+
+    @include media(">=laptop") {
+      margin-bottom: 65px;
+    }
+  }
+
+  p {
+    margin-bottom: 30px;
+
+    @include media(">=laptop") {
+      margin-bottom: 65px;
+    }
+  }
+
+  .linkMore {
+    margin: auto auto 0;
+  }
+
+  &:nth-child(3)~.newsCard {
+    @include media(">=desktop") {
+      border-top: 0;
+    }
+  }
+
+  &:nth-child(2)~.newsCard {
+    @include media(">=tablet", "<desktop") {
+      border-top: 0;
+    }
+  }
+
+  &:nth-child(3n+4) {
+    @include media(">=desktop") {
+      border-left: 8px solid $core-200;
+    }
+  }
+
+  &:nth-child(2n+3) {
+    @include media(">=tablet", "<desktop") {
+      border-left: 8px solid $core-200;
+    }
+  }
+
+  &.newItem {
+    opacity: 0;
+  }
+}
+
+.btn {
+  @extend .btn;
+}
+
+.rowCard {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -1px;
+}
+
+.textCenter {
+  text-align: center;
+  padding-bottom: 50px;
+
+  .btn {
+    margin-top: 70px;
+  }
+}

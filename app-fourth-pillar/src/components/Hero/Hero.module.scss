@@ -181,14 +181,6 @@
       font-size: 22px;
     }
 
-    .container {
-      max-width: 1860px;
-
-      @include media(">=tablet") {
-        display: flex;
-      }
-    }
-
     .textArea {
       position: relative;
       z-index: 1;
@@ -270,6 +262,10 @@
 .container {
   @extend .container;
   max-width: 1820px;
+
+  @include media(">=tablet") {
+    display: flex;
+  }
 }
 
 .name,
