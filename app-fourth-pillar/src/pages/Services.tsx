@@ -1,7 +1,8 @@
 import Hero from '../components/Hero';
 import CardList from '../components/CardList';
+import BlockquoteSlider from '../components/BlockquoteSlider';
 
-import { heroData } from '../mocks/services';
+import { heroData, slideData } from '../mocks/services';
 
 const Services = () => {
   return (
@@ -11,6 +12,7 @@ const Services = () => {
         type={'serviceCards'}
         limit={6}
       />
+      <BlockquoteSlider slideData={slideData} />
     </main>
   )
 }

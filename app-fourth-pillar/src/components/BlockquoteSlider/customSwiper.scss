@@ -1,0 +1,94 @@
+@import 'include-media/dist/include-media';
+@import '../../assets/styles/variables';
+
+.swiper-button-next,
+.swiper-button-prev {
+  position: absolute;
+  z-index: 101;
+  font-size: 0;
+  top: 50%;
+  border: 0;
+  cursor: pointer;
+  transform: translateY(-50%);
+  margin-top: 5px;
+  background: $white;
+  transition: background 0.3s ease;
+  width: 52px;
+  height: 52px;
+
+  @include media(">=laptop") {
+    width: 60px;
+    height: 60px;
+  }
+
+  @include media(">=widescreen") {
+    width: 68px;
+    height: 68px;
+  }
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='54px' height='54px' viewBox='0 0 24.00 24.00' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M4 12H20M20 12L16 8M20 12L16 16' stroke='%23C70361' stroke-width='0.648' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+  }
+
+  &:hover {
+    background: $core-500;
+  }
+}
+
+.swiper-button-prev {
+  left: 0;
+
+  &::after {
+    transform: rotate(180deg);
+  }
+}
+
+.swiper-button-next {
+  right: 0;
+}
+
+.swiper-pagination {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  justify-content: center;
+  font-size: 0;
+  padding: 42px 0 0;
+  top: 100%;
+  bottom: auto;
+
+  .swiper-pagination-bullet {
+    margin: 0 6px;
+    width: 16px;
+    padding: 0;
+    background: none;
+    display: block;
+    height: 16px;
+    border-radius: 50%;
+    border: 1px solid $white;
+    cursor: pointer;
+    transition: background 0.3s ease, border 0.3s ease;
+  }
+
+  .swiper-pagination-bullet-active {
+    background: $core-500;
+    border-color: $core-500;
+  }
+}
+
+.swiper-slide {
+  opacity: 0;
+
+  &.swiper-slide-active {
+    opacity: 1;
+  }
+}

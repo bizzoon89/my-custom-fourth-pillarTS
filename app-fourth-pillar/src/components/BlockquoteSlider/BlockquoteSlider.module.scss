@@ -1,0 +1,124 @@
+@import 'include-media/dist/include-media';
+@import '../../assets/styles/variables';
+
+.blockquoteSection {
+  padding: 70px 0;
+  background: linear-gradient(81.12deg, #C70361 9.64%, #2A2745 88.74%);
+  box-shadow: 0 0 80px 0 rgba(#0C0A2B, 0.08);
+  color: $white;
+
+  @include media(">=laptop") {
+    padding: 90px 0;
+  }
+
+  @include media(">=widescreen") {
+    padding: 110px 0;
+  }
+}
+
+.container {
+  @extend .container;
+}
+
+.blockquoteSlider {
+  position: relative;
+  margin: 0 -30px;
+  padding: 0 30px;
+
+  @include media(">=tablet") {
+    padding: 0 11%;
+  }
+
+  .slick-arrow {
+    @include media("<tablet") {
+      top: auto;
+      bottom: -96px;
+    }
+  }
+
+  blockquote {
+    margin: 0;
+    border: 0;
+    font-weight: 300;
+    color: $white;
+    line-height: 1.2;
+    text-align: center;
+    position: relative;
+    font-size: 20px;
+    padding: 60px 0 0;
+
+    @include media(">=tablet") {
+      font-size: 22px;
+      padding: 100px 0 0;
+    }
+
+    @include media(">=laptop") {
+      font-size: 28px;
+      padding-top: 120px;
+    }
+
+    @include media(">=widescreen") {
+      padding: 137px 0 0;
+      font-size: 34px;
+    }
+
+    &::before {
+      content: '“';
+      font-weight: 700;
+      line-height: 1;
+      height: 92px;
+      position: absolute;
+      left: 50%;
+      font-size: 80px;
+      top: 0;
+      transform: translateX(-50%);
+
+      @include media(">=tablet") {
+        font-size: 112px;
+      }
+
+      @include media(">=laptop") {
+        font-size: 160px;
+      }
+
+      @include media(">=widescreen") {
+        top: -21px;
+        font-size: 230px;
+      }
+    }
+
+    p {
+      margin-bottom: 70px;
+
+      &::before {
+        display: none;
+      }
+
+      &::after {
+        display: none;
+      }
+    }
+
+    .author {
+      display: block;
+      font-weight: 500;
+      margin: 0 0 7px;
+      font-size: 16px;
+
+      @include media(">=widescreen") {
+        font-size: 18px;
+      }
+    }
+
+    .pos {
+      font-weight: 400;
+      display: block;
+      font-size: 16px;
+
+      @include media(">=widescreen") {
+        font-size: 18px;
+      }
+    }
+  }
+  
+}
