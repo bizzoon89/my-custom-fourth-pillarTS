@@ -13,6 +13,12 @@ export interface IImage { //i use
   alt: string;
 };
 
+export interface IBlockquote { //i use
+  text: string;
+  author: string;
+};
+
+
 export interface IIcon { //i use
   src: string;
   alt: string;

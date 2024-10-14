@@ -1,0 +1,82 @@
+@import 'include-media/dist/include-media';
+@import '../../assets/styles/variables';
+
+.heroSection+.singlePostSection {
+  padding-top: 0;
+}
+
+.singlePostSection {
+  padding: 30px 0 50px;
+
+  @include media(">=tablet") {
+    padding: 30px 0 108px;
+  }
+
+  .container {
+    @extend .container;
+    position: relative;
+
+    @include media(">=tablet") {
+      display: flex;
+      align-items: flex-start;
+    }
+  }
+
+  .postImg {
+    position: relative;
+    margin: 0;
+    padding: 0 0 80px;
+
+    @include media(">=tablet") {
+      width: 40%;
+    }
+
+    @include media(">=laptop") {
+      width: 32%;
+      padding: 0 0 152px;
+    }
+
+    img {
+      vertical-align: top;
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  .textArea {
+
+    @include media(">=tablet") {
+      padding: 0 0 0 50px;
+      width: 60%;
+    }
+
+    @include media(">=laptop") {
+      padding: 80px 0 0 80px;
+      width: 62%;
+    }
+
+    @include media(">=widescreen") {
+      width: 51%;
+      padding: 106px 0 0 7.5%;
+
+    }
+  }
+
+  h4 {
+    @include media(">=laptop") {
+      margin-bottom: 63px;
+    }
+  }
+
+  p {
+    margin-bottom: 17px;
+  }
+
+  blockquote {
+    margin-top: 72px;
+
+    p {
+      margin-bottom: 16px;
+    }
+  }
+}

@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import PublicLayouts from '../layouts/PublicLayouts'; 
-import { Home, About, NotFound, Services, Clients, People, Contact, News } from '../pages';
+import { Home, About, NotFound, Services, Clients, People, Contact, News, Founders } from '../pages';
 
 const routes = createBrowserRouter([
   {
@@ -23,6 +23,10 @@ const routes = createBrowserRouter([
       {
         path: 'people',
         element: <People />,
+      },
+      {
+        path: 'people/:id',
+        element: <Founders />,
       },
       {
         path: 'clients',
