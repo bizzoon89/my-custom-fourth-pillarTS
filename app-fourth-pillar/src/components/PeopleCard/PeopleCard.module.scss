@@ -1,0 +1,80 @@
+@import 'include-media/dist/include-media';
+@import '../../assets/styles/variables';
+
+.peopleCard {
+  position: relative;
+  margin: 0 0 30px;
+  width: 100%;
+
+  @include media(">=phone") {
+    width: 50%;
+  }
+
+  @include media(">=tablet") {
+    margin: 0 0 40px;
+    width: 280px;
+    margin-left: auto;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    vertical-align: top;
+  }
+
+  .box {
+    max-width: 100%;
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+
+  h3 {
+    font-weight: 400;
+    font-size: 18px;
+    margin: 0 0 10px;
+  }
+
+  .more {
+    display: block;
+    font-weight: 700;
+    font-size: 18px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    letter-spacing: 2px;
+    text-decoration: underline;
+    color: $white;
+
+    font-size: 14px;
+
+    &:focus,
+    &:hover {
+      color: $core-500;
+    }
+  }
+
+  .popupCard {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 16px;
+    display: flex;
+    align-items: flex-end;
+    color: $white;
+    background: transparent;
+    opacity: 1;
+    text-align: left;
+
+    &::after {
+      content: '';
+      height: 41%;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      background: linear-gradient(180deg, rgba(119, 22, 83, 0) 0%, rgba(56, 37, 72, 0.6) 100%);
+    }
+  }
+}

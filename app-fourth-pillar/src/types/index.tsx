@@ -13,6 +13,13 @@ export interface IImage { //i use
   alt: string;
 };
 
+export interface IIcon { //i use
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+};
+
 export interface ILinkTarget {
   url: string;
   title: string;

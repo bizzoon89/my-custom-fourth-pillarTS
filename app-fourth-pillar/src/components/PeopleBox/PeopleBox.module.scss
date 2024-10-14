@@ -1,0 +1,78 @@
+@import 'include-media/dist/include-media';
+@import '../../assets/styles/variables';
+
+.peopleSection {
+  padding: 15px 0 30px;
+
+  @include media(">=tablet") {
+    padding: 73px 0 38px;
+  }
+
+  @include media(">=desktop") {
+    padding-top: 214px;
+  }
+  
+  p {
+    margin-bottom: 18px;
+  }
+  
+}
+
+.container {
+  @extend .container;
+  position: relative;
+
+  @include media(">=tablet") {
+    display: flex;
+    padding-bottom: 140px;
+  }
+
+  @include media(">=desktop") {
+    padding-bottom: 96px;
+  }
+
+  @include media(">=widescreen") {
+    padding-left: 135px;
+    padding-right: 135px;
+  }
+
+}
+
+.imageHolder {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+
+  @include media(">=phone") {
+    gap: 30px;
+  }
+
+  @include media(">=tablet") {
+    width: 40%;
+    display: block;
+  }
+
+  @include media(">=desktop") {
+    width: 29.5%;
+  }
+}
+
+.textArea {
+  @include media(">=tablet") {
+    width: 60%;
+    padding: 0 0 0 50px;
+  }
+
+  @include media(">=desktop") {
+    width: 47%;
+  }
+
+  @include media(">=laptop") {
+    padding: 0 0 0 80px;
+  }
+
+  @include media(">=widescreen") {
+    width: 49%;
+    padding: 0 0 0 8.7%;
+  }
+}

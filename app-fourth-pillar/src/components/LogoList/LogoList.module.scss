@@ -1,0 +1,28 @@
+@import 'include-media/dist/include-media';
+@import '../../assets/styles/variables';
+
+.logoList {
+  margin: 0;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  padding: 26px 0 0;
+
+
+  img {
+    vertical-align: top;
+    height: auto;
+    width: auto;
+    max-width: 148px;
+    max-height: 80px;
+
+    @include media(">=laptop") {
+      max-width: 176px;
+      max-height: 95px;
+    }
+  }
+
+  li {
+    margin-right: 32px;
+  }
+}
