@@ -18,10 +18,11 @@ export interface HeaderProps {
 
 const Header = ({ logoData, menuItems, addMenuItems }: HeaderProps) => {
 
+  const HEADER_MARGIN: number = 1
+
   const [navState, setNavState] = useState<boolean>(false);
 
-  const handleNavToggle = (e: React.MouseEvent<HTMLAnchorElement>): void => {
-    e.preventDefault();
+  const handleNavToggle = (): void => {
     setNavState(!navState);
     if (navState) {
       document.body.style.overflow = 'auto';
@@ -36,13 +37,14 @@ const Header = ({ logoData, menuItems, addMenuItems }: HeaderProps) => {
     const header = document.querySelector('header') as HTMLElement | null;
     
     const scrollTop: number = window.scrollY;
-    const headerHeightWithMargin: number = 1; // Add your custom margin here if needed.
-    const sticky = headerHeightWithMargin <= scrollTop;
+    const sticky = HEADER_MARGIN <= scrollTop;
 
-    if (sticky) {
-      header?.classList.add(`${styles.fixedHeader}`);
-    } else {
-      header?.classList.remove(`${styles.fixedHeader}`);
+    if (header) {
+      if (sticky) {
+        header.classList.add(`${styles.fixedHeader}`);
+      } else {
+        header.classList.remove(`${styles.fixedHeader}`);
+      }
     }
   };
 
@@ -65,14 +67,13 @@ const Header = ({ logoData, menuItems, addMenuItems }: HeaderProps) => {
             linkItem={addMenuItems}
           />
         </div>
-        <a
-          href='#'
+        <button
           className={styles.navOpener}
           onClick={handleNavToggle}
-          aria-expanded={`${navState ? true : false}`}
+          aria-expanded={navState}
           aria-haspopup='true'>
           <em>menu</em>
-        </a>
+        </button>
       </div>
     </header>
   )

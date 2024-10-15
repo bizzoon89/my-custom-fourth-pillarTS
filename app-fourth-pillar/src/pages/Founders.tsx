@@ -30,11 +30,7 @@ const Founders = () => {
     return Object.values(dataFounders).find(founder => founder.userId === userId);
   };
   
-  let founder: FounderProps | undefined;
-
-  if (id) {
-    founder = findFounderByUserId(id);
-  }
+  const founder = id ? findFounderByUserId(id) : undefined;
   
   if (!founder) {
     return <NotFound />;

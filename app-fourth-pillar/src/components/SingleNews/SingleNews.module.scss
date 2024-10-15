@@ -113,6 +113,8 @@
   }
 
   .textCardTxt {
+    padding: 10px;
+    
     @include media(">=widescreen") {
       padding: 59px 71px 59px 65px;
     }

@@ -45,6 +45,7 @@ const NewsCards = ({ posts, limit, loadMore }: IPropsNews) => {
         <article
           className={styles.newsCard}
           key={item.id}
+          style={{ animationDelay: '0.1s' }}
         >
           <div className={styles.newsCardTxt}>
             <span className={styles.newsCardDate}>{item.publishedAt}</span>

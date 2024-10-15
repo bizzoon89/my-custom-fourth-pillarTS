@@ -6,9 +6,7 @@ import ServiceCards from './ServiceCards';
 import ClientCards from './ClientCards';
 import NewsCards from './NewsCards';
 
-import { _URL_SERVICE } from '../../constants/apiUrl';
-import { _URL_CLIENTS } from '../../constants/apiUrl';
-import { _URL_TEXT } from '../../constants/apiUrl';
+import { _URL_SERVICE, _URL_CLIENTS, _URL_TEXT } from '../../constants/apiUrl';
 
 import styles from './CardList.module.scss';
 
@@ -23,18 +21,32 @@ const CardsList = ({ type, titleSection, limit = 3, loadMore }: ICardsList) => {
 
   const [posts, setPosts] = useState([]);
   
-  let url: string = '';
-
-  const setContent = (type: string) => {
+  const getUrlByType = (type: string): string => {
     switch (type) {
       case 'serviceCards':
-        url = _URL_SERVICE;
+        return _URL_SERVICE;
+      case 'newsCards':
+        return _URL_TEXT;
+      case 'clientCards':
+        return _URL_CLIENTS;
+      default:
+        throw new Error('Unexpected card type');
+    }
+  };
+
+  const onRequest = (url: string) => {
+    request(`${url}?_limit=${limit}`)
+      .then(response => setPosts(response))
+      .catch(error => console.error(error));
+  }
+
+  const renderContent = () => {
+    switch (type) {
+      case 'serviceCards':
         return <ServiceCards posts={posts} />;
       case 'newsCards':
-        url = _URL_TEXT;
         return <NewsCards posts={posts} limit={limit} loadMore={loadMore} />;
       case 'clientCards':
-        url = _URL_CLIENTS;
         return <ClientCards posts={posts}/>;
       default:
         throw new Error('Unexpected process state');
@@ -42,21 +54,16 @@ const CardsList = ({ type, titleSection, limit = 3, loadMore }: ICardsList) => {
   }
 
   useEffect(() => {
-    onRequest();
+    const url = getUrlByType(type);
+    onRequest(url);
     // eslint-disable-next-line 
-  }, []);
-  
-  const onRequest = () => {
-    request(`${url}?_limit=${limit}`)
-      .then(response => setPosts(response))
-      .catch(error => console.error(error));
-  }
+  }, [type, limit]);
 
   return (
     <section className={styles.cardsSection}>
       <div className={styles.container}>
-        {titleSection ? <h3>{titleSection}</h3> : null}
-        {setContent(type)}
+        {titleSection && <h3>{titleSection}</h3>}
+        {renderContent()}
       </div>
     </section>
   )

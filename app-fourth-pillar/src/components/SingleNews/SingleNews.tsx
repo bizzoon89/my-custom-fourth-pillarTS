@@ -12,11 +12,11 @@ const SingleNews = () => {
   const [newsPostList, setNewPostList] = useState<INewsCards[]>([]);
 
   useEffect(() => {
-    onRequest();
+    onRequest(_URL_TEXT);
   }, [])
   
-  const onRequest = () => {
-    request(_URL_TEXT)
+  const onRequest = (url: string) => {
+    request(url)
       .then(response => setNewPostList(response))
       .catch(error => console.error(error));
   }
