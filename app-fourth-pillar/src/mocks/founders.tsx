@@ -1,13 +1,20 @@
+import { HeroProps } from '../components/Hero/Hero';
 import { FoundersProps } from "../pages/Founders"
+
+export const heroData = {
+  title: 'Our people',
+} as HeroProps;
 
 export const dataFounders = {
   founder1: {
     userId: 'claire-turvey',
-    name: 'Claire Turvey',
-    position: 'Managing Partner',
+    person: {
+      name: 'Claire Turvey',
+      position: 'Managing Partner',
+    },
     post: {
       image: {
-        src: 'images/img-post-01.jpg',
+        src: '/images/img-post-01.jpg',
         alt: 'Claire Turvey'
       },
       title: 'Claire has 20 years’ experience in strategic communications and reputation management, including 10 years working in the City of London.',
@@ -25,11 +32,13 @@ export const dataFounders = {
   },
   founder2: {
     userId: 'lynne-best',
-    name: 'Lynne Best',
-    position: 'Managing Partner',
+    person: {
+      name: 'Lynne Best',
+      position: 'Managing Partner',
+    },
     post: {
       image: {
-        src: 'images/img-post-02.jpg',
+        src: '/images/img-post-02.jpg',
         alt: 'Lynne Best'
       },
       title: 'Lynne is an experienced strategic and corporate communications professional, having spent 15 years in the music business and wider creative industries.',
@@ -43,6 +52,6 @@ export const dataFounders = {
         'Prior to working in music, Lynne started her career at the European Parliament in Brussels and is a Board Member of the Arts Council of Northern Ireland. Lynne was inducted into the Music Week Women in Music Roll of Honour in 2020 and was the Northern Ireland representative on the Expert Panel for selecting Bradford as the UK City of Culture 2025.'
       ]
     }
-  }
+  },
 } as FoundersProps;
 

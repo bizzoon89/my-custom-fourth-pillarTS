@@ -8,7 +8,7 @@ import styles from './AboutBox.module.scss';
 export interface AboutBoxProps {
   title: string;
   image: IImage;
-  paragraphs: PlainText[]
+  paragraphs?: PlainText[]
 }
 
 const AboutBox = ({ title, image, paragraphs }: AboutBoxProps) => {
@@ -21,7 +21,7 @@ const AboutBox = ({ title, image, paragraphs }: AboutBoxProps) => {
         </figure>
         <div className={styles.textArea}>
           <h3>{title}</h3>
-          {paragraphs.map((paragraph, index) => (
+          {paragraphs?.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
         </div>

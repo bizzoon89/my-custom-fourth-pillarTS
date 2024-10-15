@@ -1,5 +1,6 @@
 
 import { IImage } from '../../types';
+import { IPerson } from '../../pages/Founders';
 
 import styles from './Hero.module.scss'
 
@@ -10,6 +11,7 @@ export interface HeroProps {
   mail?: string;
   address?: string;
   heroImg?: IImage;
+  heroPerson?: IPerson;
 }
 
 interface IHero extends HeroProps {
@@ -17,7 +19,7 @@ interface IHero extends HeroProps {
   children?: React.ReactNode;
 }
 
-const Hero = ({ children, optionClass, title, text, maps, address, mail, heroImg }: IHero) => {
+const Hero = ({ children, optionClass, title, text, maps, address, mail, heroImg, heroPerson }: IHero) => {
   const Maps = () => {
     return (
       <div className={styles.imgMaps}>
@@ -46,6 +48,13 @@ const Hero = ({ children, optionClass, title, text, maps, address, mail, heroImg
           {text ? <p>{text}</p> : null}
           {mail ? <span className={styles.mail}><a href={`mailto:${mail}`}>{mail}</a></span> : null}
           {address ? <address>{address}</address> : null}
+          {heroPerson
+            ?
+            <>
+              <strong className={styles.name}>{heroPerson.name}</strong>
+              <strong className={styles.pos}>{heroPerson.position}</strong>
+            </>
+            : null}
           {children}
         </div>
         {maps ? <Maps /> : null}

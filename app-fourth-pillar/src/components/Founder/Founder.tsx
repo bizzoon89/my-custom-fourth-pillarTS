@@ -7,10 +7,10 @@ import { PlainText } from '../../types';
 import styles from './Founder.module.scss';
 
 export interface IFounder {
-  image: IImage;
-  title: string;
-  blockquote: IBlockquote;
-  paragraphs: PlainText[];
+  image?: IImage;
+  title?: string;
+  blockquote?: IBlockquote;
+  paragraphs?: PlainText[];
 }
 
 const Founder = ({ image, title, blockquote, paragraphs }: IFounder) => {
@@ -18,17 +18,17 @@ const Founder = ({ image, title, blockquote, paragraphs }: IFounder) => {
     <section className={styles.singlePostSection}>
       <div className={styles.container}>
         <figure className={styles.postImg}>
-          <img src={image.src} alt={image.alt} />
+          <img src={image?.src} alt={image?.alt} />
           <AnimatedSquare positionClass={'square06'} />
         </figure>
         <div className={styles.textArea}>
           <h4>{title}</h4>
-          {paragraphs.map((paragraph, index) => (
+          {paragraphs?.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
           <blockquote>
-            <p>{blockquote.text}</p>
-            <cite>{blockquote.author}</cite>
+            <p>{blockquote?.text}</p>
+            <cite>{blockquote?.author}</cite>
           </blockquote>
         </div>
       </div>

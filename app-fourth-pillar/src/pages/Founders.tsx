@@ -1,15 +1,21 @@
 import { useParams } from 'react-router-dom';
 
-//import Founder from '../components/Founder/Founder';
+import Hero from '../components/Hero';
+import Founder from '../components/Founder/Founder';
+import NotFound from './NotFound';
 
 import { IFounder } from '../components/Founder/Founder';
   
-import { dataFounders } from '../mocks/founders';
+import { heroData, dataFounders } from '../mocks/founders';
+
+export interface IPerson {
+  name: string;
+  position: string;
+}
 
 interface FounderProps {
   userId: string;
-  name: string;
-  position: string;
+  person: IPerson;
   post: IFounder;
 }
 
@@ -18,25 +24,31 @@ export interface FoundersProps {
 } 
 
 const Founders = () => {
+  const { id } = useParams<{ id: string }>();
 
-  console.log(dataFounders.key);
-  console.log(dataFounders);
+  const findFounderByUserId = (userId: string): FounderProps | undefined => {
+    return Object.values(dataFounders).find(founder => founder.userId === userId);
+  };
   
-  //вытянуть через айди
-  //let { id } = useParams();
-  //console.log(id);
+  let founder: FounderProps | undefined;
 
+  if (id) {
+    founder = findFounderByUserId(id);
+  }
   
-  //const params = useParams<{ tag: string; item: string }>()
-  const params = useParams()
-  console.log(params);
-  
+  if (!founder) {
+    return <NotFound />;
+  }
   
   return (
-    <div>
-      Founders
-      {/* <Founder /> */}
-    </div>
+    <main className='main' id='main'>
+      <Hero
+        {...heroData}
+        optionClass={'heroAlt'}
+        heroPerson={founder.person}
+      />
+      <Founder {...founder.post} />
+    </main>
   )
 }
 
