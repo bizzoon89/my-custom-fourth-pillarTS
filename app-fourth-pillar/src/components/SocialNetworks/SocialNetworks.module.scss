@@ -108,27 +108,4 @@
   path {
     transition: fill 0.3s ease;
   }
-
-  .a2a_kit {
-    display: flex;
-
-    @include media(">=tablet") {
-      display: block;
-    }
-
-    a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      margin-bottom: 15px;
-      padding: 5px;
-      transition: background 0.3s ease;
-      margin-right: 17px;
-
-      @include media(">=tablet") {
-        margin-bottom: 15px;
-        margin-right: 0;
-      }
-    }
-  }
 }

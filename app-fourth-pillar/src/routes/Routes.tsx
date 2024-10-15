@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import PublicLayouts from '../layouts/PublicLayouts'; 
-import { Home, About, NotFound, Services, Clients, People, Contact, News, Founders, PrivacyPolicy, CookiePolicy } from '../pages';
+import { Home, About, NotFound, Services, Clients, People, Contact, News, Founders, SinglePost, PrivacyPolicy, CookiePolicy } from '../pages';
 
 const routes = createBrowserRouter([
   {
@@ -21,6 +21,10 @@ const routes = createBrowserRouter([
         element: <Services />,
       },
       {
+        path: 'services/:idPost',
+        element: <SinglePost postType='services' />
+      },
+      {
         path: 'people',
         element: <People />,
       },
@@ -35,6 +39,10 @@ const routes = createBrowserRouter([
       {
         path: 'news',
         element: <News />,
+      },
+      {
+        path: 'news/:idPost',
+        element: <SinglePost postType='news' />,
       },
       {
         path: 'contact',
@@ -55,5 +63,4 @@ const routes = createBrowserRouter([
     ],
   },
 ]);
-
 export default routes;

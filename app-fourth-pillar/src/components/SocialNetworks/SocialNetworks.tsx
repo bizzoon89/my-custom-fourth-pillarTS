@@ -17,9 +17,14 @@ interface SocialNetworks {
   socialLinkList: ISocialLinks[];
 }
 
+
 const SocialNetworks = ({ contentPosition, socialLinkList }: SocialNetworks) => {
   return (
-    <ul className={`${styles.socialNetworks} ${contentPosition ? contentPosition : ''}`}>
+    <ul className={
+      contentPosition
+        ? `${styles.socialNetworks} ${styles.contentPosition}`
+        : `${styles.socialNetworks}`
+    }>
       {socialLinkList.map(social => (
         <li key={uuidv4()}>
           <a href={social.url} aria-label={social.ariaLabel} target={social.target}>

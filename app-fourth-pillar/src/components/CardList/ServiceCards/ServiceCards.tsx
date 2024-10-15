@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 import styles from './ServiceCards.module.scss';
 
-interface IServiceCards {
+export interface IServiceCards {
   userId: number;
   id: number;
   title: string;

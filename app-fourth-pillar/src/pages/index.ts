@@ -9,5 +9,6 @@ import NotFound from './NotFound';
 import Founders from './Founders';
 import PrivacyPolicy from './PrivacyPolicy';
 import CookiePolicy from './CookiePolicy';
+import SinglePost from './SinglePost';
 
-export { Home, About, NotFound, Services, Clients, People, Contact, News, Founders, PrivacyPolicy, CookiePolicy };
+export { Home, About, NotFound, Services, Clients, People, Contact, News, Founders, SinglePost, PrivacyPolicy, CookiePolicy };
