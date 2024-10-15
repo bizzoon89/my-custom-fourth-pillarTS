@@ -7,5 +7,7 @@ import People from './People';
 import News from './News';
 import NotFound from './NotFound';
 import Founders from './Founders';
+import PrivacyPolicy from './PrivacyPolicy';
+import CookiePolicy from './CookiePolicy';
 
-export { Home, About, NotFound, Services, Clients, People, Contact, News, Founders };
+export { Home, About, NotFound, Services, Clients, People, Contact, News, Founders, PrivacyPolicy, CookiePolicy };

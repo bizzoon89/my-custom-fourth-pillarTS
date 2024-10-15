@@ -1,5 +1,3 @@
-import { useState } from 'react';
-
 import Hero from '../components/Hero';
 import InfoText from '../components/InfoText';
 import AnimatedSquare from '../components/AnimatedSquare';
@@ -9,8 +7,6 @@ import CardList from '../components/CardList';
 import { heroData, infoTextData } from '../mocks/home';
 
 const Home = () => {
-  const [count, setCount] = useState(0)
-
   return (
     <main className='main' id='main'>
       <Hero
@@ -26,9 +22,6 @@ const Home = () => {
         limit={6}
       />
       <ContactForm />
-      <button onClick={() => setCount((count) => count + 1)}>
-        count is {count}
-      </button>
     </main>
   )
 }

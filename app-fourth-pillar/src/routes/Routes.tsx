@@ -1,7 +1,7 @@
 import { createBrowserRouter } from 'react-router-dom';
 
 import PublicLayouts from '../layouts/PublicLayouts'; 
-import { Home, About, NotFound, Services, Clients, People, Contact, News, Founders } from '../pages';
+import { Home, About, NotFound, Services, Clients, People, Contact, News, Founders, PrivacyPolicy, CookiePolicy } from '../pages';
 
 const routes = createBrowserRouter([
   {
@@ -39,6 +39,14 @@ const routes = createBrowserRouter([
       {
         path: 'contact',
         element: <Contact />,
+      }, 
+      {
+        path: 'privacy-policy',
+        element: <PrivacyPolicy />,
+      },
+      {
+        path: 'cookie-policy',
+        element: <CookiePolicy />,
       },
       {
         path: '*',
