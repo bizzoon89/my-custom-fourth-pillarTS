@@ -1,0 +1,150 @@
+@import 'include-media/dist/include-media';
+@import '../../assets/styles/variables';
+
+.navigationHolder {
+  padding-top: 27px;
+  position: relative;
+  padding-bottom: 60px;
+
+  &.navigationHolderAtl {
+
+    @include media(">=desktop") {
+      padding-bottom: 106px;
+      padding-top: 41px;
+    }
+
+    .containerMd {
+      @extend .container;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .back-link {
+      margin-bottom: 0;
+    }
+  }
+
+  .containerMd {
+    @extend .container;
+    max-width: calc(1024px + 60px);
+    position: relative;
+
+    @include media(">=tablet") {
+      max-width: calc(1024px + 240px);
+      padding-left: 120px;
+      padding-right: 120px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    @include media(">=laptop") {
+      max-width: calc(1024px + 380px);
+      padding-right: 190px;
+      padding-left: 190px;
+    }
+  }
+
+  @include media(">=tablet") {
+    padding-bottom: 90px;
+  }
+
+  @include media(">=desktop") {
+    padding-bottom: 110px;
+  }
+
+  @include media(">=laptop") {
+    padding-bottom: 140px;
+  }
+
+  .backLink {
+    margin-bottom: 25px;
+
+    @include media(">=tablet") {
+      max-width: 50%;
+      padding-right: 10px;
+      margin-bottom: 0;
+    }
+  }
+}
+
+.backLink {
+  font-weight: 700;
+  font-size: 18px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.navigationSingle {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+
+  .next,
+  .prev {
+    display: flex;
+    text-decoration: none;
+    width: 52px;
+    height: 52px;
+
+    @include media(">=laptop") {
+      width: 60px;
+      height: 60px;
+    }
+
+    @include media(">=widescreen") {
+      width: 68px;
+      height: 68px;
+    }
+
+    button {
+      text-decoration: none;
+      display: block;
+      font-size: 0;
+      height: 100%;
+      color: $white;
+      background: $core-500;
+      width: 100%;
+      position: relative;
+      transition: background 0.3s ease;
+      border: 0;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-image: url("data:image/svg+xml,%3Csvg width='54px' height='50px' viewBox='0 0 24.00 24.00' fill='none' xmlns='http://www.w3.org/2000/svg' stroke='%23ffffff'%3E%3Cg id='SVGRepo_bgCarrier' stroke-width='0'%3E%3C/g%3E%3Cg id='SVGRepo_tracerCarrier' stroke-linecap='round' stroke-linejoin='round'%3E%3C/g%3E%3Cg id='SVGRepo_iconCarrier'%3E%3Cpath d='M4 12H20M20 12L16 8M20 12L16 16' stroke='%23ffffff' stroke-width='0.8399999999999999' stroke-linecap='round' stroke-linejoin='round'%3E%3C/path%3E%3C/g%3E%3C/svg%3E");
+        background-position: 50% 50%;
+        background-repeat: no-repeat;
+      }
+
+      &:hover {
+        background: $highlight-500;
+      }
+
+      span {
+        position: absolute;
+        font-weight: 700;
+        font-size: 18px;
+        color: $blue-normal;
+        top: 50%;
+        transform: translateY(-50%);
+        right: 100%;
+        white-space: nowrap;
+        padding: 0 22px 0 0;
+      }
+    }
+  }
+
+  .prev {
+    button {
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}

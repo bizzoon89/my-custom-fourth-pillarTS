@@ -11,7 +11,7 @@ import { _URL_SERVICE, _URL_CLIENTS, _URL_TEXT } from '../../constants/apiUrl';
 import styles from './CardList.module.scss';
 
 interface ICardsList {
-  type: string;
+  type: 'serviceCards' | 'clientCards' | 'newsCards';
   titleSection?: string;
   limit?: number;
   loadMore?: boolean;

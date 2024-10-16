@@ -5,6 +5,8 @@ import { useParams } from 'react-router-dom';
 import Hero from '../components/Hero';
 import Post from '../components/Post';
 import SocialNetworks from '../components/SocialNetworks';
+import NavPost from '../components/NavPost';
+import CardList from '../components/CardList';
 import { request } from '../services/postsService';
 
 import { _URL_SERVICE, _URL_TEXT } from '../constants/apiUrl';
@@ -15,7 +17,7 @@ import { INewsCards } from '../components/CardList/NewsCards/NewsCards';
 import { socialLinkData } from '../mocks/single-post';
 
 interface ISinglePost {
-  postType: string;
+  postType: 'services' | 'news';
 }
 
 const SinglePost = ({ postType }: ISinglePost) => {
@@ -51,31 +53,11 @@ const SinglePost = ({ postType }: ISinglePost) => {
     return null;
   }
 
-  // const renderContent = (type: string) => {
-  //   switch (type) {
-  //     case 'services':
-  //       return <Post post={post} />;
-  //     case 'news':
-  //       return (
-  //         <Post post={post} >
-  //           <SocialNetworks
-  //             contentPosition={true}
-  //             socialLinkList={socialLinkData}
-  //           />
-  //         </Post>
-
-  //       );
-  //     default:
-  //       throw new Error('Unexpected process state');
-  //   }
-  // }
-
   return (
     <main className='main' id='main'>
       <Hero
         title={post.title}
       />
-      {/* {renderContent(postType)} */}
       <Post post={post} >
         {postType === 'news'
           ? <SocialNetworks
@@ -85,6 +67,16 @@ const SinglePost = ({ postType }: ISinglePost) => {
           : null
         }
       </Post>
+      <NavPost postType={postType} arrLength={posts.length} />
+      {
+        postType ==='news'
+        ? <CardList
+          titleSection={'Articles'}
+          type={'newsCards'}
+          loadMore={false}
+        />
+        : null
+      }
     </main>
   )
 }
