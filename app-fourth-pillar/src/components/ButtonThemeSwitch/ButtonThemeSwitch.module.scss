@@ -1,0 +1,40 @@
+.btnThemeSwitch {
+  background: none;
+  border-radius: 3px;
+  border-width: 1px;
+  border-style: solid;
+  border-color: #000;
+  color: #fff;
+  position: absolute;
+  top: 5px;
+  height: 15px;
+  font-size: 0;
+  right: 10px;
+  width: 30px;
+  border-radius: 5px;
+  cursor: pointer;
+  overflow: hidden;
+  padding: 0;
+  transition: color 200ms ease-in-out;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 1px;
+    border-radius: 3px;
+    bottom: 2px;
+    left: 2px;
+    width: 45%;
+    background: #000;
+    transition: all 200ms ease-in-out;
+  }
+
+  &.btnDark {
+    border-color: #fff;
+
+    &:before {
+      background: #fff;
+      left: 45%;
+    }
+  }
+}

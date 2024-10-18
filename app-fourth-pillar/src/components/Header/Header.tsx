@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 
 import Menu from '../Menu';
 import Logo from '../Logo';
+import ButtonThemeSwitch from '../ButtonThemeSwitch';
 import LinkList from '../LinkList';
 
 import { ILogo } from '../Logo/Logo';
@@ -66,6 +67,7 @@ const Header = ({ logoData, menuItems, addMenuItems }: HeaderProps) => {
             classList={styles.addLink}
             linkItem={addMenuItems}
           />
+          <ButtonThemeSwitch />
         </div>
         <button
           className={styles.navOpener}

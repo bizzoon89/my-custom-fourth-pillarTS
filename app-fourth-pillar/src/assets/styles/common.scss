@@ -79,6 +79,10 @@ blockquote {
   min-height: 100vh;
 }
 
+.dark section[class*="heroSection"] {
+  border-color: #000;
+}
+
 .social-networks {
   @extend %listreset;
   display: flex;

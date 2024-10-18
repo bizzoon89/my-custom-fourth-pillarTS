@@ -3,6 +3,7 @@ import { createRoot } from 'react-dom/client';
 import { Provider } from 'react-redux';
 
 import App from './App';
+import { ThemeProvider } from './context/themeContext';
 import store from './store';
 
 import 'normalize.css';
@@ -10,7 +11,9 @@ import 'normalize.css';
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <Provider store={store}>
-      <App/>
+      <ThemeProvider>
+        <App/>
+      </ThemeProvider>
     </Provider>
   </StrictMode>,
 )
