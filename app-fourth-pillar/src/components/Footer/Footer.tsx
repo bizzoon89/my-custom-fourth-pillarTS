@@ -1,21 +1,27 @@
-import { useEffect, useState } from 'react';
+//import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
+import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import Logo from '../Logo';
 import FooterArea from '../FooterArea';
 import LinkList from '../LinkList';
 import SocialNetworks from '../SocialNetworks';
+import { fetchServices } from '../../store/slices/serviceSlice';
 
-import { request } from '../../services/postsService';
+import { RootState } from '../../store';
+import { AppDispatch } from '../../store';
+
+//import { request } from '../../services/postsService';
 
 import { ILogo } from '../Logo/Logo';
 import { IContactInfo } from '../FooterArea/FooterArea';
 import { ILink } from '../../types';
 import { ISocialLinks } from '../SocialNetworks/SocialNetworks';
-import { IServiceCards } from '../CardList/ServiceCards/ServiceCards';
+//import { IServiceCards } from '../CardList/ServiceCards/ServiceCards';
 
-import { _URL_SERVICE} from '../../constants/apiUrl';
+//import { _URL_SERVICE} from '../../constants/apiUrl';
 
 import styles from './Footer.module.scss';
 
@@ -35,18 +41,27 @@ export interface FooterProps {
 
 const Footer = ({ logoData, contactInfo, footerMenu, servicesMenu, addFooterMenu, socialLinkList }: FooterProps) => {
   
+  const dispatch: AppDispatch = useDispatch<AppDispatch>();
+  const posts = useSelector((state: RootState) => state.services.posts);
+
   const limit: number = 6;
-  const [posts, setPosts] = useState<IServiceCards[]>([]);
-
-  const onRequest = (url: string) => {
-    request(`${url}?_limit=${limit}`)
-      .then(response => setPosts(response))
-      .catch(error => console.error(error));
-  }
-
+  
   useEffect(() => {
-    onRequest(_URL_SERVICE);
-  }, [limit]);
+    dispatch(fetchServices(limit));
+  }, [dispatch]);
+  
+  // const [posts, setPosts] = useState<IServiceCards[]>([]);
+  // const limit: number = 6;
+
+  // const onRequest = (url: string) => {
+  //   request(`${url}?_limit=${limit}`)
+  //     .then(response => setPosts(response))
+  //     .catch(error => console.error(error));
+  // }
+
+  // useEffect(() => {
+  //   onRequest(_URL_SERVICE);
+  // }, [limit]);
   
   return (
     <footer className={styles.footer}>

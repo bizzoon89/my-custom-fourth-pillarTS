@@ -1,12 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit';
 
-import postsReducer from './slices/postsSlice';
+import serviceSlice from './slices/serviceSlice';
 
 const store = configureStore({
   reducer: {
-    posts: postsReducer,
+    services: serviceSlice,
   },
-  middleware: getDefaultMiddleware => getDefaultMiddleware(),
+  //middleware: getDefaultMiddleware => getDefaultMiddleware(),
   //devTools: process.env.NODE_ENV !== 'production'
 })
 

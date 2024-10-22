@@ -3,23 +3,23 @@ export type PlainText = string;
 export type Html = string;
 export type InlineHtml = string;
 
-export interface ILink { //i use
+export interface ILink {
   url: string;
   text: string;
 };
 
-export interface IImage { //i use
+export interface IImage {
   src: string;
   alt: string;
 };
 
-export interface IBlockquote { //i use
+export interface IBlockquote {
   text: string;
   author: string;
 };
 
 
-export interface IIcon { //i use
+export interface IIcon {
   src: string;
   alt: string;
   width: number;
@@ -37,3 +37,8 @@ export interface ILabeledLink {
   label: string;
 };
 
+export enum ETypeCards {
+  Service = 'serviceCards',
+  Client = 'clientCards',
+  News = 'newsCards'
+}
