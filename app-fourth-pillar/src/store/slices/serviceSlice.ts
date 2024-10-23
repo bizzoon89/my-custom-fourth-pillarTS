@@ -9,7 +9,7 @@ import {
 } from '../../types/serviceSliceType';
 
 const initialState: IServiceSlice = {
-  posts: [],
+  serviceList: [],
   status: EServiceSliceStatus.Loading
 }
 
@@ -27,15 +27,15 @@ const serviceSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchServices.pending, (state) => {
-        state.posts = [];
+        state.serviceList = [];
         state.status = EServiceSliceStatus.Loading;
       })
       .addCase(fetchServices.fulfilled, (state, action) => {
-        state.posts = action.payload;
+        state.serviceList = action.payload;
         state.status = EServiceSliceStatus.Success;
       })
       .addCase(fetchServices.rejected, (state) => {
-        state.posts = [];
+        state.serviceList = [];
         state.status = EServiceSliceStatus.Error;
       })
       .addDefaultCase(() => { })

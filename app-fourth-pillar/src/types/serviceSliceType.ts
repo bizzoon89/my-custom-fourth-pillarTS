@@ -6,7 +6,7 @@ export interface IServiceCards {
 }
 
 export interface IServiceSlice {
-  posts: IServiceCards[];
+  serviceList: IServiceCards[];
   status: EServiceSliceStatus;
 }
 

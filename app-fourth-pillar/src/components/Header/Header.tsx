@@ -49,7 +49,6 @@ const Header = ({ logoData, menuItems, addMenuItems }: HeaderProps) => {
     }
   };
 
-  // Sticky Menu Area
   useEffect(() => {
     window.addEventListener('scroll', isSticky);
     return () => {

@@ -8,20 +8,15 @@ import Logo from '../Logo';
 import FooterArea from '../FooterArea';
 import LinkList from '../LinkList';
 import SocialNetworks from '../SocialNetworks';
+
 import { fetchServices } from '../../store/slices/serviceSlice';
-
-import { RootState } from '../../store';
+import { selectServiceList } from '../../store/selectors';
 import { AppDispatch } from '../../store';
-
-//import { request } from '../../services/postsService';
 
 import { ILogo } from '../Logo/Logo';
 import { IContactInfo } from '../FooterArea/FooterArea';
 import { ILink } from '../../types';
 import { ISocialLinks } from '../SocialNetworks/SocialNetworks';
-//import { IServiceCards } from '../CardList/ServiceCards/ServiceCards';
-
-//import { _URL_SERVICE} from '../../constants/apiUrl';
 
 import styles from './Footer.module.scss';
 
@@ -42,26 +37,13 @@ export interface FooterProps {
 const Footer = ({ logoData, contactInfo, footerMenu, servicesMenu, addFooterMenu, socialLinkList }: FooterProps) => {
   
   const dispatch: AppDispatch = useDispatch<AppDispatch>();
-  const posts = useSelector((state: RootState) => state.services.posts);
+  const serviceList = useSelector(selectServiceList);  
 
   const limit: number = 6;
-  
+
   useEffect(() => {
     dispatch(fetchServices(limit));
   }, [dispatch]);
-  
-  // const [posts, setPosts] = useState<IServiceCards[]>([]);
-  // const limit: number = 6;
-
-  // const onRequest = (url: string) => {
-  //   request(`${url}?_limit=${limit}`)
-  //     .then(response => setPosts(response))
-  //     .catch(error => console.error(error));
-  // }
-
-  // useEffect(() => {
-  //   onRequest(_URL_SERVICE);
-  // }, [limit]);
   
   return (
     <footer className={styles.footer}>
@@ -79,7 +61,7 @@ const Footer = ({ logoData, contactInfo, footerMenu, servicesMenu, addFooterMenu
           <div className={styles.col}>
             <h6>{servicesMenu.title}</h6>
             <ul className={styles.listLink}>
-              {posts.map(item => (
+              {serviceList.map(item => (
                 <li key={uuidv4()}>
                   <Link to={`/services/${item.id}`}>{item.title}</Link>
                 </li>
