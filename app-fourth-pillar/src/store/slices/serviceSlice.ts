@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import { request } from '../../services/postsService';
+import { request } from '../../services/getPosts';
 import { _URL_SERVICE } from '../../constants/apiUrl';
 
 import {

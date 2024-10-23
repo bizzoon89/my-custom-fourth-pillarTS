@@ -7,7 +7,7 @@ import Post from '../components/Post';
 import SocialNetworks from '../components/SocialNetworks';
 import NavPost from '../components/NavPost';
 import CardList from '../components/CardList';
-import { request } from '../services/postsService';
+import { request } from '../services/getPosts';
 
 import { _URL_SERVICE, _URL_TEXT } from '../constants/apiUrl';
 

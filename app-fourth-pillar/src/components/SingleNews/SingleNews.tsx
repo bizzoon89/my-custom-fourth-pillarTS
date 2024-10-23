@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import { request } from '../../services/postsService';
+import { request } from '../../services/getPosts';
 import { INewsCards } from '../CardList/NewsCards/NewsCards';
 
 import { _URL_TEXT } from '../../constants/apiUrl';

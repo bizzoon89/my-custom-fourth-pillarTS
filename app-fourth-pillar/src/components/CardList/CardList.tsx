@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { request } from '../../services/postsService';
+import { request } from '../../services/getPosts';
 
 import ServiceCards from './ServiceCards';
 import ClientCards from './ClientCards';
