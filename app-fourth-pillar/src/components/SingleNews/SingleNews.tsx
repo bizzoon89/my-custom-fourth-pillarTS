@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 import { request } from '../../services/getPosts';
-import { INewsCards } from '../CardList/NewsCards/NewsCards';
+import { INewsCards } from '../../types/newsSliceType';
 
 import { _URL_TEXT } from '../../constants/apiUrl';
 import styles from './SingleNews.module.scss';

@@ -1,17 +1,22 @@
-import { useEffect, useState } from 'react';
-
-import { request } from '../../services/getPosts';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 import ServiceCards from './ServiceCards';
 import ClientCards from './ClientCards';
 import NewsCards from './NewsCards';
 
-import { _URL_SERVICE, _URL_CLIENTS, _URL_TEXT } from '../../constants/apiUrl';
+import { fetchServices } from '../../store/slices/serviceSlice';
+import { fetchClient } from '../../store/slices/clientSlice';
+import { fetchNews } from '../../store/slices/newsSlice';
+import { selectServiceList, selectClientList, selectNewsList  } from '../../store/selectors';
+import { AppDispatch } from '../../store';
+
+import { ETypeCards } from '../../types';
 
 import styles from './CardList.module.scss';
 
 interface ICardsList {
-  type: 'serviceCards' | 'clientCards' | 'newsCards';
+  type: ETypeCards;
   titleSection?: string;
   limit?: number;
   loadMore?: boolean;
@@ -19,45 +24,33 @@ interface ICardsList {
 
 const CardsList = ({ type, titleSection, limit = 3, loadMore }: ICardsList) => {
 
-  const [posts, setPosts] = useState([]);
-  
-  const getUrlByType = (type: string): string => {
-    switch (type) {
-      case 'serviceCards':
-        return _URL_SERVICE;
-      case 'newsCards':
-        return _URL_TEXT;
-      case 'clientCards':
-        return _URL_CLIENTS;
-      default:
-        throw new Error('Unexpected card type');
-    }
-  };
-
-  const onRequest = (url: string) => {
-    request(`${url}?_limit=${limit}`)
-      .then(response => setPosts(response))
-      .catch(error => console.error(error));
-  }
+  const dispatch: AppDispatch = useDispatch<AppDispatch>();
+  const serviceList = useSelector(selectServiceList);
+  const clientList = useSelector(selectClientList);
+  const newsList = useSelector(selectNewsList);
 
   const renderContent = () => {
     switch (type) {
-      case 'serviceCards':
-        return <ServiceCards posts={posts} />;
-      case 'newsCards':
-        return <NewsCards posts={posts} limit={limit} loadMore={loadMore} />;
-      case 'clientCards':
-        return <ClientCards posts={posts}/>;
+      case ETypeCards.Service:
+        return <ServiceCards posts={serviceList} />;
+      case ETypeCards.News:
+        return <NewsCards posts={newsList} limit={limit} loadMore={loadMore} />;
+      case ETypeCards.Client:
+        return <ClientCards posts={clientList}/>;
       default:
-        throw new Error('Unexpected process state');
+        return null;
     }
   }
 
   useEffect(() => {
-    const url = getUrlByType(type);
-    onRequest(url);
-    // eslint-disable-next-line 
-  }, [type, limit]);
+    if (type === ETypeCards.Service) {
+      dispatch(fetchServices(limit));
+    } else if (type === ETypeCards.Client) {
+      dispatch(fetchClient(limit));
+    } else if (type === ETypeCards.News) {
+      dispatch(fetchNews(limit));
+    }
+  }, [dispatch, type, limit]);
 
   return (
     <section className={styles.cardsSection}>

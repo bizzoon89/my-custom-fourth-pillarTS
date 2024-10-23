@@ -2,6 +2,8 @@ import Hero from '../components/Hero';
 import CardList from '../components/CardList';
 import SingleNews from '../components/SingleNews';
 
+import { ETypeCards } from '../types';
+
 import { heroData } from '../mocks/news';
 
 const News = () => {
@@ -14,7 +16,7 @@ const News = () => {
       <SingleNews />
       <CardList
         titleSection={'Articles'}
-        type={'newsCards'}
+        type={ETypeCards.News}
         loadMore={true}
       />
     </main>

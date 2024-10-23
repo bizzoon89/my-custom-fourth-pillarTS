@@ -1,22 +1,9 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-import styles from './NewsCards.module.scss';
+import { INewsCards } from '../../../types/newsSliceType';
 
-export interface INewsCards {
-  id: number;
-  slug: string;
-  url: string;
-  title: string;
-  content: string;
-  image: string;
-  thumbnail: string;
-  status: string;
-  category: string;
-  publishedAt: string;
-  updatedAt: string;
-  userId: number;
-}
+import styles from './NewsCards.module.scss';
 
 interface IPropsNews {
   posts: INewsCards[];

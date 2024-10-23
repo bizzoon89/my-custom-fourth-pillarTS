@@ -38,7 +38,7 @@ export interface ILabeledLink {
 };
 
 export enum ETypeCards {
-  Service = 'serviceCards',
-  Client = 'clientCards',
-  News = 'newsCards'
+  Service = 'service',
+  Client = 'client',
+  News = 'news'
 }

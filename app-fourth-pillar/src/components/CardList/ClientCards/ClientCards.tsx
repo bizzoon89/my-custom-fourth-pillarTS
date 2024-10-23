@@ -1,12 +1,5 @@
 import styles from './ClientCards.module.scss';
-
-interface IClientCards {
-  albumId: string;
-  id: number;
-  title: string;
-  url: string;
-  thumbnailUrl: string;
-}
+import { IClientCards } from '../../../types/clientSliceType';
 
 interface IPropsClient {
   posts: IClientCards[];

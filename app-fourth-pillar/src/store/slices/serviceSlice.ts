@@ -15,7 +15,7 @@ const initialState: IServiceSlice = {
 
 export const fetchServices = createAsyncThunk<IServiceCards[], number | undefined>(
   'services/fetchService',
-  async (limit = 3) => {
+  async (limit = 6) => {
     return await request(`${_URL_SERVICE}?_limit=${limit}`);
   }
 );

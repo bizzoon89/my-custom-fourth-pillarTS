@@ -2,8 +2,8 @@ import AnimatedSquare from '../AnimatedSquare';
 
 import styles from './Post.module.scss';
 
-import { IServiceCards } from '../CardList/ServiceCards/ServiceCards';
-import { INewsCards } from '../CardList/NewsCards/NewsCards';
+import { IServiceCards } from '../../types/serviceSliceType';
+import { INewsCards } from '../../types/newsSliceType';
 
 interface IPost {
   post: IServiceCards | INewsCards;

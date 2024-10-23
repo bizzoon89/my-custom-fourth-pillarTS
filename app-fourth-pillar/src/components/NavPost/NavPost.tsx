@@ -2,9 +2,10 @@ import { useEffect, useState, useMemo} from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 
 import styles from './NavPost.module.scss';
+import { ETypeCards } from '../../types';
 
 interface INavPost {
-  postType: 'services' | 'news';
+  postType: ETypeCards;
   arrLength: number;
 }
 
@@ -32,7 +33,7 @@ const NavPost = ({ postType, arrLength }: INavPost) => {
   };
 
   const renderBackLink = () => {
-    return postType === 'services'
+    return postType === ETypeCards.Service
       ? <Link to="/services">Back to Our Services</Link>
       : <Link to="/news">Back to News</Link>;
   };
@@ -47,7 +48,7 @@ const NavPost = ({ postType, arrLength }: INavPost) => {
     }
 
     setNavPost(newPostNumber);
-    const newRoute = postType === 'services' ? `/services/${newPostNumber}` : `/news/${newPostNumber}`;
+    const newRoute = postType === ETypeCards.Service ? `/services/${newPostNumber}` : `/news/${newPostNumber}`;
     navigate(newRoute);
 
     scrollToTop();
@@ -71,7 +72,7 @@ const NavPost = ({ postType, arrLength }: INavPost) => {
         </div>
         <div className={styles.navigationSingle}>
           <div className={styles.prev}>
-            {postType === 'services' && generateLink('prev')}
+            {postType === ETypeCards.Service && generateLink('prev')}
           </div>
           <div className={styles.next}>
             {generateLink('next')}

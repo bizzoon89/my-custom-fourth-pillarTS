@@ -2,13 +2,7 @@
 import { Link } from 'react-router-dom';
 
 import styles from './ServiceCards.module.scss';
-
-export interface IServiceCards {
-  userId: number;
-  id: number;
-  title: string;
-  body: string;
-}
+import { IServiceCards } from '../../../types/serviceSliceType';
 
 interface IPropsService {
   posts: IServiceCards[];

@@ -11,13 +11,15 @@ import { request } from '../services/getPosts';
 
 import { _URL_SERVICE, _URL_TEXT } from '../constants/apiUrl';
 
-import { IServiceCards } from '../components/CardList/ServiceCards/ServiceCards';
-import { INewsCards } from '../components/CardList/NewsCards/NewsCards';
+import { IServiceCards } from '../types/serviceSliceType';
+import { INewsCards } from '../types/newsSliceType';
+
+import { ETypeCards } from '../types';
 
 import { socialLinkData } from '../mocks/single-post';
 
 interface ISinglePost {
-  postType: 'services' | 'news';
+  postType: ETypeCards;
 }
 
 const SinglePost = ({ postType }: ISinglePost) => {
@@ -27,9 +29,9 @@ const SinglePost = ({ postType }: ISinglePost) => {
 
   const getUrlByType = (type: string): string => {
     switch (type) {
-      case 'services':
+      case ETypeCards.Service:
         return _URL_SERVICE;
-      case 'news':
+      case ETypeCards.News:
         return _URL_TEXT;
       default:
         throw new Error('Unexpected post type');
@@ -59,7 +61,7 @@ const SinglePost = ({ postType }: ISinglePost) => {
         title={post.title}
       />
       <Post post={post} >
-        {postType === 'news'
+        {postType === ETypeCards.News
           ? <SocialNetworks
             contentPosition={true}
             socialLinkList={socialLinkData}
@@ -69,10 +71,10 @@ const SinglePost = ({ postType }: ISinglePost) => {
       </Post>
       <NavPost postType={postType} arrLength={posts.length} />
       {
-        postType ==='news'
+        postType === ETypeCards.News
         ? <CardList
           titleSection={'Articles'}
-          type={'newsCards'}
+            type={ETypeCards.News}
           loadMore={false}
         />
         : null

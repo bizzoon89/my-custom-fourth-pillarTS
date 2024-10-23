@@ -39,10 +39,8 @@ const Footer = ({ logoData, contactInfo, footerMenu, servicesMenu, addFooterMenu
   const dispatch: AppDispatch = useDispatch<AppDispatch>();
   const serviceList = useSelector(selectServiceList);  
 
-  const limit: number = 6;
-
   useEffect(() => {
-    dispatch(fetchServices(limit));
+    dispatch(fetchServices());
   }, [dispatch]);
   
   return (

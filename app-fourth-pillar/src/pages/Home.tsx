@@ -4,6 +4,8 @@ import AnimatedSquare from '../components/AnimatedSquare';
 import ContactForm from '../components/ContactForm';
 import CardList from '../components/CardList';
 
+import { ETypeCards } from '../types';
+
 import { heroData, infoTextData } from '../mocks/home';
 
 const Home = () => {
@@ -18,7 +20,7 @@ const Home = () => {
       </InfoText>
       <CardList
         titleSection={'Our services'}
-        type={'serviceCards'}
+        type={ETypeCards.Service}
         limit={6}
       />
       <ContactForm />

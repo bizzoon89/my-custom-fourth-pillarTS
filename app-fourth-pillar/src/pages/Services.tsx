@@ -2,6 +2,8 @@ import Hero from '../components/Hero';
 import CardList from '../components/CardList';
 import BlockquoteSlider from '../components/BlockquoteSlider';
 
+import { ETypeCards } from '../types';
+
 import { heroData, slideData } from '../mocks/services';
 
 const Services = () => {
@@ -9,7 +11,7 @@ const Services = () => {
     <main className='main' id='main'>
       <Hero {...heroData} />
       <CardList
-        type={'serviceCards'}
+        type={ETypeCards.Service}
         limit={6}
       />
       <BlockquoteSlider slideData={slideData} />
