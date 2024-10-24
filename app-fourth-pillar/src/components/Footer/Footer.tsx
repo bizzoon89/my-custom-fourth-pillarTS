@@ -9,9 +9,10 @@ import FooterArea from '../FooterArea';
 import LinkList from '../LinkList';
 import SocialNetworks from '../SocialNetworks';
 
-import { fetchServices } from '../../store/slices/serviceSlice';
-import { selectServiceList } from '../../store/selectors';
 import { AppDispatch } from '../../store';
+import { fetchServices } from '../../store/slices/serviceSlice';
+import { EServiceSliceStatus } from '../../types/serviceSliceType';
+import { selectServiceList, selectServiceStatus } from '../../store/selectors';
 
 import { ILogo } from '../Logo/Logo';
 import { IContactInfo } from '../FooterArea/FooterArea';
@@ -38,10 +39,13 @@ const Footer = ({ logoData, contactInfo, footerMenu, servicesMenu, addFooterMenu
   
   const dispatch: AppDispatch = useDispatch<AppDispatch>();
   const serviceList = useSelector(selectServiceList);  
+  const serviceStatus = useSelector(selectServiceStatus);
 
   useEffect(() => {
-    dispatch(fetchServices());
-  }, [dispatch]);
+    if (serviceStatus !== EServiceSliceStatus.Success) {
+      dispatch(fetchServices());
+    }
+  }, [dispatch, serviceStatus]);
   
   return (
     <footer className={styles.footer}>

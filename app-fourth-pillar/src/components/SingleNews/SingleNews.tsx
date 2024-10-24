@@ -1,28 +1,27 @@
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { request } from '../../services/getPosts';
-import { INewsCards } from '../../types/newsSliceType';
+import { AppDispatch } from '../../store';
+import { fetchNews } from '../../store/slices/newsSlice';
+import { selectNewsList, selectNewsStatus } from '../../store/selectors';
+import { ENewsSliceStatus } from '../../types/newsSliceType';
 
-import { _URL_TEXT } from '../../constants/apiUrl';
 import styles from './SingleNews.module.scss';
 
 const SingleNews = () => {
-
-  const [newsPostList, setNewPostList] = useState<INewsCards[]>([]);
+  const dispatch: AppDispatch = useDispatch<AppDispatch>();
+  const newsList = useSelector(selectNewsList);
+  const newsStatus = useSelector(selectNewsStatus);
 
   useEffect(() => {
-    onRequest(_URL_TEXT);
-  }, [])
+    if (newsStatus !== ENewsSliceStatus.Success) {
+      dispatch(fetchNews());
+    }
+  }, [dispatch, newsStatus])
   
-  const onRequest = (url: string) => {
-    request(url)
-      .then(response => setNewPostList(response))
-      .catch(error => console.error(error));
-  }
-
-  const newsPostIndex: number = Math.floor(Math.random() * newsPostList.length);
-  const newsPostElement = newsPostList[newsPostIndex];
+  const newsPostIndex: number = Math.floor(Math.random() * newsList.length);
+  const newsPostElement = newsList[newsPostIndex];
   
   if (!newsPostElement) {
     return null;

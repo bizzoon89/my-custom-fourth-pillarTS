@@ -1,18 +1,21 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
 
 import Hero from '../components/Hero';
 import Post from '../components/Post';
 import SocialNetworks from '../components/SocialNetworks';
 import NavPost from '../components/NavPost';
 import CardList from '../components/CardList';
-import { request } from '../services/getPosts';
 
-import { _URL_SERVICE, _URL_TEXT } from '../constants/apiUrl';
+import { AppDispatch } from '../store';
+import { fetchServices } from '../store/slices/serviceSlice';
+import { fetchNews } from '../store/slices/newsSlice';
+import { selectServiceList, selectNewsList, selectServiceStatus, selectNewsStatus } from '../store/selectors';
 
-import { IServiceCards } from '../types/serviceSliceType';
-import { INewsCards } from '../types/newsSliceType';
+import { EServiceSliceStatus } from '../types/serviceSliceType';
+import { ENewsSliceStatus } from '../types/newsSliceType';
 
 import { ETypeCards } from '../types';
 
@@ -23,36 +26,34 @@ interface ISinglePost {
 }
 
 const SinglePost = ({ postType }: ISinglePost) => {
+
+  const dispatch: AppDispatch = useDispatch<AppDispatch>();
+  const newsList = useSelector(selectNewsList);
+  const serviceList = useSelector(selectServiceList);
+  const serviceStatus = useSelector(selectServiceStatus);
+  const newsStatus = useSelector(selectNewsStatus);
+
   const { idPost } = useParams<{ idPost: string }>();
 
-  const [posts, setPosts] = useState<IServiceCards[] | INewsCards[]>([]);
-
-  const getUrlByType = (type: string): string => {
-    switch (type) {
-      case ETypeCards.Service:
-        return _URL_SERVICE;
-      case ETypeCards.News:
-        return _URL_TEXT;
-      default:
-        throw new Error('Unexpected post type');
-    }
-  };
-
-  const onRequest = (url: string) => {
-    request(url)
-      .then(response => setPosts(response))
-      .catch(error => console.error(error));
-  }
-
   useEffect(() => {
-    const url = getUrlByType(postType);
-    onRequest(url);
-  }, [idPost, postType]);
+    if (postType === ETypeCards.Service && serviceStatus !== EServiceSliceStatus.Success) {
+      dispatch(fetchServices());
+    } else if (postType === ETypeCards.News && newsStatus !== ENewsSliceStatus.Success) {
+      dispatch(fetchNews());
+    }
+  }, [dispatch, postType, serviceStatus, newsStatus]);
+
+  const posts = postType === ETypeCards.Service ? serviceList : newsList;
   
   const post = posts.find(p => p.id === Number(idPost));
+
+  if (postType === ETypeCards.Service && serviceStatus === EServiceSliceStatus.Loading ||
+    postType === ETypeCards.News && newsStatus === ENewsSliceStatus.Loading) {
+    return <Hero title={'Loading...'} />;
+  }
   
   if (!post) {
-    return null;
+    return <Hero title={'Post not found'} />;
   }
 
   return (
