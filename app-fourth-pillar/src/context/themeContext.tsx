@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useCallback } from "react";
+import { createContext, useState, useEffect, useCallback } from 'react';
 
 interface IThemeContext {
   theme: string;
@@ -11,7 +11,7 @@ interface IThemeProvider {
 
 export const ThemeContext = createContext<IThemeContext>({
   theme: 'light',
-  toggleTheme: () => { },
+  toggleTheme: () => {},
 });
 
 export const ThemeProvider = ({ children }: IThemeProvider) => {
@@ -36,4 +36,4 @@ export const ThemeProvider = ({ children }: IThemeProvider) => {
       {children}
     </ThemeContext.Provider>
   );
-}
+};

@@ -10,7 +10,7 @@ import { heroData, infoTextData } from '../mocks/home';
 
 const Home = () => {
   return (
-    <main className='main' id='main'>
+    <>
       <Hero
         {...heroData}
         optionClass={'heroHome'}
@@ -24,7 +24,7 @@ const Home = () => {
         limit={6}
       />
       <ContactForm />
-    </main>
+    </>
   )
 }
 

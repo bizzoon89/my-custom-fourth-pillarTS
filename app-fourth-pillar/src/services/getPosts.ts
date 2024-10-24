@@ -10,4 +10,4 @@ export const request = (url: string) => {
     }
   }
   return getPosts();
-}
+};

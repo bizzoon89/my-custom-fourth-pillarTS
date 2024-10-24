@@ -1,4 +1,4 @@
-import { HeaderProps } from '../components/Header/Header'
+import { HeaderProps } from '../components/Header/Header';
 
 export const headerData = {
   logoData: {
@@ -10,42 +10,42 @@ export const headerData = {
     {
       label: 'About',
       url: '/about',
-      btnContact: false
+      btnContact: false,
     },
     {
       label: 'Services',
       url: '/services',
-      btnContact: false
+      btnContact: false,
     },
     {
       label: 'Our People',
       url: '/people',
-      btnContact: false
+      btnContact: false,
     },
     {
       label: 'Clients',
       url: '/clients',
-      btnContact: false
+      btnContact: false,
     },
     {
       label: 'News',
       url: '/news',
-      btnContact: false
+      btnContact: false,
     },
     {
       label: 'Contact',
       url: '/contact',
-      btnContact: true
-    }
+      btnContact: true,
+    },
   ],
   addMenuItems: [
     {
       url: '/privacy-policy',
-      text: 'Privacy Policy'
+      text: 'Privacy Policy',
     },
     {
       url: '/cookie-policy',
-      text: 'Cookie Policy'
-    }
-  ]
+      text: 'Cookie Policy',
+    },
+  ],
 } as HeaderProps;

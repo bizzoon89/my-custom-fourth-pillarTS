@@ -21,5 +21,5 @@ export interface INewsSlice {
 export enum ENewsSliceStatus {
   Loading = 'loading',
   Success = 'success',
-  Error = 'error'
+  Error = 'error',
 }

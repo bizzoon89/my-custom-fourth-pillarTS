@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import PublicLayouts from '../layouts/PublicLayouts'; 
+import PublicLayouts from '../layouts/PublicLayouts';
 import { Home, About, NotFound, Services, Clients, People, Contact, News, Founders, SinglePost, PrivacyPolicy, CookiePolicy } from '../pages';
 import { ETypeCards } from '../types';
 
@@ -23,7 +23,7 @@ const routes = createBrowserRouter([
       },
       {
         path: 'services/:idPost',
-        element: <SinglePost postType={ETypeCards.Service} />
+        element: <SinglePost postType={ETypeCards.Service} />,
       },
       {
         path: 'people',
@@ -48,7 +48,7 @@ const routes = createBrowserRouter([
       {
         path: 'contact',
         element: <Contact />,
-      }, 
+      },
       {
         path: 'privacy-policy',
         element: <PrivacyPolicy />,

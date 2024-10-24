@@ -18,11 +18,11 @@ const SingleNews = () => {
     if (newsStatus !== ENewsSliceStatus.Success) {
       dispatch(fetchNews());
     }
-  }, [dispatch, newsStatus])
-  
+  }, [dispatch, newsStatus]);
+
   const newsPostIndex: number = Math.floor(Math.random() * newsList.length);
   const newsPostElement = newsList[newsPostIndex];
-  
+
   if (!newsPostElement) {
     return null;
   }
@@ -37,12 +37,17 @@ const SingleNews = () => {
             <span className={styles.textCardDate}>{publishedAt}</span>
             <h3>{title}</h3>
             <p>{content}</p>
-            <Link to={`/news/${id}`} className={styles.linkMore}>READ ALL</Link>
+            <Link
+              to={`/news/${id}`}
+              className={styles.linkMore}
+            >
+              READ ALL
+            </Link>
           </div>
         </article>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default SingleNews;

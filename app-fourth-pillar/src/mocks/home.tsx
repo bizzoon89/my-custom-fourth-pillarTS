@@ -6,5 +6,5 @@ export const heroData = {
 } as HeroProps;
 
 export const infoTextData = {
-  title: 'Fourth Pillar is the only corporate and financial strategic communications firm that specialises in the business of music.'
+  title: 'Fourth Pillar is the only corporate and financial strategic communications firm that specialises in the business of music.',
 } as InfoTextProps;

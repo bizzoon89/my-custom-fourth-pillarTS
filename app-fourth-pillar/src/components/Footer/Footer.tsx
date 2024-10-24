@@ -36,9 +36,8 @@ export interface FooterProps {
 }
 
 const Footer = ({ logoData, contactInfo, footerMenu, servicesMenu, addFooterMenu, socialLinkList }: FooterProps) => {
-  
   const dispatch: AppDispatch = useDispatch<AppDispatch>();
-  const serviceList = useSelector(selectServiceList);  
+  const serviceList = useSelector(selectServiceList);
   const serviceStatus = useSelector(selectServiceStatus);
 
   useEffect(() => {
@@ -46,7 +45,7 @@ const Footer = ({ logoData, contactInfo, footerMenu, servicesMenu, addFooterMenu
       dispatch(fetchServices());
     }
   }, [dispatch, serviceStatus]);
-  
+
   return (
     <footer className={styles.footer}>
       <div className={styles.container}>
@@ -55,8 +54,8 @@ const Footer = ({ logoData, contactInfo, footerMenu, servicesMenu, addFooterMenu
             {...logoData}
             positionFooter={true}
           />
-          <FooterArea  {...contactInfo} >
-            <SocialNetworks socialLinkList={socialLinkList}/>
+          <FooterArea {...contactInfo}>
+            <SocialNetworks socialLinkList={socialLinkList} />
           </FooterArea>
         </div>
         <div className={styles.footerNav}>
@@ -86,8 +85,7 @@ const Footer = ({ logoData, contactInfo, footerMenu, servicesMenu, addFooterMenu
         </div>
       </div>
     </footer>
-  )
-}
+  );
+};
 
 export default Footer;
-

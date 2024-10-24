@@ -17,11 +17,14 @@ const Logo = ({ positionFooter, url, src, alt }: Logo) => {
 
   return (
     <div className={`${positionFooter ? footerLogo : logo}`}>
-      <Link to={url} >
-        <img src={src} alt={alt} />
+      <Link to={url}>
+        <img
+          src={src}
+          alt={alt}
+        />
       </Link>
     </div>
-  )
-}
+  );
+};
 
 export default Logo;

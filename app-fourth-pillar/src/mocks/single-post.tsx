@@ -1,4 +1,4 @@
-import { ISocialLinks } from "../components/SocialNetworks/SocialNetworks"
+import { ISocialLinks } from '../components/SocialNetworks/SocialNetworks';
 
 export const socialLinkData = [
   {
@@ -8,8 +8,8 @@ export const socialLinkData = [
     name: 'Instagram',
     icon: {
       src: '/images/linkedin.svg',
-      alt: 'LinkedIn'
-    }
+      alt: 'LinkedIn',
+    },
   },
   {
     url: 'https://mailto:test@test.com',
@@ -18,7 +18,7 @@ export const socialLinkData = [
     name: 'mail',
     icon: {
       src: '/images/mail.svg',
-      alt: 'mail'
-    }
+      alt: 'mail',
+    },
   },
 ] as ISocialLinks[];

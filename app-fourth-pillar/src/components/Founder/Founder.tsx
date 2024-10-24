@@ -18,7 +18,10 @@ const Founder = ({ image, title, blockquote, paragraphs }: IFounder) => {
     <section className={styles.singlePostSection}>
       <div className={styles.container}>
         <figure className={styles.postImg}>
-          <img src={image?.src} alt={image?.alt} />
+          <img
+            src={image?.src}
+            alt={image?.alt}
+          />
           <AnimatedSquare positionClass={'square06'} />
         </figure>
         <div className={styles.textArea}>
@@ -33,7 +36,7 @@ const Founder = ({ image, title, blockquote, paragraphs }: IFounder) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Founder;

@@ -39,13 +39,19 @@ const CardsList = ({ type, titleSection, limit = 3, loadMore }: ICardsList) => {
       case ETypeCards.Service:
         return <ServiceCards posts={serviceList} />;
       case ETypeCards.News:
-        return <NewsCards posts={newsList} limit={limit} loadMore={loadMore} />;
+        return (
+          <NewsCards
+            posts={newsList}
+            limit={limit}
+            loadMore={loadMore}
+          />
+        );
       case ETypeCards.Client:
-        return <ClientCards posts={clientList}/>;
+        return <ClientCards posts={clientList} />;
       default:
         return null;
     }
-  }
+  };
 
   useEffect(() => {
     if (type === ETypeCards.Service && serviceStatus !== EServiceSliceStatus.Success) {
@@ -57,9 +63,11 @@ const CardsList = ({ type, titleSection, limit = 3, loadMore }: ICardsList) => {
     }
   }, [dispatch, type, limit, serviceStatus, clientStatus, newsStatus]);
 
-  if (type === ETypeCards.Service && serviceStatus === EServiceSliceStatus.Loading ||
-    type === ETypeCards.News && newsStatus === ENewsSliceStatus.Loading ||
-    type === ETypeCards.Client && clientStatus === EClientSliceStatus.Loading) {
+  if (
+    (type === ETypeCards.Service && serviceStatus === EServiceSliceStatus.Loading) ||
+    (type === ETypeCards.News && newsStatus === ENewsSliceStatus.Loading) ||
+    (type === ETypeCards.Client && clientStatus === EClientSliceStatus.Loading)
+  ) {
     return <div className={styles.container}>Loading..</div>;
   }
 
@@ -70,7 +78,7 @@ const CardsList = ({ type, titleSection, limit = 3, loadMore }: ICardsList) => {
         {renderContent()}
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default CardsList;

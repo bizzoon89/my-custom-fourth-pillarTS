@@ -6,7 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 
 import styles from './BlockquoteSlider.module.scss';
-import './customSwiper.scss'
+import './customSwiper.scss';
 
 export interface SlideProps {
   text: string;
@@ -29,11 +29,11 @@ const BlockquoteSlider = ({ slideData }: ISlide) => {
           slidesPerView={1}
           navigation
           pagination={{ clickable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
+          onSwiper={swiper => console.log(swiper)}
           onSlideChange={() => console.log('slide change')}
         >
           {slideData.map(item => (
-            <SwiperSlide key={uuidv4()} >
+            <SwiperSlide key={uuidv4()}>
               <blockquote>
                 <p>{item.text}</p>
                 <strong className={styles.author}>{item.author}</strong>
@@ -44,7 +44,7 @@ const BlockquoteSlider = ({ slideData }: ISlide) => {
         </Swiper>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default BlockquoteSlider;

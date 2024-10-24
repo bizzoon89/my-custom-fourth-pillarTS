@@ -20,7 +20,7 @@ const Post = ({ post, children }: IPost) => {
         <AnimatedSquare positionClass={'square03'} />
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default Post;

@@ -8,7 +8,7 @@ import { heroData } from '../mocks/news';
 
 const News = () => {
   return (
-    <main className='main' id='main'>
+    <>
       <Hero
         {...heroData}
         optionClass={'heroNews'}
@@ -19,7 +19,7 @@ const News = () => {
         type={ETypeCards.News}
         loadMore={true}
       />
-    </main>
+    </>
   )
 }
 

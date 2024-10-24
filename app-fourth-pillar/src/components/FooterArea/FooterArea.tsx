@@ -1,5 +1,4 @@
-
-import styles from "./FooterArea.module.scss";
+import styles from './FooterArea.module.scss';
 
 export interface IContactInfo {
   text: string;
@@ -8,12 +7,11 @@ export interface IContactInfo {
   copyright: string;
 }
 
-interface IFooterArea extends IContactInfo { 
+interface IFooterArea extends IContactInfo {
   children: React.ReactNode;
 }
 
 const FooterArea = ({ text, address, title, copyright, children }: IFooterArea) => {
-
   const today = new Date();
   const year = today.getFullYear();
 
@@ -23,9 +21,12 @@ const FooterArea = ({ text, address, title, copyright, children }: IFooterArea) 
       <address className={styles.address}>{address}</address>
       <span className={styles.title}>{title}</span>
       {children}
-      <span className={styles.copy}>{copyright}{year}</span>
+      <span className={styles.copy}>
+        {copyright}
+        {year}
+      </span>
     </>
-  )
-}
+  );
+};
 
 export default FooterArea;

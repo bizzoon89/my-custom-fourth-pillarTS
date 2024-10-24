@@ -18,7 +18,7 @@ const InfoText = ({ children, title }: IInfoText) => {
         {children}
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default InfoText;

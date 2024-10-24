@@ -10,17 +10,17 @@ export const heroData = {
 } as HeroProps;
 
 export const joinBoxData = {
-  title: 'Let\'s work together',
+  title: "Let's work together",
   buttonText: 'Contact Us',
-  url: '/contact'
+  url: '/contact',
 } as JoinBoxProps;
 
 export const peopleData = {
   title: 'Our combined expertise brings together a wealth of knowledge and experience gained in corporate communications, financial PR, journalism, politics and public affairs.',
   paragraphs: [
     'This complementary set of skills and experience allows our clients to benefit from a deep understanding of the music business and complex landscape for intellectual property rights, as well as a quality, personalised service delivered by a highly professional team that puts its clients first.',
-    'Fourth Pillar was founded by Lynne Best and Claire Turvey to deliver a complete offering to meet the growing demand for specialist corporate and financial communications from across the music industry.'
-  ]
+    'Fourth Pillar was founded by Lynne Best and Claire Turvey to deliver a complete offering to meet the growing demand for specialist corporate and financial communications from across the music industry.',
+  ],
 } as PeopleProps;
 
 export const peopleListData = [
@@ -32,8 +32,8 @@ export const peopleListData = [
     },
     link: {
       url: '/people/lynne-best',
-      text: 'Read more'
-    }
+      text: 'Read more',
+    },
   },
   {
     name: 'Claire Turvey',
@@ -43,9 +43,9 @@ export const peopleListData = [
     },
     link: {
       url: '/people/claire-turvey',
-      text: 'Read more'
-    }
-  }
+      text: 'Read more',
+    },
+  },
 ] as PeopleListProps[];
 
 export const logoListData = [
@@ -56,8 +56,8 @@ export const logoListData = [
       src: 'images/img-logo-01.png',
       alt: 'Logo 1',
       width: 176,
-      height: 84
-    }
+      height: 84,
+    },
   },
   {
     url: 'https://www.google.com/',
@@ -66,7 +66,7 @@ export const logoListData = [
       src: 'images/img-logo-02.png',
       alt: 'Logo 2',
       width: 112,
-      height: 95
-    }
+      height: 95,
+    },
   },
 ] as LogoListProps[];

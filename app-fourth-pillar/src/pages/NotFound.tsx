@@ -3,7 +3,7 @@ import Button from '../components/Button';
 
 const NotFound = () => {
   return (
-    <main className='main' id='main'>
+    <>
       <Hero
         title={'404'}
       >
@@ -14,7 +14,7 @@ const NotFound = () => {
           buttonColor={'btnWhite'}
         />
       </Hero>
-    </main>
+    </>
   )
 }
 

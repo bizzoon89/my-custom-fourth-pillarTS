@@ -15,5 +15,5 @@ export const contentData = {
     <p>Learn more about who we are, how you can contact us and how we process personal data in our Privacy Policy.</p>
     <p>Please state your consent ID and date when you contact us regarding your consent.</p>
     <p>Your consent applies to the following domains: fourthpillarpr.com</p>
-  `
+  `,
 } as ITextContentProps;

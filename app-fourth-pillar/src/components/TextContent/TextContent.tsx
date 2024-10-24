@@ -11,18 +11,14 @@ interface ITextContent extends ITextContentProps {
 }
 
 const TextContent = ({ content, children }: ITextContent) => {
-  console.log(content);
-  
   return (
     <section className={`${styles.contentSection} ${styles.fzBase}`}>
-      <div
-        className={styles.containerMd}
-      >
+      <div className={styles.containerMd}>
         <div dangerouslySetInnerHTML={{ __html: content }} />
         {children}
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default TextContent;

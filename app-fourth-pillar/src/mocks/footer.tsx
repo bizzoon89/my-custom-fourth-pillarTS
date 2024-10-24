@@ -1,4 +1,4 @@
-import { FooterProps } from '../components/Footer/Footer'
+import { FooterProps } from '../components/Footer/Footer';
 
 export const footerData = {
   logoData: {
@@ -10,75 +10,75 @@ export const footerData = {
     text: 'Registered address:',
     address: '303 The Pill Box \n 115 Coventry Road London \n E2 6GH, United Kingdom.',
     title: 'Follow us',
-    copyright: '© The Fourth Pillar'
+    copyright: '© The Fourth Pillar',
   },
   footerMenu: [
     {
       url: '/about',
-      text: 'About'
+      text: 'About',
     },
     {
       url: '/services',
-      text: 'Services'
+      text: 'Services',
     },
     {
       url: '/people',
-      text: 'Our People'
+      text: 'Our People',
     },
     {
       url: '/clients',
-      text: 'Clients'
+      text: 'Clients',
     },
     {
       url: '/contact',
-      text: 'Contact'
+      text: 'Contact',
     },
     {
       url: '/news',
-      text: 'News'
-    }
+      text: 'News',
+    },
   ],
   servicesMenu: {
     title: 'Services',
     menuItems: [
       {
         url: '',
-        text: 'Financial and investor communications'
+        text: 'Financial and investor communications',
       },
       {
         url: '',
-        text: 'Media and stakeholder campaigns'
+        text: 'Media and stakeholder campaigns',
       },
       {
         url: '',
-        text: 'Messaging, positioning and thought leadership'
+        text: 'Messaging, positioning and thought leadership',
       },
       {
         url: '',
-        text: 'Reputation and issues management'
+        text: 'Reputation and issues management',
       },
       {
         url: '',
-        text: 'ESG and cultural strategy'
+        text: 'ESG and cultural strategy',
       },
       {
         url: '',
-        text: 'Media and presentation training'
-      }
-    ]
+        text: 'Media and presentation training',
+      },
+    ],
   },
   addFooterMenu: {
     title: 'Legal',
     menuItems: [
       {
         url: '/privacy-policy',
-        text: 'Privacy Policy'
+        text: 'Privacy Policy',
       },
       {
         url: '/cookie-policy',
-        text: 'Cookie Policy'
-      }
-    ]
+        text: 'Cookie Policy',
+      },
+    ],
   },
   socialLinkList: [
     {
@@ -88,8 +88,8 @@ export const footerData = {
       name: 'Instagram',
       icon: {
         src: '/images/instagram.svg',
-        alt: 'Instagram'
-      }
+        alt: 'Instagram',
+      },
     },
     {
       url: 'https://www.linkedin.com/company/the-fourth-pillar',
@@ -98,9 +98,8 @@ export const footerData = {
       name: 'Instagram',
       icon: {
         src: '/images/linkedin.svg',
-        alt: 'LinkedIn'
-      }
-    }
-  ]
+        alt: 'LinkedIn',
+      },
+    },
+  ],
 } as FooterProps;
-

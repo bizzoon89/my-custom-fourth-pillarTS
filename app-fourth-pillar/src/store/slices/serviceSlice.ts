@@ -2,16 +2,12 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { request } from '../../services/getPosts';
 import { _URL_SERVICE } from '../../constants/apiUrl';
 
-import {
-  IServiceSlice,
-  IServiceCards,
-  EServiceSliceStatus
-} from '../../types/serviceSliceType';
+import { IServiceSlice, IServiceCards, EServiceSliceStatus } from '../../types/serviceSliceType';
 
 const initialState: IServiceSlice = {
   serviceList: [],
-  status: EServiceSliceStatus.Loading
-}
+  status: EServiceSliceStatus.Loading,
+};
 
 export const fetchServices = createAsyncThunk<IServiceCards[], number | undefined>(
   'services/fetchService',
@@ -23,10 +19,10 @@ export const fetchServices = createAsyncThunk<IServiceCards[], number | undefine
 const serviceSlice = createSlice({
   name: 'serviceSlice',
   initialState,
-  reducers: { },
-  extraReducers: (builder) => {
+  reducers: {},
+  extraReducers: builder => {
     builder
-      .addCase(fetchServices.pending, (state) => {
+      .addCase(fetchServices.pending, state => {
         state.serviceList = [];
         state.status = EServiceSliceStatus.Loading;
       })
@@ -34,12 +30,12 @@ const serviceSlice = createSlice({
         state.serviceList = action.payload;
         state.status = EServiceSliceStatus.Success;
       })
-      .addCase(fetchServices.rejected, (state) => {
+      .addCase(fetchServices.rejected, state => {
         state.serviceList = [];
         state.status = EServiceSliceStatus.Error;
       })
-      .addDefaultCase(() => { })
-  } 
-}); 
+      .addDefaultCase(() => {});
+  },
+});
 
 export default serviceSlice.reducer;

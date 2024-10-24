@@ -2,11 +2,11 @@ import Hero from '../components/Hero';
 import JoinBox from '../components/JoinBox';
 import PeopleBox from '../components/PeopleBox';
 
-import { heroData, joinBoxData, peopleData, peopleListData, logoListData  } from '../mocks/people';
+import { heroData, joinBoxData, peopleData, peopleListData, logoListData } from '../mocks/people';
 
 const People = () => {
   return (
-    <main className='main' id='main'>
+    <>
       <Hero {...heroData} />
       <PeopleBox
         peopleData={peopleData}
@@ -18,8 +18,8 @@ const People = () => {
         align={'textCenter'}
         buttonColor={'btnWhite'}
       />
-    </main>
-  )
-}
+    </>
+  );
+};
 
 export default People;

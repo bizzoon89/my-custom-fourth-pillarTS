@@ -12,15 +12,11 @@ const Button = ({ url, buttonText, buttonColor }: IButton) => {
   return (
     <Link
       to={url}
-      className={
-        buttonColor
-          ? `${styles.btn} ${styles.btnArrow} ${styles[buttonColor]}`
-          : `${styles.btn} ${styles.btnArrow}`
-        }
+      className={buttonColor ? `${styles.btn} ${styles.btnArrow} ${styles[buttonColor]}` : `${styles.btn} ${styles.btnArrow}`}
     >
       {buttonText}
     </Link>
-  )
-}
+  );
+};
 
 export default Button;

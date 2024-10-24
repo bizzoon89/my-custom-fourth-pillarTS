@@ -9,32 +9,30 @@ export interface IMenuItem {
   btnContact?: boolean;
 }
 
-interface IMenu  {
-  menuItems: IMenuItem[],
-};
+interface IMenu {
+  menuItems: IMenuItem[];
+}
 
 const Menu = ({ menuItems }: IMenu) => {
   return (
     <nav className={styles.mainNav}>
       <ul className={styles.nav}>
-        {
-          menuItems.map(menuItem => (
-            <li
-              key={uuidv4()}
-              className={`${menuItem.btnContact ? 'btnContact' : ''}`}
+        {menuItems.map(menuItem => (
+          <li
+            key={uuidv4()}
+            className={`${menuItem.btnContact ? 'btnContact' : ''}`}
+          >
+            <NavLink
+              to={menuItem.url}
+              className={({ isActive }: { isActive: boolean }): string | undefined => (isActive ? `${styles.active}` : undefined)}
             >
-              <NavLink
-                to={menuItem.url}
-                className={({ isActive }: { isActive: boolean }): string | undefined => isActive ? `${styles.active}` : undefined}
-                >
-                {menuItem.label}
-              </NavLink>
-            </li>
-          ))
-        }
+              {menuItem.label}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
-  )
-}
+  );
+};
 
 export default Menu;

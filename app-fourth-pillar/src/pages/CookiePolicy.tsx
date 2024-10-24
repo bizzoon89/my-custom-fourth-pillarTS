@@ -6,7 +6,7 @@ import { heroData, contentData } from '../mocks/cookie-policy';
 
 const CookiePolicy = () => {
   return (
-    <main className='main' id='main'>
+    <>
       <Hero
         {...heroData}
       />
@@ -15,7 +15,7 @@ const CookiePolicy = () => {
       >
         <AnimatedSquare positionClass={'square04'} />
       </TextContent>
-    </main>
+    </>
   )
 }
 

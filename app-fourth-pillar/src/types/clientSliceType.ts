@@ -14,5 +14,5 @@ export interface IClientSlice {
 export enum EClientSliceStatus {
   Loading = 'loading',
   Success = 'success',
-  Error = 'error'
+  Error = 'error',
 }

@@ -18,5 +18,5 @@ export const contentData = {
     <p>We’re committed to protecting your privacy. We use the information we collect from you only for the purposes for which you have consented. We will not pass on your personal information to others without your permission. You can always enquire about or check the information that you have given us by contacting us.</p>
     <h4>Feedback</h4>
     <p>If you have any questions or comments about privacy, please email us at <a href="mailto:info@thefourthpillar.co.uk">info@thefourthpillar.co.uk</a></p>
-  `
+  `,
 } as ITextContentProps;

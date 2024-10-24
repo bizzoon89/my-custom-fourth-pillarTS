@@ -1,7 +1,7 @@
 import styles from './AnimatedSquare.module.scss';
 
 interface IAnimatedSquare {
-  positionClass: string
+  positionClass: string;
 }
 
 const AnimatedSquare = ({ positionClass }: IAnimatedSquare) => {
@@ -12,8 +12,7 @@ const AnimatedSquare = ({ positionClass }: IAnimatedSquare) => {
       <span></span>
       <span></span>
     </div>
-  )
-}
+  );
+};
 
 export default AnimatedSquare;
-

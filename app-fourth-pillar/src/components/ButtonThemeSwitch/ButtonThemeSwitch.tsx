@@ -15,8 +15,8 @@ const ButtonThemeSwitch = () => {
       onClick={toggleTheme}
     >
       Light / Dark
-    </button >
-  )
-}
+    </button>
+  );
+};
 
 export default ButtonThemeSwitch;

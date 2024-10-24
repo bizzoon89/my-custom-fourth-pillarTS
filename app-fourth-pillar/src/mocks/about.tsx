@@ -17,11 +17,11 @@ export const aboutData = {
     'We have a unique blend of experience in music and international capital markets that no other PR firm offers.',
     'Our mission is to help organizations achieve their goals and deliver results that resonate with their audiences.We provide critical insight and valuable perspective to our clients, cutting through the complexity of the music business to deliver informed strategic communications advice.',
     'Clients immediately benefit from our combined expertise and expansive network of media contacts, stakeholders and opinion formers to provide a trusted service, which encompasses corporate PR, financial PR, internal communications, reputation management, and ESG and cultural strategy.',
-  ]
+  ],
 } as AboutBoxProps;
 
 export const joinBoxData = {
   title: 'Interested in joining our award winning team?',
   buttonText: 'Contact Us',
-  url: '/contact'
+  url: '/contact',
 } as JoinBoxProps;

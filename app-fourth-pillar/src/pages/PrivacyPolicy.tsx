@@ -6,17 +6,13 @@ import { heroData, contentData } from '../mocks/privacy-policy';
 
 const PrivacyPolicy = () => {
   return (
-    <main className='main' id='main'>
-      <Hero
-        {...heroData}
-      />
-      <TextContent
-        {...contentData}
-      >
+    <>
+      <Hero {...heroData} />
+      <TextContent {...contentData}>
         <AnimatedSquare positionClass={'square04'} />
       </TextContent>
-    </main>
-  )
-}
+    </>
+  );
+};
 
 export default PrivacyPolicy;

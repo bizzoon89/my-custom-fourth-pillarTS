@@ -1,5 +1,5 @@
 import { HeroProps } from '../components/Hero/Hero';
-import { FoundersProps } from "../pages/Founders"
+import { FoundersProps } from '../pages/Founders';
 
 export const heroData = {
   title: 'Our people',
@@ -15,7 +15,7 @@ export const dataFounders = {
     post: {
       image: {
         src: '/images/img-post-01.jpg',
-        alt: 'Claire Turvey'
+        alt: 'Claire Turvey',
       },
       title: 'Claire has 20 years’ experience in strategic communications and reputation management, including 10 years working in the City of London.',
       blockquote: {
@@ -26,9 +26,9 @@ export const dataFounders = {
         'Prior to joining Fourth Pillar, she was a managing director in the strategic communications practice of global management consultancy firm FTI Consulting, where she spent eight years advising on high profile international mandates.',
         'Claire’s primary focus is on financial and corporate PR, including investor communications, financial calendar, analyst relations, capital markets, M&A, IPOs, fundraises, restructurings, profile raising, brand building/positioning, issues/crisis management, ESG and stakeholder engagement.',
         'She has spent the majority of her career advising quoted and non-quoted companies, from global organisations and FTSE 100/250 companies to small private businesses and start-ups, asset / fund managers and private equity.',
-        'Formerly a ministerial advisor with the Irish Government, Claire began her career as a journalist and producer with The Times, Sky TV and the BBC and is a former board member of Irish Film London.'
-      ]
-    }
+        'Formerly a ministerial advisor with the Irish Government, Claire began her career as a journalist and producer with The Times, Sky TV and the BBC and is a former board member of Irish Film London.',
+      ],
+    },
   },
   founder2: {
     userId: 'lynne-best',
@@ -39,7 +39,7 @@ export const dataFounders = {
     post: {
       image: {
         src: '/images/img-post-02.jpg',
-        alt: 'Lynne Best'
+        alt: 'Lynne Best',
       },
       title: 'Lynne is an experienced strategic and corporate communications professional, having spent 15 years in the music business and wider creative industries.',
       blockquote: {
@@ -49,9 +49,8 @@ export const dataFounders = {
       paragraphs: [
         'Prior to Fourth Pillar, she was Head of Communications for the music licensing company PPL and Director at Well Red Music and Media, supporting a range of global media and music companies with strategic communications. She was also Head of PR at the BPI, the UK’s representative body for record labels and music technology companies and organiser of The BRIT Awards and Mercury Prize.',
         'Lynne’s primary focus is on strategic and corporate communications, including media relations, copywriting and speechwriting, profile raising and positioning, ESG, stakeholder engagement, and public affairs.',
-        'Prior to working in music, Lynne started her career at the European Parliament in Brussels and is a Board Member of the Arts Council of Northern Ireland. Lynne was inducted into the Music Week Women in Music Roll of Honour in 2020 and was the Northern Ireland representative on the Expert Panel for selecting Bradford as the UK City of Culture 2025.'
-      ]
-    }
+        'Prior to working in music, Lynne started her career at the European Parliament in Brussels and is a Board Member of the Arts Council of Northern Ireland. Lynne was inducted into the Music Week Women in Music Roll of Honour in 2020 and was the Northern Ireland representative on the Expert Panel for selecting Bradford as the UK City of Culture 2025.',
+      ],
+    },
   },
 } as FoundersProps;
-

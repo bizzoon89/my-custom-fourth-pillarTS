@@ -18,8 +18,7 @@ export interface HeaderProps {
 }
 
 const Header = ({ logoData, menuItems, addMenuItems }: HeaderProps) => {
-
-  const HEADER_MARGIN: number = 1
+  const HEADER_MARGIN: number = 1;
 
   const [navState, setNavState] = useState<boolean>(false);
 
@@ -32,11 +31,11 @@ const Header = ({ logoData, menuItems, addMenuItems }: HeaderProps) => {
       document.body.classList.add(`${styles.navActive}`);
       document.body.style.overflow = 'hidden';
     }
-  }
+  };
 
   const isSticky = (): void => {
     const header = document.querySelector('header') as HTMLElement | null;
-    
+
     const scrollTop: number = window.scrollY;
     const sticky = HEADER_MARGIN <= scrollTop;
 
@@ -55,13 +54,13 @@ const Header = ({ logoData, menuItems, addMenuItems }: HeaderProps) => {
       window.removeEventListener('scroll', isSticky);
     };
   }, []);
-  
+
   return (
     <header className={styles.header}>
       <div className={styles.container}>
-        <Logo {...logoData}/>
+        <Logo {...logoData} />
         <div className={styles.dropNav}>
-          <Menu menuItems={menuItems}/>
+          <Menu menuItems={menuItems} />
           <LinkList
             classList={styles.addLink}
             linkItem={addMenuItems}
@@ -72,12 +71,13 @@ const Header = ({ logoData, menuItems, addMenuItems }: HeaderProps) => {
           className={styles.navOpener}
           onClick={handleNavToggle}
           aria-expanded={navState}
-          aria-haspopup='true'>
+          aria-haspopup="true"
+        >
           <em>menu</em>
         </button>
       </div>
     </header>
-  )
-}
+  );
+};
 
 export default Header;

@@ -2,16 +2,12 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { request } from '../../services/getPosts';
 import { _URL_NEWS } from '../../constants/apiUrl';
 
-import {
-  INewsSlice,
-  INewsCards,
-  ENewsSliceStatus
-} from '../../types/newsSliceType';
+import { INewsSlice, INewsCards, ENewsSliceStatus } from '../../types/newsSliceType';
 
 const initialState: INewsSlice = {
   newsList: [],
-  status: ENewsSliceStatus.Loading
-}
+  status: ENewsSliceStatus.Loading,
+};
 
 export const fetchNews = createAsyncThunk<INewsCards[], number | undefined>(
   'news/fetchNews',
@@ -23,10 +19,10 @@ export const fetchNews = createAsyncThunk<INewsCards[], number | undefined>(
 const newsSlice = createSlice({
   name: 'newsSlice',
   initialState,
-  reducers: { },
-  extraReducers: (builder) => {
+  reducers: {},
+  extraReducers: builder => {
     builder
-      .addCase(fetchNews.pending, (state) => {
+      .addCase(fetchNews.pending, state => {
         state.newsList = [];
         state.status = ENewsSliceStatus.Loading;
       })
@@ -34,12 +30,12 @@ const newsSlice = createSlice({
         state.newsList = action.payload;
         state.status = ENewsSliceStatus.Success;
       })
-      .addCase(fetchNews.rejected, (state) => {
+      .addCase(fetchNews.rejected, state => {
         state.newsList = [];
         state.status = ENewsSliceStatus.Error;
       })
-      .addDefaultCase(() => { })
-  } 
-}); 
+      .addDefaultCase(() => {});
+  },
+});
 
 export default newsSlice.reducer;

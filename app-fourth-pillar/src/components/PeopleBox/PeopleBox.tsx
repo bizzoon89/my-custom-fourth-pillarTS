@@ -10,9 +10,8 @@ import styles from './PeopleBox.module.scss';
 
 export interface PeopleProps {
   title: string;
-  paragraphs?: PlainText[]
+  paragraphs?: PlainText[];
 }
-
 
 interface IPeopleBox {
   peopleData: PeopleProps;
@@ -37,12 +36,12 @@ const PeopleBox = ({ peopleData: { title, paragraphs }, peopleListData: peopleLi
           {paragraphs?.map((paragraph, index) => (
             <p key={index}>{paragraph}</p>
           ))}
-          <LogoList logoList={logoList}/>
+          <LogoList logoList={logoList} />
         </div>
         <AnimatedSquare positionClass={'square05'} />
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default PeopleBox;

@@ -12,7 +12,6 @@ interface IPropsNews {
 }
 
 const NewsCards = ({ posts, limit, loadMore }: IPropsNews) => {
-
   const addNewCard: number = 3;
 
   const [countCard, setCountCard] = useState<number>(limit);
@@ -20,7 +19,7 @@ const NewsCards = ({ posts, limit, loadMore }: IPropsNews) => {
   const onLoadCards = (e: React.MouseEvent<HTMLAnchorElement>) => {
     e.preventDefault();
     setCountCard(countCard + addNewCard);
-  }
+  };
 
   const renderItems = (arr: INewsCards[]) => {
     let i: number = 0;
@@ -39,36 +38,34 @@ const NewsCards = ({ posts, limit, loadMore }: IPropsNews) => {
             <h3>{item.title}</h3>
             <Link
               to={`/news/${item.id}`}
-              className={styles.linkMore}>
+              className={styles.linkMore}
+            >
               READ ALL
             </Link>
           </div>
         </article>
-      )
-    })
+      );
+    });
 
-    return (
-      <div className={styles.rowCard}>
-        {items}
-      </div>
-    )
-  }
+    return <div className={styles.rowCard}>{items}</div>;
+  };
 
   return (
     <>
       {renderItems(posts)}
       <div className={styles.textCenter}>
-        {loadMore
-          ? <a
-              href='#'
-              className={`${styles.btn} ${styles.btnArrow} ${styles.loadMore}`}
-              onClick={onLoadCards}>
-              Load more
-            </a>
-          : null}
+        {loadMore ? (
+          <a
+            href="#"
+            className={`${styles.btn} ${styles.btnArrow} ${styles.loadMore}`}
+            onClick={onLoadCards}
+          >
+            Load more
+          </a>
+        ) : null}
       </div>
     </>
-  )
-}
+  );
+};
 
 export default NewsCards;

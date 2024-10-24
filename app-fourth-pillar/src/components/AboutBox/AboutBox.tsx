@@ -8,7 +8,7 @@ import styles from './AboutBox.module.scss';
 export interface AboutBoxProps {
   title: string;
   image: IImage;
-  paragraphs?: PlainText[]
+  paragraphs?: PlainText[];
 }
 
 const AboutBox = ({ title, image, paragraphs }: AboutBoxProps) => {
@@ -16,7 +16,10 @@ const AboutBox = ({ title, image, paragraphs }: AboutBoxProps) => {
     <section className={styles.aboutSection}>
       <div className={styles.container}>
         <figure className={styles.imageBox}>
-          <img src={image.src} alt={image.alt} />
+          <img
+            src={image.src}
+            alt={image.alt}
+          />
           <AnimatedSquare positionClass={'square02'} />
         </figure>
         <div className={styles.textArea}>
@@ -27,7 +30,7 @@ const AboutBox = ({ title, image, paragraphs }: AboutBoxProps) => {
         </div>
       </div>
     </section>
-  )
-}
+  );
+};
 
 export default AboutBox;

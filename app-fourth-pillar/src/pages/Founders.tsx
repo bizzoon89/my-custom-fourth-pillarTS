@@ -37,14 +37,14 @@ const Founders = () => {
   }
   
   return (
-    <main className='main' id='main'>
+    <>
       <Hero
         {...heroData}
         optionClass={'heroAlt'}
         heroPerson={founder.person}
       />
       <Founder {...founder.post} />
-    </main>
+    </>
   )
 }
 

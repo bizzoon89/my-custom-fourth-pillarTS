@@ -13,5 +13,5 @@ export interface IServiceSlice {
 export enum EServiceSliceStatus {
   Loading = 'loading',
   Success = 'success',
-  Error = 'error'
+  Error = 'error',
 }
