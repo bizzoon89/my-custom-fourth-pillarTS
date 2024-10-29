@@ -7,6 +7,7 @@ import { ThemeProvider } from './context/themeContext';
 import store from './store';
 
 import 'normalize.css';
+import './assets/styles/style.scss';
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
