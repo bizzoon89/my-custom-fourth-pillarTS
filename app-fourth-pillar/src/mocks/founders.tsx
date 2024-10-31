@@ -1,12 +1,11 @@
-import { HeroProps } from '../components/Hero/Hero';
-import { FoundersProps } from '../pages/Founders';
+import { HeroProps } from '../components/Hero/Hero'
 
 export const heroData = {
   title: 'Our people',
-} as HeroProps;
+} as HeroProps
 
-export const dataFounders = {
-  founder1: {
+export const dataFounders = [
+  {
     userId: 'claire-turvey',
     person: {
       name: 'Claire Turvey',
@@ -17,7 +16,8 @@ export const dataFounders = {
         src: '/images/img-post-01.jpg',
         alt: 'Claire Turvey',
       },
-      title: 'Claire has 20 years’ experience in strategic communications and reputation management, including 10 years working in the City of London.',
+      title:
+        'Claire has 20 years’ experience in strategic communications and reputation management, including 10 years working in the City of London.',
       blockquote: {
         text: 'Predictions for the growth of the music industry are extremely encouraging and yet music remains one of the most under-monetised forms of entertainment. This is being recognised with more and more investment being directed towards the multitude of exciting opportunities that are emerging across the music business ecosystem every day, whether in tech solutions, streaming, catalogue acquisitions or digital evolution. Fourth Pillar is in a unique position to be able to assist organisations in navigating this often complex industry, and to craft and tell their stories to those they need to reach, be it investors, customers, employees or partners.',
         author: 'Claire Turvey',
@@ -30,7 +30,7 @@ export const dataFounders = {
       ],
     },
   },
-  founder2: {
+  {
     userId: 'lynne-best',
     person: {
       name: 'Lynne Best',
@@ -41,7 +41,8 @@ export const dataFounders = {
         src: '/images/img-post-02.jpg',
         alt: 'Lynne Best',
       },
-      title: 'Lynne is an experienced strategic and corporate communications professional, having spent 15 years in the music business and wider creative industries.',
+      title:
+        'Lynne is an experienced strategic and corporate communications professional, having spent 15 years in the music business and wider creative industries.',
       blockquote: {
         text: 'As the industry continues to be fuelled by innovation, entrepreneurship and creativity, it is imperative that leading businesses define and communicate their ambitions and activities effectively. At the same time, it is critical for companies to take a position on the more strategic challenges and opportunities facing the industry, from equity, diversity and inclusion to ESG, the role of music in levelling up, and mental health and wellbeing, all of which inform a company’s culture and shape their reputation internally and externally. Our specialism means we are immersed in every aspect of the industry which gives us a unique ability to provide honest, informed advice and, ultimately, to protect and enhance reputations.',
         author: 'Lynne Best',
@@ -53,4 +54,4 @@ export const dataFounders = {
       ],
     },
   },
-} as FoundersProps;
+]

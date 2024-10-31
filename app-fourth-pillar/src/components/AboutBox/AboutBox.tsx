@@ -1,25 +1,22 @@
-import AnimatedSquare from '../AnimatedSquare';
+import AnimatedSquare from '../AnimatedSquare'
 
-import { IImage } from '../../types';
-import { PlainText } from '../../types';
+import { IImage } from '../../types'
+import { PlainText } from '../../types'
 
-import styles from './AboutBox.module.scss';
+import styles from './AboutBox.module.scss'
 
 export interface AboutBoxProps {
-  title: string;
-  image: IImage;
-  paragraphs?: PlainText[];
+  title: string
+  image: IImage
+  paragraphs?: PlainText[]
 }
 
-const AboutBox = ({ title, image, paragraphs }: AboutBoxProps) => {
+export const AboutBox = ({ title, image, paragraphs }: AboutBoxProps) => {
   return (
     <section className={styles.aboutSection}>
       <div className={styles.container}>
         <figure className={styles.imageBox}>
-          <img
-            src={image.src}
-            alt={image.alt}
-          />
+          <img src={image.src} alt={image.alt} />
           <AnimatedSquare positionClass={'square02'} />
         </figure>
         <div className={styles.textArea}>
@@ -30,7 +27,5 @@ const AboutBox = ({ title, image, paragraphs }: AboutBoxProps) => {
         </div>
       </div>
     </section>
-  );
-};
-
-export default AboutBox;
+  )
+}

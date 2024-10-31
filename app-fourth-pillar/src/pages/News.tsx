@@ -1,26 +1,29 @@
-import Hero from '../components/Hero';
-import CardList from '../components/CardList';
-import SingleNews from '../components/SingleNews';
+import Hero from '../components/Hero'
+import CardList from '../components/CardList'
+import { SingleNews } from '../components/SingleNews'
 
-import { ETypeCards } from '../types';
+import { heroData } from '../mocks/news'
+import NewsCards from '../components/CardList/NewsCards'
+import { ENewsSliceStatus } from '../types/newsSliceType'
+import { useNews } from '../hooks/useNews'
 
-import { heroData } from '../mocks/news';
+const LIMIT = 3
 
 const News = () => {
+  const { newsList, newsStatus } = useNews()
+
   return (
     <>
-      <Hero
-        {...heroData}
-        optionClass={'heroNews'}
-      />
+      <Hero {...heroData} optionClass={'heroNews'} />
       <SingleNews />
       <CardList
         titleSection={'Articles'}
-        type={ETypeCards.News}
-        loadMore={true}
-      />
+        isLoading={newsStatus === ENewsSliceStatus.Loading}
+      >
+        <NewsCards posts={newsList} limit={LIMIT} loadMore={true} />
+      </CardList>
     </>
   )
 }
 
-export default News;
+export default News

@@ -1,13 +1,13 @@
-import AnimatedSquare from '../AnimatedSquare';
+import AnimatedSquare from '../AnimatedSquare'
 
-import styles from './Post.module.scss';
+import styles from './Post.module.scss'
 
-import { IServiceCards } from '../../types/serviceSliceType';
-import { INewsCards } from '../../types/newsSliceType';
+import { IServiceCards } from '../../types/serviceSliceType'
+import { INewsCards } from '../../types/newsSliceType'
 
 interface IPost {
-  post: IServiceCards | INewsCards;
-  children?: React.ReactNode;
+  post: IServiceCards | INewsCards
+  children?: React.ReactNode
 }
 
 const Post = ({ post, children }: IPost) => {
@@ -20,7 +20,7 @@ const Post = ({ post, children }: IPost) => {
         <AnimatedSquare positionClass={'square03'} />
       </div>
     </section>
-  );
-};
+  )
+}
 
-export default Post;
+export default Post
