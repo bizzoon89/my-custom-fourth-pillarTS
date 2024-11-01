@@ -1,4 +1,4 @@
-import { useEffect, useState, useMemo} from 'react';
+import { useState} from 'react';
 import { Link, useParams, useNavigate } from 'react-router-dom';
 
 import styles from './NavPost.module.scss';
@@ -13,17 +13,7 @@ const NavPost = ({ postType, arrLength }: INavPost) => {
   const { idPost } = useParams<{ idPost: string }>();
   const navigate = useNavigate();
 
-  const initialNavPost = useMemo(() => {
-    return idPost ? Number(idPost) : 1;
-  }, [idPost]);
-
-  const [navPost, setNavPost] = useState<number>(initialNavPost);
-
-  useEffect(() => {
-    if (idPost) {
-      setNavPost(Number(idPost));
-    }
-  }, [idPost]);
+  const [navPost, setNavPost] = useState<number>(idPost ? Number(idPost) : 1);
   
   const scrollToTop = () => {
     window.scrollTo({

@@ -1,12 +1,12 @@
 import Hero from '../components/Hero';
 import CardList from '../components/CardList';
-import BlockquoteSlider from '../components/BlockquoteSlider';
+import { BlockquoteSlider } from '../components/BlockquoteSlider';
 
 import { ETypeCards } from '../types';
 
 import { heroData, slideData } from '../mocks/services';
 
-const Services = () => {
+export const Services = () => {
   return (
     <>
       <Hero {...heroData} />
@@ -18,5 +18,3 @@ const Services = () => {
     </>
   );
 };
-
-export default Services;

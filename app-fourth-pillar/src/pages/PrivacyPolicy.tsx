@@ -1,10 +1,10 @@
 import Hero from '../components/Hero';
 import TextContent from '../components/TextContent';
-import AnimatedSquare from '../components/AnimatedSquare';
+import { AnimatedSquare } from '../components/AnimatedSquare';
 
 import { heroData, contentData } from '../mocks/privacy-policy';
 
-const PrivacyPolicy = () => {
+export const PrivacyPolicy = () => {
   return (
     <>
       <Hero {...heroData} />
@@ -14,5 +14,3 @@ const PrivacyPolicy = () => {
     </>
   );
 };
-
-export default PrivacyPolicy;

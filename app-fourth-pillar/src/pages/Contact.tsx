@@ -3,7 +3,7 @@ import ContactForm from '../components/ContactForm';
 
 import { heroData } from '../mocks/contact';
 
-const Contact = () => {
+export const Contact = () => {
   return (
     <>
       <Hero
@@ -14,5 +14,3 @@ const Contact = () => {
     </>
   );
 }
-
-export default Contact;

@@ -1,6 +1,6 @@
 import { HeroProps } from '../components/Hero/Hero';
 import { JoinBoxProps } from '../components/JoinBox/JoinBox';
-import { AboutBoxProps } from '../components/AboutBox/AboutBox';
+import { AboutBoxProps } from '../components/AboutBox';
 
 export const heroData = {
   title: 'ABOUT US',

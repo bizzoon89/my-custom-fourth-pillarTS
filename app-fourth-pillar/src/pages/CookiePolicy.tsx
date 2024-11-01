@@ -1,10 +1,10 @@
 import Hero from '../components/Hero';
 import TextContent from '../components/TextContent';
-import AnimatedSquare from '../components/AnimatedSquare';
+import { AnimatedSquare } from '../components/AnimatedSquare';
 
 import { heroData, contentData } from '../mocks/cookie-policy';
 
-const CookiePolicy = () => {
+export const CookiePolicy = () => {
   return (
     <>
       <Hero
@@ -18,5 +18,3 @@ const CookiePolicy = () => {
     </>
   )
 }
-
-export default CookiePolicy;

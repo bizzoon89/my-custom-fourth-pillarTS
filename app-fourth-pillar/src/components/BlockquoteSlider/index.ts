@@ -1,1 +1,1 @@
-export { default } from './BlockquoteSlider';
+export * from './BlockquoteSlider';

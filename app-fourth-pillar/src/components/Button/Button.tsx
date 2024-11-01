@@ -8,7 +8,7 @@ interface IButton {
   buttonColor?: string;
 }
 
-const Button = ({ url, buttonText, buttonColor }: IButton) => {
+export const Button = ({ url, buttonText, buttonColor }: IButton) => {
   return (
     <Link
       to={url}
@@ -18,5 +18,3 @@ const Button = ({ url, buttonText, buttonColor }: IButton) => {
     </Link>
   );
 };
-
-export default Button;

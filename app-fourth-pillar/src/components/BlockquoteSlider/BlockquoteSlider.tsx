@@ -18,7 +18,7 @@ interface ISlide {
   slideData: SlideProps[];
 }
 
-const BlockquoteSlider = ({ slideData }: ISlide) => {
+export const BlockquoteSlider = ({ slideData }: ISlide) => {
   return (
     <section className={styles.blockquoteSection}>
       <div className={styles.container}>
@@ -46,5 +46,3 @@ const BlockquoteSlider = ({ slideData }: ISlide) => {
     </section>
   );
 };
-
-export default BlockquoteSlider;

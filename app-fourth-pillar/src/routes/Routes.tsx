@@ -1,6 +1,6 @@
 import { createBrowserRouter } from 'react-router-dom';
 
-import PublicLayouts from '../layouts/PublicLayouts';
+import { PublicLayouts } from '../layouts/PublicLayouts';
 import { Home, About, NotFound, Services, Clients, People, Contact, News, Founders, SinglePost, PrivacyPolicy, CookiePolicy } from '../pages';
 import { ETypeCards } from '../types';
 

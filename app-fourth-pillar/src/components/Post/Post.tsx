@@ -1,4 +1,4 @@
-import AnimatedSquare from '../AnimatedSquare';
+import {AnimatedSquare} from '../AnimatedSquare';
 
 import styles from './Post.module.scss';
 

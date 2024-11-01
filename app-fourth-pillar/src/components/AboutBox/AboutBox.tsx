@@ -1,4 +1,4 @@
-import AnimatedSquare from '../AnimatedSquare';
+import {AnimatedSquare} from '../AnimatedSquare';
 
 import { IImage } from '../../types';
 import { PlainText } from '../../types';
@@ -11,7 +11,7 @@ export interface AboutBoxProps {
   paragraphs?: PlainText[];
 }
 
-const AboutBox = ({ title, image, paragraphs }: AboutBoxProps) => {
+export const AboutBox = ({ title, image, paragraphs }: AboutBoxProps) => {
   return (
     <section className={styles.aboutSection}>
       <div className={styles.container}>
@@ -33,4 +33,3 @@ const AboutBox = ({ title, image, paragraphs }: AboutBoxProps) => {
   );
 };
 
-export default AboutBox;

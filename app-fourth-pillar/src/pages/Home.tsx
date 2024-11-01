@@ -1,6 +1,6 @@
 import Hero from '../components/Hero';
 import InfoText from '../components/InfoText';
-import AnimatedSquare from '../components/AnimatedSquare';
+import { AnimatedSquare } from '../components/AnimatedSquare';
 import ContactForm from '../components/ContactForm';
 import CardList from '../components/CardList';
 
@@ -8,7 +8,7 @@ import { ETypeCards } from '../types';
 
 import { heroData, infoTextData } from '../mocks/home';
 
-const Home = () => {
+export const Home = () => {
   return (
     <>
       <Hero
@@ -27,5 +27,3 @@ const Home = () => {
     </>
   )
 }
-
-export default Home;

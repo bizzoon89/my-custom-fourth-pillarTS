@@ -24,7 +24,7 @@ interface ISinglePost {
   postType: ETypeCards;
 }
 
-const SinglePost = ({ postType }: ISinglePost) => {
+export const SinglePost = ({ postType }: ISinglePost) => {
   const dispatch: AppDispatch = useDispatch<AppDispatch>();
   const newsList = useSelector(selectNewsList);
   const serviceList = useSelector(selectServiceList);
@@ -36,7 +36,11 @@ const SinglePost = ({ postType }: ISinglePost) => {
   useEffect(() => {
     if (postType === ETypeCards.Service && serviceStatus !== EServiceSliceStatus.Success) {
       dispatch(fetchServices());
-    } else if (postType === ETypeCards.News && newsStatus !== ENewsSliceStatus.Success) {
+    }
+  }, [dispatch, postType, serviceStatus, newsStatus]);
+
+  useEffect(() => {
+    if (postType === ETypeCards.News && newsStatus !== ENewsSliceStatus.Success) {
       dispatch(fetchNews());
     }
   }, [dispatch, postType, serviceStatus, newsStatus]);
@@ -84,5 +88,3 @@ const SinglePost = ({ postType }: ISinglePost) => {
     </>
   );
 };
-
-export default SinglePost;

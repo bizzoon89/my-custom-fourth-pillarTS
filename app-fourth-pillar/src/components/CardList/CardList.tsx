@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 import ServiceCards from './ServiceCards';
@@ -53,25 +53,35 @@ const CardsList = ({ type, titleSection, limit = 3, loadMore }: ICardsList) => {
     }
   };
 
+  const isLoading = useMemo(
+    () =>
+      type === ETypeCards.Service && serviceStatus === EServiceSliceStatus.Loading ||
+      type === ETypeCards.News && newsStatus === ENewsSliceStatus.Loading ||
+      type === ETypeCards.Client && clientStatus === EClientSliceStatus.Loading,
+    [type, serviceStatus, newsStatus, clientStatus]
+  );
+
   useEffect(() => {
     if (type === ETypeCards.Service && serviceStatus !== EServiceSliceStatus.Success) {
       dispatch(fetchServices(limit));
-    } else if (type === ETypeCards.Client && clientStatus !== EClientSliceStatus.Success) {
+    } 
+  }, [dispatch, type, limit, serviceStatus]);
+
+  useEffect(() => {
+    if (type === ETypeCards.Client && clientStatus !== EClientSliceStatus.Success) {
       dispatch(fetchClient(limit));
-    } else if (type === ETypeCards.News && newsStatus !== ENewsSliceStatus.Success) {
+    }
+  }, [dispatch, type, limit, clientStatus]);
+
+  useEffect(() => {
+    if (type === ETypeCards.News && newsStatus !== ENewsSliceStatus.Success) {
       dispatch(fetchNews(limit));
     }
-  }, [dispatch, type, limit, serviceStatus, clientStatus, newsStatus]);
+  }, [dispatch, type, limit, newsStatus]);
 
-  if (
-    (type === ETypeCards.Service && serviceStatus === EServiceSliceStatus.Loading) ||
-    (type === ETypeCards.News && newsStatus === ENewsSliceStatus.Loading) ||
-    (type === ETypeCards.Client && clientStatus === EClientSliceStatus.Loading)
-  ) {
-    return <div className={styles.container}>Loading..</div>;
-  }
-
-  return (
+  return isLoading ? (
+    <div className={styles.container}>Loading..</div>
+  ) : (
     <section className={styles.cardsSection}>
       <div className={styles.container}>
         {titleSection && <h3>{titleSection}</h3>}

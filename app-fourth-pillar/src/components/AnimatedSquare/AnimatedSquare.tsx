@@ -4,7 +4,7 @@ interface IAnimatedSquare {
   positionClass: string;
 }
 
-const AnimatedSquare = ({ positionClass }: IAnimatedSquare) => {
+export const AnimatedSquare = ({ positionClass }: IAnimatedSquare) => {
   return (
     <div className={`${styles.animatedSquare} ${styles[positionClass]}`}>
       <span></span>
@@ -14,5 +14,3 @@ const AnimatedSquare = ({ positionClass }: IAnimatedSquare) => {
     </div>
   );
 };
-
-export default AnimatedSquare;

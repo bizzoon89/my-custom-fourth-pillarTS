@@ -1,4 +1,4 @@
-import AnimatedSquare from '../AnimatedSquare';
+import {AnimatedSquare} from '../AnimatedSquare';
 import LogoList from '../LogoList/LogoList';
 import PeopleCard from '../PeopleCard';
 

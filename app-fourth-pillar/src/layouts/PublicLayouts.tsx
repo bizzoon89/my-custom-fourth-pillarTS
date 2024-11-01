@@ -7,28 +7,30 @@ import Footer from '../components/Footer';
 import { headerData } from '../mocks/header';
 import { footerData } from '../mocks/footer';
 
-const PublicLayouts = () => {
+export const PublicLayouts = () => {
+
+  const { logoData, menuItems, addMenuItems } = headerData;
+  const { logoData: logoDataFooter, contactInfo, footerMenu, servicesMenu, addFooterMenu, socialLinkList } = footerData;
+
   return (
     <>
       <ScrollToTop />
       <Header
-        logoData={headerData.logoData}
-        menuItems={headerData.menuItems}
-        addMenuItems={headerData.addMenuItems}
+        logoData={logoData}
+        menuItems={menuItems}
+        addMenuItems={addMenuItems}
       />
-      <main className='main'>
+      <main className="main">
         <Outlet />
       </main>
       <Footer
-        logoData={footerData.logoData}
-        contactInfo={footerData.contactInfo}
-        footerMenu={footerData.footerMenu}
-        servicesMenu={footerData.servicesMenu}
-        addFooterMenu={footerData.addFooterMenu}
-        socialLinkList={footerData.socialLinkList}
+        logoData={logoDataFooter}
+        contactInfo={contactInfo}
+        footerMenu={footerMenu}
+        servicesMenu={servicesMenu}
+        addFooterMenu={addFooterMenu}
+        socialLinkList={socialLinkList}
       />
     </>
   );
 };
-
-export default PublicLayouts;

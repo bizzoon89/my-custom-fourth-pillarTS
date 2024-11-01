@@ -1,7 +1,7 @@
 import Hero from '../components/Hero';
-import Button from '../components/Button';
+import { Button } from '../components/Button';
 
-const NotFound = () => {
+export const NotFound = () => {
   return (
     <>
       <Hero
@@ -17,5 +17,3 @@ const NotFound = () => {
     </>
   )
 }
-
-export default NotFound;

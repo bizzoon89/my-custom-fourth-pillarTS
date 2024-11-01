@@ -4,7 +4,7 @@ import PeopleBox from '../components/PeopleBox';
 
 import { heroData, joinBoxData, peopleData, peopleListData, logoListData } from '../mocks/people';
 
-const People = () => {
+export const People = () => {
   return (
     <>
       <Hero {...heroData} />
@@ -21,5 +21,3 @@ const People = () => {
     </>
   );
 };
-
-export default People;

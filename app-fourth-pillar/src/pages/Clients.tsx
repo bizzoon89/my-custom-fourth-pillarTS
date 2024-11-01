@@ -5,7 +5,7 @@ import { ETypeCards } from '../types';
 
 import { heroData } from '../mocks/clients';
 
-const Clients = () => {
+export const Clients = () => {
   return (
     <>
       <Hero {...heroData} />
@@ -16,5 +16,3 @@ const Clients = () => {
     </>
   )
 }
-
-export default Clients;

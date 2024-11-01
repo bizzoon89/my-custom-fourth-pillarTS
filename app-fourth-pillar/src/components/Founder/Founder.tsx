@@ -1,4 +1,4 @@
-import AnimatedSquare from '../AnimatedSquare';
+import {AnimatedSquare} from '../AnimatedSquare';
 
 import { IImage } from '../../types';
 import { IBlockquote } from '../../types';

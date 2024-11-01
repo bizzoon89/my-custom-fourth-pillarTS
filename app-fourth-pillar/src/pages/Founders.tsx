@@ -2,7 +2,7 @@ import { useParams } from 'react-router-dom';
 
 import Hero from '../components/Hero';
 import Founder from '../components/Founder/Founder';
-import NotFound from './NotFound';
+import { NotFound } from './NotFound';
 
 import { IFounder } from '../components/Founder/Founder';
   
@@ -13,21 +13,17 @@ export interface IPerson {
   position: string;
 }
 
-interface FounderProps {
+export interface FounderProps {
   userId: string;
   person: IPerson;
   post: IFounder;
 }
 
-export interface FoundersProps {
-  [propName: string]: FounderProps;
-} 
-
-const Founders = () => {
+export const Founders = () => {
   const { id } = useParams<{ id: string }>();
 
   const findFounderByUserId = (userId: string): FounderProps | undefined => {
-    return Object.values(dataFounders).find(founder => founder.userId === userId);
+    return dataFounders.find(founder => founder.userId === userId);
   };
   
   const founder = id ? findFounderByUserId(id) : undefined;
@@ -47,5 +43,3 @@ const Founders = () => {
     </>
   )
 }
-
-export default Founders;

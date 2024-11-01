@@ -6,7 +6,7 @@ import { ETypeCards } from '../types';
 
 import { heroData } from '../mocks/news';
 
-const News = () => {
+export const News = () => {
   return (
     <>
       <Hero
@@ -22,5 +22,3 @@ const News = () => {
     </>
   )
 }
-
-export default News;

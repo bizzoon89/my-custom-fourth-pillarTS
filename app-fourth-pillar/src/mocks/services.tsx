@@ -1,5 +1,5 @@
 import { HeroProps } from '../components/Hero/Hero';
-import { SlideProps } from '../components/BlockquoteSlider/BlockquoteSlider';
+import { SlideProps } from '../components/BlockquoteSlider';
 
 export const heroData = {
   title: 'OUR \n Services',
