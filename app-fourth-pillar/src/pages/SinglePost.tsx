@@ -1,6 +1,4 @@
-import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 
 import { Hero } from '../components/Hero';
 import { Post } from '../components/Post';
@@ -8,42 +6,28 @@ import { SocialNetworks } from '../components/SocialNetworks';
 import { NavPost } from '../components/NavPost';
 import { CardList } from '../components/CardList';
 
-import { AppDispatch } from '../store';
-import { fetchServices } from '../store/slices/serviceSlice';
-import { fetchNews } from '../store/slices/newsSlice';
-import { selectServiceList, selectNewsList, selectServiceStatus, selectNewsStatus } from '../store/selectors';
-
 import { EServiceSliceStatus } from '../types/serviceSliceType';
 import { ENewsSliceStatus } from '../types/newsSliceType';
 
 import { ETypeCards } from '../types';
 
+import { useService } from '../hooks/useService';
+import { useNews } from '../hooks/useNews';
+
 import { socialLinkData } from '../mocks/single-post';
+import { NewsCards } from '../components/CardList/NewsCards';
 
 interface ISinglePost {
   postType: ETypeCards;
 }
 
+const LIMIT = 3;
+
 export const SinglePost = ({ postType }: ISinglePost) => {
-  const dispatch: AppDispatch = useDispatch<AppDispatch>();
-  const newsList = useSelector(selectNewsList);
-  const serviceList = useSelector(selectServiceList);
-  const serviceStatus = useSelector(selectServiceStatus);
-  const newsStatus = useSelector(selectNewsStatus);
-
   const { idPost } = useParams<{ idPost: string }>();
+  const { newsList, newsStatus } = useNews();
+  const { serviceList, serviceStatus } = useService();
 
-  useEffect(() => {
-    if (postType === ETypeCards.Service && serviceStatus !== EServiceSliceStatus.Success) {
-      dispatch(fetchServices());
-    }
-  }, [dispatch, postType, serviceStatus, newsStatus]);
-
-  useEffect(() => {
-    if (postType === ETypeCards.News && newsStatus !== ENewsSliceStatus.Success) {
-      dispatch(fetchNews());
-    }
-  }, [dispatch, postType, serviceStatus, newsStatus]);
 
   const posts = postType === ETypeCards.Service ? serviceList : newsList;
 
@@ -63,28 +47,30 @@ export const SinglePost = ({ postType }: ISinglePost) => {
   return (
     <>
       <Hero title={post.title} />
-      <Post post={post} >
-        {postType === ETypeCards.News
-          ? <SocialNetworks
+      <Post post={post}>
+        {postType === ETypeCards.News ? (
+          <SocialNetworks
             contentPosition={true}
             socialLinkList={socialLinkData}
-            />
-          : null
-        }
+          />
+        ) : null}
       </Post>
       <NavPost
         postType={postType}
         arrLength={posts.length}
       />
-      {
-        postType === ETypeCards.News
-        ? <CardList
+      {postType === ETypeCards.News ? (
+        <CardList
           titleSection={'Articles'}
-            type={ETypeCards.News}
-          loadMore={false}
-        />
-        : null
-      }
+          isLoading={newsStatus === ENewsSliceStatus.Loading}
+        >
+          <NewsCards
+            posts={newsList}
+            limit={LIMIT}
+            loadMore={false}
+          />
+        </CardList>
+      ) : null}
     </>
   );
 };

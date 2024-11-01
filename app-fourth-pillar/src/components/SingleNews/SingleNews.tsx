@@ -1,24 +1,11 @@
-import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useDispatch, useSelector } from 'react-redux';
 
-import { AppDispatch } from '../../store';
-import { fetchNews } from '../../store/slices/newsSlice';
-import { selectNewsList, selectNewsStatus } from '../../store/selectors';
-import { ENewsSliceStatus } from '../../types/newsSliceType';
+import { useNews } from '../../hooks/useNews';
 
 import styles from './SingleNews.module.scss';
 
 export const SingleNews = () => {
-  const dispatch: AppDispatch = useDispatch<AppDispatch>();
-  const newsList = useSelector(selectNewsList);
-  const newsStatus = useSelector(selectNewsStatus);
-
-  useEffect(() => {
-    if (newsStatus !== ENewsSliceStatus.Success) {
-      dispatch(fetchNews());
-    }
-  }, [dispatch, newsStatus]);
+  const { newsList } = useNews();
 
   const newsPostIndex: number = Math.floor(Math.random() * newsList.length);
   const newsPostElement = newsList[newsPostIndex];

@@ -1,12 +1,18 @@
 import { Hero } from '../components/Hero';
 import { CardList } from '../components/CardList';
 import { SingleNews } from '../components/SingleNews';
+import { NewsCards } from '../components/CardList/NewsCards';
 
-import { ETypeCards } from '../types';
+import { useNews } from '../hooks/useNews';
+import { ENewsSliceStatus } from '../types/newsSliceType';
 
 import { heroData } from '../mocks/news';
 
+const LIMIT = 3;
+
 export const News = () => {
+  const { newsList, newsStatus } = useNews();
+
   return (
     <>
       <Hero
@@ -16,9 +22,14 @@ export const News = () => {
       <SingleNews />
       <CardList
         titleSection={'Articles'}
-        type={ETypeCards.News}
-        loadMore={true}
-      />
+        isLoading={newsStatus === ENewsSliceStatus.Loading}
+      >
+        <NewsCards
+          posts={newsList}
+          limit={LIMIT}
+          loadMore={true}
+        />
+      </CardList>
     </>
   );
 };

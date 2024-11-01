@@ -1,7 +1,5 @@
 //import { useEffect, useState } from 'react';
-import { useEffect } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { Logo } from '../Logo';
@@ -9,15 +7,12 @@ import { FooterArea } from '../FooterArea';
 import { LinkList } from '../LinkList';
 import { SocialNetworks } from '../SocialNetworks';
 
-import { AppDispatch } from '../../store';
-import { fetchServices } from '../../store/slices/serviceSlice';
-import { EServiceSliceStatus } from '../../types/serviceSliceType';
-import { selectServiceList, selectServiceStatus } from '../../store/selectors';
-
 import { ILogo } from '../Logo/Logo';
 import { IContactInfo } from '../FooterArea/FooterArea';
 import { ILink } from '../../types';
 import { ISocialLinks } from '../SocialNetworks/SocialNetworks';
+
+import { useService } from '../../hooks/useService';
 
 import styles from './Footer.module.scss';
 
@@ -36,15 +31,7 @@ export interface FooterProps {
 }
 
 export const Footer = ({ logoData, contactInfo, footerMenu, servicesMenu, addFooterMenu, socialLinkList }: FooterProps) => {
-  const dispatch: AppDispatch = useDispatch<AppDispatch>();
-  const serviceList = useSelector(selectServiceList);
-  const serviceStatus = useSelector(selectServiceStatus);
-
-  useEffect(() => {
-    if (serviceStatus !== EServiceSliceStatus.Success) {
-      dispatch(fetchServices());
-    }
-  }, [dispatch, serviceStatus]);
+  const { serviceList } = useService();
 
   return (
     <footer className={styles.footer}>
