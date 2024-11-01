@@ -4,10 +4,10 @@ import { v4 as uuidv4 } from 'uuid';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import Logo from '../Logo';
-import FooterArea from '../FooterArea';
-import LinkList from '../LinkList';
-import SocialNetworks from '../SocialNetworks';
+import { Logo } from '../Logo';
+import { FooterArea } from '../FooterArea';
+import { LinkList } from '../LinkList';
+import { SocialNetworks } from '../SocialNetworks';
 
 import { AppDispatch } from '../../store';
 import { fetchServices } from '../../store/slices/serviceSlice';
@@ -35,7 +35,7 @@ export interface FooterProps {
   socialLinkList: ISocialLinks[];
 }
 
-const Footer = ({ logoData, contactInfo, footerMenu, servicesMenu, addFooterMenu, socialLinkList }: FooterProps) => {
+export const Footer = ({ logoData, contactInfo, footerMenu, servicesMenu, addFooterMenu, socialLinkList }: FooterProps) => {
   const dispatch: AppDispatch = useDispatch<AppDispatch>();
   const serviceList = useSelector(selectServiceList);
   const serviceStatus = useSelector(selectServiceStatus);
@@ -87,5 +87,3 @@ const Footer = ({ logoData, contactInfo, footerMenu, servicesMenu, addFooterMenu
     </footer>
   );
 };
-
-export default Footer;

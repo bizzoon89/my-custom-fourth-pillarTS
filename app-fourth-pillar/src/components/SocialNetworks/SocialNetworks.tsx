@@ -17,7 +17,7 @@ interface SocialNetworks {
   socialLinkList: ISocialLinks[];
 }
 
-const SocialNetworks = ({ contentPosition, socialLinkList }: SocialNetworks) => {
+export const SocialNetworks = ({ contentPosition, socialLinkList }: SocialNetworks) => {
   return (
     <ul className={
       contentPosition
@@ -42,5 +42,3 @@ const SocialNetworks = ({ contentPosition, socialLinkList }: SocialNetworks) => 
     </ul>
   );
 };
-
-export default SocialNetworks;

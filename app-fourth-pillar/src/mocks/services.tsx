@@ -1,4 +1,4 @@
-import { HeroProps } from '../components/Hero/Hero';
+import { HeroProps } from '../components/Hero';
 import { SlideProps } from '../components/BlockquoteSlider';
 
 export const heroData = {

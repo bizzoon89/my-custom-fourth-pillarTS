@@ -1,9 +1,9 @@
 import { useState, useEffect } from 'react';
 
-import Menu from '../Menu';
-import Logo from '../Logo';
-import ButtonThemeSwitch from '../ButtonThemeSwitch';
-import LinkList from '../LinkList';
+import { Menu } from '../Menu';
+import { Logo } from '../Logo';
+import { ButtonThemeSwitch } from '../ButtonThemeSwitch';
+import { LinkList } from '../LinkList';
 
 import { ILogo } from '../Logo/Logo';
 import { IMenuItem } from '../Menu/Menu';
@@ -17,7 +17,7 @@ export interface HeaderProps {
   addMenuItems: ILink[];
 }
 
-const Header = ({ logoData, menuItems, addMenuItems }: HeaderProps) => {
+export const Header = ({ logoData, menuItems, addMenuItems }: HeaderProps) => {
   const HEADER_MARGIN: number = 1;
 
   const [navState, setNavState] = useState<boolean>(false);
@@ -79,5 +79,3 @@ const Header = ({ logoData, menuItems, addMenuItems }: HeaderProps) => {
     </header>
   );
 };
-
-export default Header;

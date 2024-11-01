@@ -1,6 +1,6 @@
-import Hero from '../components/Hero';
-import JoinBox from '../components/JoinBox';
-import PeopleBox from '../components/PeopleBox';
+import { Hero } from '../components/Hero';
+import { JoinBox } from '../components/JoinBox';
+import { PeopleBox } from '../components/PeopleBox';
 
 import { heroData, joinBoxData, peopleData, peopleListData, logoListData } from '../mocks/people';
 

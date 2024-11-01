@@ -1,12 +1,10 @@
-import Hero from '../components/Hero';
+import { Hero } from '../components/Hero';
 import { Button } from '../components/Button';
 
 export const NotFound = () => {
   return (
     <>
-      <Hero
-        title={'404'}
-      >
+      <Hero title={'404'}>
         <p>Page not found.</p>
         <Button
           url={'/'}
@@ -15,5 +13,5 @@ export const NotFound = () => {
         />
       </Hero>
     </>
-  )
-}
+  );
+};

@@ -1,4 +1,4 @@
-import {AnimatedSquare} from '../AnimatedSquare';
+import { AnimatedSquare } from '../AnimatedSquare';
 
 import { IImage } from '../../types';
 import { IBlockquote } from '../../types';
@@ -13,7 +13,7 @@ export interface IFounder {
   paragraphs?: PlainText[];
 }
 
-const Founder = ({ image, title, blockquote, paragraphs }: IFounder) => {
+export const Founder = ({ image, title, blockquote, paragraphs }: IFounder) => {
   return (
     <section className={styles.singlePostSection}>
       <div className={styles.container}>
@@ -38,5 +38,3 @@ const Founder = ({ image, title, blockquote, paragraphs }: IFounder) => {
     </section>
   );
 };
-
-export default Founder;

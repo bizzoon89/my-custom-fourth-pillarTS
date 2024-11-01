@@ -3,7 +3,7 @@ import { ThemeContext } from '../../context/themeContext';
 
 import styles from './ButtonThemeSwitch.module.scss';
 
-const ButtonThemeSwitch = () => {
+export const ButtonThemeSwitch = () => {
   const { theme, toggleTheme } = useContext(ThemeContext);
 
   return (
@@ -18,5 +18,3 @@ const ButtonThemeSwitch = () => {
     </button>
   );
 };
-
-export default ButtonThemeSwitch;

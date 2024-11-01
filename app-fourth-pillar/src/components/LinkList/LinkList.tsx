@@ -8,7 +8,7 @@ interface ILinkList {
   linkItem: ILink[];
 }
 
-const LinkList = ({ classList, linkItem }: ILinkList) => {
+export const LinkList = ({ classList, linkItem }: ILinkList) => {
   return (
     <ul className={classList}>
       {linkItem.map(item => (
@@ -19,5 +19,3 @@ const LinkList = ({ classList, linkItem }: ILinkList) => {
     </ul>
   );
 };
-
-export default LinkList;

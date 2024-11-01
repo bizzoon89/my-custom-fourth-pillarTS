@@ -1,6 +1,6 @@
-import Hero from '../components/Hero';
-import CardList from '../components/CardList';
-import SingleNews from '../components/SingleNews';
+import { Hero } from '../components/Hero';
+import { CardList } from '../components/CardList';
+import { SingleNews } from '../components/SingleNews';
 
 import { ETypeCards } from '../types';
 
@@ -20,5 +20,5 @@ export const News = () => {
         loadMore={true}
       />
     </>
-  )
-}
+  );
+};

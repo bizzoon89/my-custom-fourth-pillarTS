@@ -2,11 +2,11 @@ import { useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 
-import Hero from '../components/Hero';
-import Post from '../components/Post';
-import SocialNetworks from '../components/SocialNetworks';
-import NavPost from '../components/NavPost';
-import CardList from '../components/CardList';
+import { Hero } from '../components/Hero';
+import { Post } from '../components/Post';
+import { SocialNetworks } from '../components/SocialNetworks';
+import { NavPost } from '../components/NavPost';
+import { CardList } from '../components/CardList';
 
 import { AppDispatch } from '../store';
 import { fetchServices } from '../store/slices/serviceSlice';

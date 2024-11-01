@@ -14,7 +14,7 @@ interface ILogoList {
   logoList: LogoListProps[];
 }
 
-const LogoList = ({ logoList }: ILogoList) => {
+export const LogoList = ({ logoList }: ILogoList) => {
   return (
     <ul className={styles.logoList}>
       {logoList.map(item => (
@@ -35,5 +35,3 @@ const LogoList = ({ logoList }: ILogoList) => {
     </ul>
   );
 };
-
-export default LogoList;

@@ -13,7 +13,7 @@ interface IMenu {
   menuItems: IMenuItem[];
 }
 
-const Menu = ({ menuItems }: IMenu) => {
+export const Menu = ({ menuItems }: IMenu) => {
   return (
     <nav className={styles.mainNav}>
       <ul className={styles.nav}>
@@ -34,5 +34,3 @@ const Menu = ({ menuItems }: IMenu) => {
     </nav>
   );
 };
-
-export default Menu;

@@ -1,9 +1,9 @@
 import { useEffect, useMemo } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import ServiceCards from './ServiceCards';
-import ClientCards from './ClientCards';
-import NewsCards from './NewsCards';
+import { ServiceCards } from './ServiceCards';
+import { ClientCards } from './ClientCards';
+import { NewsCards } from './NewsCards';
 
 import { fetchServices } from '../../store/slices/serviceSlice';
 import { fetchClient } from '../../store/slices/clientSlice';
@@ -25,7 +25,7 @@ interface ICardsList {
   loadMore?: boolean;
 }
 
-const CardsList = ({ type, titleSection, limit = 3, loadMore }: ICardsList) => {
+export const CardList = ({ type, titleSection, limit = 3, loadMore }: ICardsList) => {
   const dispatch: AppDispatch = useDispatch<AppDispatch>();
   const serviceList = useSelector(selectServiceList);
   const clientList = useSelector(selectClientList);
@@ -90,5 +90,3 @@ const CardsList = ({ type, titleSection, limit = 3, loadMore }: ICardsList) => {
     </section>
   );
 };
-
-export default CardsList;

@@ -11,7 +11,7 @@ interface IPropsNews {
   loadMore?: boolean;
 }
 
-const NewsCards = ({ posts, limit, loadMore }: IPropsNews) => {
+export const NewsCards = ({ posts, limit, loadMore }: IPropsNews) => {
   const addNewCard: number = 3;
 
   const [countCard, setCountCard] = useState<number>(limit);
@@ -67,5 +67,3 @@ const NewsCards = ({ posts, limit, loadMore }: IPropsNews) => {
     </>
   );
 };
-
-export default NewsCards;

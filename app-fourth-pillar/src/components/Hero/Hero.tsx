@@ -18,35 +18,9 @@ interface IHero extends HeroProps {
   children?: React.ReactNode;
 }
 
-const Hero = ({ children, optionClass, title, text, maps, address, mail, heroImg, heroPerson }: IHero) => {
-  const Maps = () => {
-    return (
-      <div className={styles.imgMaps}>
-        <img
-          src={maps?.src}
-          alt={maps?.alt}
-        />
-      </div>
-    );
-  };
-
-  const HeroImg = () => {
-    return (
-      <div className={styles.heroImages}>
-        <img
-          src={heroImg?.src}
-          alt={heroImg?.alt}
-        />
-      </div>
-    );
-  };
-
+export const Hero = ({ children, optionClass, title, text, maps, address, mail, heroImg, heroPerson }: IHero) => {
   return (
-    <section className={
-      optionClass
-        ? `${styles.heroSection} ${styles[optionClass]}`
-        : `${styles.heroSection}`}
-    >
+    <section className={optionClass ? `${styles.heroSection} ${styles[optionClass]}` : `${styles.heroSection}`}>
       <div className={styles.container}>
         <div className={styles.textArea}>
           <h1 className={styles.fzSm}>{title}</h1>
@@ -65,11 +39,23 @@ const Hero = ({ children, optionClass, title, text, maps, address, mail, heroImg
           ) : null}
           {children}
         </div>
-        {maps ? <Maps /> : null}
-        {heroImg ? <HeroImg /> : null}
+        {maps ? (
+          <div className={styles.imgMaps}>
+            <img
+              src={maps?.src}
+              alt={maps?.alt}
+            />
+          </div>
+        ) : null}
+        {heroImg ? (
+          <div className={styles.heroImages}>
+            <img
+              src={heroImg?.src}
+              alt={heroImg?.alt}
+            />
+          </div>
+        ) : null}
       </div>
     </section>
   );
 };
-
-export default Hero;

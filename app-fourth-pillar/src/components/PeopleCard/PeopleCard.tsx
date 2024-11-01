@@ -11,7 +11,7 @@ export interface PeopleListProps {
   link: ILink;
 }
 
-const PeopleCard = ({ name, image, link }: PeopleListProps) => {
+export const PeopleCard = ({ name, image, link }: PeopleListProps) => {
   return (
     <figure className={styles.peopleCard}>
       <img
@@ -34,5 +34,3 @@ const PeopleCard = ({ name, image, link }: PeopleListProps) => {
     </figure>
   );
 };
-
-export default PeopleCard;

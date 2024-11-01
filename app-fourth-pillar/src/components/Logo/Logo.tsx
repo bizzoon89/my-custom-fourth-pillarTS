@@ -12,7 +12,7 @@ interface Logo extends ILogo {
   positionFooter?: boolean;
 }
 
-const Logo = ({ positionFooter, url, src, alt }: Logo) => {
+export const Logo = ({ positionFooter, url, src, alt }: Logo) => {
   const { logo, footerLogo } = styles;
 
   return (
@@ -26,5 +26,3 @@ const Logo = ({ positionFooter, url, src, alt }: Logo) => {
     </div>
   );
 };
-
-export default Logo;

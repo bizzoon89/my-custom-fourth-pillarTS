@@ -1,1 +1,1 @@
-export { default } from './NavPost';
+export * from './NavPost';

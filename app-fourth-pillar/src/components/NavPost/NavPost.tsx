@@ -9,7 +9,7 @@ interface INavPost {
   arrLength: number;
 }
 
-const NavPost = ({ postType, arrLength }: INavPost) => {
+export const NavPost = ({ postType, arrLength }: INavPost) => {
   const { idPost } = useParams<{ idPost: string }>();
   const navigate = useNavigate();
 
@@ -72,5 +72,3 @@ const NavPost = ({ postType, arrLength }: INavPost) => {
     </section>
   )
 }
-
-export default NavPost;

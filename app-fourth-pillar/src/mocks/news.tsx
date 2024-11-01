@@ -1,4 +1,4 @@
-import { HeroProps } from '../components/Hero/Hero';
+import { HeroProps } from '../components/Hero';
 
 export const heroData = {
   title: 'News \n & views',

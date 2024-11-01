@@ -1,1 +1,1 @@
-export { default } from './Founder';
+export * from './Founder';

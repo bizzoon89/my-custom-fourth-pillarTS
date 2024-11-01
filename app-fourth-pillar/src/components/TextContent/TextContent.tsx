@@ -10,7 +10,7 @@ interface ITextContent extends ITextContentProps {
   children?: React.ReactNode;
 }
 
-const TextContent = ({ content, children }: ITextContent) => {
+export const TextContent = ({ content, children }: ITextContent) => {
   return (
     <section className={`${styles.contentSection} ${styles.fzBase}`}>
       <div className={styles.containerMd}>
@@ -20,5 +20,3 @@ const TextContent = ({ content, children }: ITextContent) => {
     </section>
   );
 };
-
-export default TextContent;

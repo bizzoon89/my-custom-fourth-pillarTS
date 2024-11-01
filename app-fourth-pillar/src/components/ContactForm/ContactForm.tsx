@@ -15,7 +15,7 @@ interface IFormValues {
   checkbox: boolean;
 }
 
-const ContactForm = () => {
+export const ContactForm = () => {
   const [message, setMessage] = useState<string | null>(null);
 
   const handleSubmit = async (values: IFormValues, { setSubmitting, resetForm }: FormikHelpers<IFormValues>) => {
@@ -168,5 +168,3 @@ const ContactForm = () => {
     </section>
   );
 };
-
-export default ContactForm;

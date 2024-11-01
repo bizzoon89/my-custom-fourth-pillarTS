@@ -1,4 +1,4 @@
-import { HeroProps } from '../components/Hero/Hero';
+import { HeroProps } from '../components/Hero';
 import { FounderProps } from '../pages/Founders';
 
 export const heroData = {

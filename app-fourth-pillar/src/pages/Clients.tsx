@@ -1,5 +1,5 @@
-import Hero from '../components/Hero';
-import CardList from '../components/CardList';
+import { Hero } from '../components/Hero';
+import { CardList } from '../components/CardList';
 
 import { ETypeCards } from '../types';
 
@@ -14,5 +14,5 @@ export const Clients = () => {
         limit={12}
       />
     </>
-  )
-}
+  );
+};

@@ -1,1 +1,1 @@
-export { default } from './PeopleBox';
+export * from './PeopleBox';

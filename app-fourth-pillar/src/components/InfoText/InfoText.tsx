@@ -10,7 +10,7 @@ interface IInfoText extends InfoTextProps {
   children?: React.ReactNode;
 }
 
-const InfoText = ({ children, title }: IInfoText) => {
+export const InfoText = ({ children, title }: IInfoText) => {
   return (
     <section className={styles.infoTextSection}>
       <div className={styles.containerMd}>
@@ -20,5 +20,3 @@ const InfoText = ({ children, title }: IInfoText) => {
     </section>
   );
 };
-
-export default InfoText;

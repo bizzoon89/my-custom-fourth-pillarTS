@@ -1,1 +1,1 @@
-export { default } from './ButtonThemeSwitch';
+export * from './ButtonThemeSwitch';

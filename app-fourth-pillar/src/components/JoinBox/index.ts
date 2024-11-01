@@ -1,1 +1,1 @@
-export { default } from './JoinBox';
+export * from './JoinBox';

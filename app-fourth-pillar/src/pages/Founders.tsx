@@ -1,7 +1,7 @@
 import { useParams } from 'react-router-dom';
 
-import Hero from '../components/Hero';
-import Founder from '../components/Founder/Founder';
+import { Hero } from '../components/Hero';
+import { Founder } from '../components/Founder/Founder';
 import { NotFound } from './NotFound';
 
 import { IFounder } from '../components/Founder/Founder';

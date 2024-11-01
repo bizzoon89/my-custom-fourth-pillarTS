@@ -12,7 +12,7 @@ interface IJoinBox extends JoinBoxProps {
   buttonColor: string;
 }
 
-const JoinBox = ({ title, align, url, buttonText, buttonColor }: IJoinBox) => {
+export const JoinBox = ({ title, align, url, buttonText, buttonColor }: IJoinBox) => {
   return (
     <section className={
       align
@@ -30,5 +30,3 @@ const JoinBox = ({ title, align, url, buttonText, buttonColor }: IJoinBox) => {
     </section>
   );
 };
-
-export default JoinBox;

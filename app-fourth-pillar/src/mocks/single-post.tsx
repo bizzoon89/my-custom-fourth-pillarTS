@@ -1,4 +1,4 @@
-import { ISocialLinks } from '../components/SocialNetworks/SocialNetworks';
+import { ISocialLinks } from '../components/SocialNetworks';
 
 export const socialLinkData = [
   {

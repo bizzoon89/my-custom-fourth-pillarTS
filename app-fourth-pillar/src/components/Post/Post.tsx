@@ -10,7 +10,7 @@ interface IPost {
   children?: React.ReactNode;
 }
 
-const Post = ({ post, children }: IPost) => {
+export const Post = ({ post, children }: IPost) => {
   return (
     <section className={styles.contentSection}>
       <div className={styles.containerMd}>
@@ -22,5 +22,3 @@ const Post = ({ post, children }: IPost) => {
     </section>
   );
 };
-
-export default Post;

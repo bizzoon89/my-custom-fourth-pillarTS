@@ -5,7 +5,7 @@ interface IPropsClient {
   posts: IClientCards[];
 }
 
-const ClientCards = ({ posts }: IPropsClient) => {
+export const ClientCards = ({ posts }: IPropsClient) => {
   return (
     <div className={styles.rowCard}>
       {posts.map(item => (
@@ -34,5 +34,3 @@ const ClientCards = ({ posts }: IPropsClient) => {
     </div>
   );
 };
-
-export default ClientCards;

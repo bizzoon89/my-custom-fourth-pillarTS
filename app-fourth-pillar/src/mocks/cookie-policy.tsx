@@ -1,5 +1,5 @@
-import { HeroProps } from '../components/Hero/Hero';
-import { ITextContentProps } from '../components/TextContent/TextContent';
+import { HeroProps } from '../components/Hero';
+import { ITextContentProps } from '../components/TextContent';
 
 export const heroData = {
   title: 'Cookie Policy',

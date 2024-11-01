@@ -9,7 +9,7 @@ import { ENewsSliceStatus } from '../../types/newsSliceType';
 
 import styles from './SingleNews.module.scss';
 
-const SingleNews = () => {
+export const SingleNews = () => {
   const dispatch: AppDispatch = useDispatch<AppDispatch>();
   const newsList = useSelector(selectNewsList);
   const newsStatus = useSelector(selectNewsStatus);
@@ -49,5 +49,3 @@ const SingleNews = () => {
     </section>
   );
 };
-
-export default SingleNews;

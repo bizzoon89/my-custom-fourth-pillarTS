@@ -1,6 +1,6 @@
 import {AnimatedSquare} from '../AnimatedSquare';
-import LogoList from '../LogoList/LogoList';
-import PeopleCard from '../PeopleCard';
+import { LogoList } from '../LogoList/LogoList';
+import { PeopleCard } from '../PeopleCard';
 
 import { PlainText } from '../../types';
 import { PeopleListProps } from '../PeopleCard/PeopleCard';
@@ -19,7 +19,7 @@ interface IPeopleBox {
   logoListData: LogoListProps[];
 }
 
-const PeopleBox = ({ peopleData: { title, paragraphs }, peopleListData: peopleList, logoListData: logoList }: IPeopleBox) => {
+export const PeopleBox = ({ peopleData: { title, paragraphs }, peopleListData: peopleList, logoListData: logoList }: IPeopleBox) => {
   return (
     <section className={styles.peopleSection}>
       <div className={styles.container}>
@@ -43,5 +43,3 @@ const PeopleBox = ({ peopleData: { title, paragraphs }, peopleListData: peopleLi
     </section>
   );
 };
-
-export default PeopleBox;

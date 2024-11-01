@@ -11,7 +11,7 @@ interface IFooterArea extends IContactInfo {
   children: React.ReactNode;
 }
 
-const FooterArea = ({ text, address, title, copyright, children }: IFooterArea) => {
+export const FooterArea = ({ text, address, title, copyright, children }: IFooterArea) => {
   const today = new Date();
   const year = today.getFullYear();
 
@@ -28,5 +28,3 @@ const FooterArea = ({ text, address, title, copyright, children }: IFooterArea) 
     </>
   );
 };
-
-export default FooterArea;

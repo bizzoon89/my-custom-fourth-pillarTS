@@ -1,8 +1,8 @@
-import Hero from '../components/Hero';
-import InfoText from '../components/InfoText';
+import { Hero } from '../components/Hero';
+import { InfoText } from '../components/InfoText';
 import { AnimatedSquare } from '../components/AnimatedSquare';
-import ContactForm from '../components/ContactForm';
-import CardList from '../components/CardList';
+import { ContactForm } from '../components/ContactForm';
+import { CardList } from '../components/CardList';
 
 import { ETypeCards } from '../types';
 
@@ -25,5 +25,5 @@ export const Home = () => {
       />
       <ContactForm />
     </>
-  )
-}
+  );
+};

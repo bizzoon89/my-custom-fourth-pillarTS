@@ -1,8 +1,8 @@
-import { HeroProps } from '../components/Hero/Hero';
-import { JoinBoxProps } from '../components/JoinBox/JoinBox';
-import { PeopleProps } from '../components/PeopleBox/PeopleBox';
-import { PeopleListProps } from '../components/PeopleCard/PeopleCard';
-import { LogoListProps } from '../components/LogoList/LogoList';
+import { HeroProps } from '../components/Hero';
+import { JoinBoxProps } from '../components/JoinBox';
+import { PeopleProps } from '../components/PeopleBox';
+import { PeopleListProps } from '../components/PeopleCard';
+import { LogoListProps } from '../components/LogoList';
 
 export const heroData = {
   title: 'Our \n people',

@@ -1,1 +1,1 @@
-export { default } from './SocialNetworks';
+export * from './SocialNetworks';
